@@ -56,11 +56,6 @@ public class UIController : MonoBehaviour
         CreditsContainer.SetActive(true);
     }
 
-    private void ExitSelected()
-    {
-        Application.Quit();
-    }
-
     private void CreditsBackSelected()
     {
         OptionsContainer.SetActive(true);
@@ -82,5 +77,10 @@ public class UIController : MonoBehaviour
     private void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
+    }
+
+    private void ExitSelected()
+    {
+        Application.Quit();
     }
 }
