@@ -21,7 +21,7 @@ public class Node : MonoBehaviour
 
     }
 
-    private void OnTouchDown()
+    private void OnMouseDown()
     {
         if (turret != null)
         {
@@ -32,11 +32,11 @@ public class Node : MonoBehaviour
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
-    private void OnTouchEnter()
+    private void OnMouseEnter()
     {
         rend.material.color = hoverColor;
     }
-    private void OnTouchExit()
+    private void OnMouseExit()
     {
         rend.material.color = startColor;
     }
