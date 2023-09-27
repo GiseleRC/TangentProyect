@@ -37,6 +37,7 @@ public class Arrow : MonoBehaviour
         GameObject effectGO = (GameObject)Instantiate(_impactEffectPrefab, transform.position, transform.rotation);
         Destroy(effectGO, 2f);
 
+        Destroy(target.gameObject);
         Destroy(gameObject);
     }
 }
