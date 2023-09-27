@@ -16264,6 +16264,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3397290022146623054, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
+      propertyPath: _firePoint
+      value: 
+      objectReference: {fileID: 2586456619414577070}
+    - target: {fileID: 3397290022146623054, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
+      propertyPath: _arrowPrefab
+      value: 
+      objectReference: {fileID: 8490268208847804802, guid: 7f457a0161f44b342b91aa56e08a2d5c, type: 3}
+    - target: {fileID: 3397290022146623054, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
       propertyPath: _partToRotate
       value: 
       objectReference: {fileID: 488432966181220357}
@@ -16273,6 +16281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
+--- !u!4 &2586456619414577070 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2914012619097187309, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
+  m_PrefabInstance: {fileID: 2586456619414577069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4058056772344129904
 PrefabInstance:
   m_ObjectHideFlags: 0
