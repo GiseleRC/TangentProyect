@@ -10,9 +10,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Button ControlsButton;
     [SerializeField] private Button CreditsButton;
     [SerializeField] private Button ExitButton;
-    [SerializeField] private Button SelectLevelBackButton;
-    [SerializeField] private Button ControlsBackButton;
-    [SerializeField] private Button CreditsBackButton;
+    [SerializeField] private Button BackButton;
     [SerializeField] private Button LoadScene1Button;
     [SerializeField] private Button LoadScene2Button;
 
@@ -27,51 +25,39 @@ public class UIController : MonoBehaviour
         ControlsButton.onClick.AddListener(ControlsSelected);
         CreditsButton.onClick.AddListener(CreditsSelected);
         ExitButton.onClick.AddListener(ExitSelected);
-        SelectLevelBackButton.onClick.AddListener(LevelsBackSelected);
-        ControlsBackButton.onClick.AddListener(ControlsBackSelected);
-        CreditsBackButton.onClick.AddListener(CreditsBackSelected);
+        BackButton.onClick.AddListener(BackSelected);
         LoadScene1Button.onClick.AddListener(() => LoadScene("Level1"));
         LoadScene2Button.onClick.AddListener(() => LoadScene("Level2"));
+    }
+
+    private void LevelsSelected()
+    {
+        OptionsContainer.SetActive(false);
+        LevelsContainer.SetActive(true);
+        BackButton.gameObject.SetActive(true);
     }
 
     private void ControlsSelected()
     {
         OptionsContainer.SetActive(false);
         ControlsContainer.SetActive(true);
-        LevelsContainer.SetActive(false);
-    }
-
-    private void LevelsSelected()
-    {
-        OptionsContainer.SetActive(false);
-        ControlsContainer.SetActive(false);
-        LevelsContainer.SetActive(true);
+        BackButton.gameObject.SetActive(true);
     }
 
     private void CreditsSelected()
     {
         OptionsContainer.SetActive(false);
-        ControlsContainer.SetActive(false);
-        LevelsContainer.SetActive(false);
         CreditsContainer.SetActive(true);
+        BackButton.gameObject.SetActive(true);
     }
 
-    private void CreditsBackSelected()
+    private void BackSelected() // en lugar de 3 métodos esto lo resume en 1 sólo, también me permite tener un solo botón de "back" en lugar de 3
     {
         OptionsContainer.SetActive(true);
-        CreditsContainer.SetActive(false);
-    }
-
-    private void ControlsBackSelected()
-    {
-        OptionsContainer.SetActive(true);
-        ControlsContainer.SetActive(false);
-    }
-
-    private void LevelsBackSelected()
-    {
-        OptionsContainer.SetActive(true);
+        BackButton.gameObject.SetActive(false);
         LevelsContainer.SetActive(false);
+        CreditsContainer.SetActive(false);
+        ControlsContainer.SetActive(false);
     }
 
     private void LoadScene(string scene)
