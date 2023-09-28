@@ -11,7 +11,6 @@ public class Arrow : MonoBehaviour
         target = _target;
     }
 
-
     void Update()
     {
         if(target == null)

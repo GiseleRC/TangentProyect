@@ -16,16 +16,10 @@ public class Node : MonoBehaviour
         startColor = rend.material.color;
     }
 
-    void Update()
-    {
-
-    }
-
     private void OnMouseDown()
     {
         if (turret != null)
         {
-            Debug.Log("sedcsdc");
             return;
         }
 
