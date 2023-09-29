@@ -16825,6 +16825,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4622376716164188862}
     - target: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+      propertyPath: _enemyBasicPrefab
+      value: 
+      objectReference: {fileID: 4085918624819465892, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
+    - target: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+      propertyPath: _enemyHeavyPrefab
+      value: 
+      objectReference: {fileID: 6813090964340995730, guid: 974b68268da22354392d9d817dcebc92, type: 3}
+    - target: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: waveCountdownText
       value: 
       objectReference: {fileID: 176808791}

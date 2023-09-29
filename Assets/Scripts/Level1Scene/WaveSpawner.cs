@@ -5,7 +5,9 @@ using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform _enemyPrefab;
+    [SerializeField] private Transform _enemyBasicPrefab;
+    [SerializeField] private Transform _enemyHeavyPrefab;
+    private Transform _enemyToSpawn;
     public Transform _spawnPoint;
     public TMP_Text waveCountdownText;
     public float _timeBetweenWaves = 5f;
@@ -37,6 +39,14 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Instantiate(_enemyPrefab, _spawnPoint.position, _spawnPoint.rotation);
+        if (Random.Range(0, 101) <= 65)
+        {
+            _enemyToSpawn = _enemyBasicPrefab;
+        }
+        else
+        {
+            _enemyToSpawn = _enemyHeavyPrefab;
+        }
+        Instantiate(_enemyToSpawn, _spawnPoint.position, _spawnPoint.rotation);
     }
 }
