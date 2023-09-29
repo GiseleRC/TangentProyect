@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8772366945198005430}
   - component: {fileID: -2355521761646577652}
   m_Layer: 0
-  m_Name: Node
+  m_Name: NodeCanBuild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e21e55fee361844ab5739b660c1979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
   positionOffset: {x: 0, y: 2, z: 2}
+  hoverColor: {r: 0.070370995, g: 0.695, b: 0.068805024, a: 0}
 --- !u!114 &-2355521761646577652
 MonoBehaviour:
   m_ObjectHideFlags: 0
