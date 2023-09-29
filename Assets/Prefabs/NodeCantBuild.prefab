@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: hoverColor.r
       value: 0.698
       objectReference: {fileID: 0}
+    - target: {fileID: -8772366945198005430, guid: e7d5a003cf246894cb667c0849178842, type: 3}
+      propertyPath: notBuildableNode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4622376716920142235, guid: e7d5a003cf246894cb667c0849178842, type: 3}
       propertyPath: m_RootOrder
       value: 0

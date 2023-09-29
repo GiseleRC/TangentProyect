@@ -14,6 +14,8 @@ public class Node : MonoBehaviour
 
     BuildManager buildManager;
 
+    [SerializeField] bool notBuildableNode = false;
+
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -25,6 +27,9 @@ public class Node : MonoBehaviour
     private void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        if (notBuildableNode)
             return;
 
         if (!buildManager.CanBuild)
@@ -41,10 +46,10 @@ public class Node : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
+        rend.material.color = hoverColor;
+
         if (buildManager.CanBuild)
             return;
-        
-        rend.material.color = hoverColor;
     }
 
     private void OnMouseExit()
