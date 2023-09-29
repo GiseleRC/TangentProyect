@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
         if(_waypointsIndex >= Waypoints.points.Length -1)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }
         _waypointsIndex++;
