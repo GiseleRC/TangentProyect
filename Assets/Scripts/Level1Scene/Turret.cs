@@ -8,8 +8,8 @@ public class Turret : MonoBehaviour
 
     [Header("***Attributes***")]
 
-    public float _range = 15f;
-    public float _fireRate = 1f;
+    [SerializeField] private float _range = 15f;
+    [SerializeField] private float _fireRate = 1f;
     private float _fireCountdown = 0f;
 
     [Header("***Unity Setups Fields***")]

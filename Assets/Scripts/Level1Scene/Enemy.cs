@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float _speed = 10f;
+    [SerializeField] private float _speed = 10f;
 
-    private Transform _tarjet;
+    private Transform _target;
     private int _waypointsIndex = 0;
 
     void Start()
     {
-        _tarjet = Waypoints._points[0];
+        _target = Waypoints.points[0];
     }
 
     void Update()
     {
-        Vector3 _dir = _tarjet.position - transform.position;
+        Vector3 _dir = _target.position - transform.position;
         transform.Translate(_dir.normalized * _speed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, _tarjet.position) <= 0.4f)
+        if (Vector3.Distance(transform.position, _target.position) <= 0.4f)
         {
             GetNextWaypoint();
         }
@@ -27,12 +27,12 @@ public class Enemy : MonoBehaviour
 
     private void GetNextWaypoint()
     {
-        if(_waypointsIndex >= Waypoints._points.Length -1)
+        if(_waypointsIndex >= Waypoints.points.Length -1)
         {
             Destroy(gameObject);
             return;
         }
         _waypointsIndex++;
-        _tarjet = Waypoints._points[_waypointsIndex];
+        _target = Waypoints.points[_waypointsIndex];
     }
 }

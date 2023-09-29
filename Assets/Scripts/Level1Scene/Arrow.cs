@@ -4,8 +4,9 @@ public class Arrow : MonoBehaviour
 {
     private Transform target;
 
-    public float _speed = 70f;
+    [SerializeField] private float _speed = 70f;
     public GameObject _impactEffectPrefab;
+
     public void Seek(Transform _target)
     {
         target = _target;
