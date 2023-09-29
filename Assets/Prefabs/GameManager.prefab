@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9af16dfc63750f4299913ce55060e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 4085918624819465892, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
+  _enemyBasicPrefab: {fileID: 4085918624819465892, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
+  _enemyHeavyPrefab: {fileID: 6813090964340995730, guid: 974b68268da22354392d9d817dcebc92, type: 3}
   _spawnPoint: {fileID: 0}
   waveCountdownText: {fileID: 0}
   _timeBetweenWaves: 5
@@ -61,3 +62,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884b088ad2eac7842afe52a543814904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turret1Prefab: {fileID: 0}
+  turret2Prefab: {fileID: 0}
