@@ -13,22 +13,18 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject standarTurretPrefab;
+    public GameObject turret1Prefab;
+    public GameObject turret2Prefab;
 
     private GameObject turretToBuild;
-    void Start()
-    {
-        turretToBuild = standarTurretPrefab;
-    }
 
     public GameObject GetTurretToBuild()
     {
         return turretToBuild;
     }
 
-
-    void Update()
+    public void SetTurretToBuild(GameObject turret)
     {
-        
+        turretToBuild = turret;
     }
 }

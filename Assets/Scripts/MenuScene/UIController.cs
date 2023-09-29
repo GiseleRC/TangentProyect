@@ -51,7 +51,7 @@ public class UIController : MonoBehaviour
         BackButton.gameObject.SetActive(true);
     }
 
-    private void BackSelected() // en lugar de 3 métodos esto lo resume en 1 sólo, también me permite tener un solo botón de "back" en lugar de 3
+    private void BackSelected()
     {
         OptionsContainer.SetActive(true);
         BackButton.gameObject.SetActive(false);
