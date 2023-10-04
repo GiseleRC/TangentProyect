@@ -49,4 +49,9 @@ public class WaveSpawner : MonoBehaviour
         }
         Instantiate(_enemyToSpawn, _spawnPoint.position, _spawnPoint.rotation);
     }
+
+    public void NextWaveEarly()
+    {
+        _countdown = 0;
+    }
 }
