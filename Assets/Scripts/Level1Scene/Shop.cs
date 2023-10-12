@@ -3,7 +3,9 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public TurretBlueprints turret1;
+    public TurretBlueprints turret1Cost;
     public TurretBlueprints turret2;
+    public TurretBlueprints turret2Cost;
 
     protected BuildManager buildManager;
 
