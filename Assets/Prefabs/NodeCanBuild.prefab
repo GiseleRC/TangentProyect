@@ -111,8 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e21e55fee361844ab5739b660c1979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _notBuildableNode: 0
+  _hoverColor: {r: 0, g: 0.6981132, b: 0.37265757, a: 0}
+  turret: {fileID: 0}
   positionOffset: {x: 0, y: 2, z: 2}
-  hoverColor: {r: 0.070370995, g: 0.695, b: 0.068805024, a: 0}
 --- !u!114 &-2355521761646577652
 MonoBehaviour:
   m_ObjectHideFlags: 0

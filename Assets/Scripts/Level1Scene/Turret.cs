@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    private Transform _target;
-
     [Header("***Attributes***")]
 
     [SerializeField] private float _range = 15f;
     [SerializeField] private float _fireRate = 1f;
-    private float _fireCountdown = 0f;
 
     [Header("***Unity Setups Fields***")]
 
+    [SerializeField] private Transform _partToRotate;
+    [SerializeField] private Transform _firePoint;
+    [SerializeField] private GameObject _arrowPrefab;
+    [SerializeField] private float _turnSpeed = 10f;
+
+    private Transform _target;
+    private float _fireCountdown = 0f;
+
     public string _enemyTag = "Enemy";
-    public float _turnSpeed = 10f;
-    public Transform _partToRotate;
-    public Transform _firePoint;
-    public GameObject _arrowPrefab;
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class Turret : MonoBehaviour
 
     void Update()
     {
+        //mejorar
         if (_target == null)
             return;
 

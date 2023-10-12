@@ -5,7 +5,7 @@ public class Shop : MonoBehaviour
     public TurretBlueprints turret1;
     public TurretBlueprints turret2;
 
-    BuildManager buildManager;
+    protected BuildManager buildManager;
 
     void Start()
     {

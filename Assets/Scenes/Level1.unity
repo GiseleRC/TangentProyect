@@ -3141,10 +3141,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret1:
     prefab: {fileID: 3397290022146623055, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
-    cost: 10
+    cost: 0
   turret2:
     prefab: {fileID: 3397290022146623055, guid: c8259c42735a18541b15e48a77c33dca, type: 3}
-    cost: 15
+    cost: 0
 --- !u!1001 &252770971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21755,13 +21755,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3397290022146623055, guid: c8259c42735a18541b15e48a77c33dca, type: 3}
     - target: {fileID: 4630775471910401311, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+      propertyPath: _turret1Prefab
+      value: 
+      objectReference: {fileID: 3397290022146623055, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
+    - target: {fileID: 4630775471910401311, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+      propertyPath: _turret2Prefab
+      value: 
+      objectReference: {fileID: 3397290022146623055, guid: c8259c42735a18541b15e48a77c33dca, type: 3}
+    - target: {fileID: 4630775471910401311, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: standarTurretPrefab
       value: 
       objectReference: {fileID: 3397290022146623055, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
     - target: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 4622376716164188862}
     - target: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: _spawnPoint
       value: 

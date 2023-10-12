@@ -3,23 +3,21 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
-    public Color hoverColor;
-    public Vector3 positionOffset;
+    [SerializeField] private bool _notBuildableNode = false;
+    [SerializeField] private Color _hoverColor;
+    private Renderer _rend;
+    private Color _startColor;
 
     [Header("*** Optional parameter ***")]
     public GameObject turret;
+    public Vector3 positionOffset;
 
-    private Renderer rend;
-    private Color startColor;
-
-    BuildManager buildManager;
-
-    [SerializeField] bool notBuildableNode = false;
+    protected BuildManager buildManager;
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
-        startColor = rend.material.color;
+        _rend = GetComponent<Renderer>();
+        _startColor = _rend.material.color;
 
         buildManager = BuildManager.instance;
     }
@@ -29,7 +27,7 @@ public class Node : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if (notBuildableNode)
+        if (_notBuildableNode)
             return;
 
         if (!buildManager.CanBuild)
@@ -46,7 +44,7 @@ public class Node : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        rend.material.color = hoverColor;
+        _rend.material.color = _hoverColor;
 
         if (buildManager.CanBuild)
             return;
@@ -54,6 +52,8 @@ public class Node : MonoBehaviour
 
     private void OnMouseExit()
     {
-        rend.material.color = startColor;
+        _rend.material.color = _startColor;
     }
+
+    //Implementar la interaccion de los touch como inputs
 }

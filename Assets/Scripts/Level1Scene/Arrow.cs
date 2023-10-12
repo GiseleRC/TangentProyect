@@ -2,25 +2,25 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    private Transform target;
+    private Transform _target;
 
     [SerializeField] private float _speed = 70f;
     public GameObject _impactEffectPrefab;
 
-    public void Seek(Transform _target)
+    public void Seek(Transform target)
     {
-        target = _target;
+        _target = target;
     }
 
     void Update()
     {
-        if(target == null)
+        if(_target == null)
         {
             Destroy(gameObject);
             return;
         }
 
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = _target.position - transform.position;
         float distanceThisFrame = _speed * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame)
@@ -37,7 +37,7 @@ public class Arrow : MonoBehaviour
         GameObject effectGO = (GameObject)Instantiate(_impactEffectPrefab, transform.position, transform.rotation);
         Destroy(effectGO, 2f);
 
-        Destroy(target.gameObject);
+        Destroy(_target.gameObject);
         Destroy(gameObject);
     }
 }

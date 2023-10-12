@@ -4,6 +4,10 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
+    [SerializeField] private GameObject _turret1Prefab;
+    [SerializeField] private GameObject _turret2Prefab;
+    private TurretBlueprints _turretToBuild;
+
     private void Awake()
     {
         if (instance != null)
@@ -13,22 +17,17 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject turret1Prefab;
-    public GameObject turret2Prefab;
-
-    private TurretBlueprints turretToBuild;
-
-    public bool CanBuild { get { return turretToBuild != null; } }
+    public bool CanBuild { get { return _turretToBuild != null; } }
 
     public void BuildTurretOn(Node node)
     {
-        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.transform.position + node.positionOffset, node.transform.rotation);
+        GameObject turret = (GameObject)Instantiate(_turretToBuild.prefab, node.transform.position + node.positionOffset, node.transform.rotation);
         node.turret = turret;
     }
 
     public void SelectTurretToBuild(TurretBlueprints turret)
     {
-        turretToBuild = turret;
+        _turretToBuild = turret;
     }
 
 }
