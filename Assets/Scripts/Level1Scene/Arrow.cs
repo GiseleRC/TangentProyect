@@ -30,6 +30,7 @@ public class Arrow : MonoBehaviour
         }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        transform.LookAt(_target);
     }
 
     void HitTarget()
