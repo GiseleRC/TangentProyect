@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public class Arrow : MonoBehaviour, IPooleableObject
 {
-    private Transform _target;
-
     [SerializeField] private float _speed = 70f;
-    public GameObject _impactEffectPrefab;
+    [SerializeField] private GameObject _impactEffectPrefab;
+
+    private Transform _target = null;
 
     public void Seek(Transform target)
     {
@@ -16,7 +16,7 @@ public class Arrow : MonoBehaviour
     {
         if(_target == null)
         {
-            Destroy(gameObject);
+            ArrowFactory.Instance.ReturnObjectToPool(this);
             return;
         }
 
@@ -39,6 +39,21 @@ public class Arrow : MonoBehaviour
         Destroy(effectGO, 2f);
 
         Destroy(_target.gameObject);
-        Destroy(gameObject);
+        ArrowFactory.Instance.ReturnObjectToPool(this);
+    }
+
+    public void Reset()
+    {
+        _target = null;
+    }
+
+    public static void TurnOn(Arrow arrow)
+    {
+        arrow.gameObject.SetActive(true);
+    }
+
+    public static void TurnOff(Arrow arrow)
+    {
+        arrow.gameObject.SetActive(false);
     }
 }

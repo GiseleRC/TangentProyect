@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pool<T>
+public class Pool<T> where T : IPooleableObject
 {
     private Func<T> _factoryMethod;
     private Action<T> _turnOnCallback;
@@ -22,6 +22,7 @@ public class Pool<T>
         {
             T newObj = _factoryMethod();
 
+            newObj.Reset();
             _turnOffCallback(newObj);
             _currentStock.Add(newObj);
         }
@@ -47,6 +48,7 @@ public class Pool<T>
 
     public void ReturnObject(T obj)
     {
+        obj.Reset();
         _turnOffCallback(obj);
         _currentStock.Add(obj);
     }

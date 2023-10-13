@@ -13,7 +13,6 @@ public class Turret : MonoBehaviour
 
     [SerializeField] private Transform _partToRotate;
     [SerializeField] private Transform _firePoint;
-    [SerializeField] private GameObject _arrowPrefab;
     [SerializeField] private float _turnSpeed = 10f;
 
     private Transform _target;
@@ -63,7 +62,7 @@ public class Turret : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(_partToRotate.rotation, lookRotation, Time.deltaTime * _turnSpeed).eulerAngles;
         _partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-        if(_fireCountdown <= 0f)
+        if (_fireCountdown <= 0f)
         {
             Shoot();
             _fireCountdown = 1f / _fireRate;
@@ -74,11 +73,12 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject arrowGO = (GameObject)Instantiate(_arrowPrefab, _firePoint.position, _firePoint.rotation);
-        Arrow arrow = arrowGO.GetComponent<Arrow>();
+        Arrow arrow = ArrowFactory.Instance.GetObjectFromPool();
 
         if (arrow != null)
         {
+            arrow.transform.position = _firePoint.position;
+            arrow.transform.rotation = _firePoint.rotation;
             arrow.Seek(_target);
         }
     }

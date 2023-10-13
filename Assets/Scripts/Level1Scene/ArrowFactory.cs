@@ -34,8 +34,8 @@ public class ArrowFactory : MonoBehaviour
         return _myArrowPool.GetObject();
     }
 
-    public void ReturnObjectToPool(Arrow bullet)
+    public void ReturnObjectToPool(Arrow arrow)
     {
-        _myArrowPool.ReturnObject(bullet);
+        _myArrowPool.ReturnObject(arrow);
     }
 }
