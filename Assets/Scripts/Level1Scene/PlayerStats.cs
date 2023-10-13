@@ -9,9 +9,4 @@ public class PlayerStats : MonoBehaviour
     {
         Money = startMoney;
     }
-
-    void Update()
-    {
-        
-    }
 }

@@ -3141,9 +3141,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret1:
     prefab: {fileID: 3397290022146623055, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
+    cost: 150
+  turret1Cost:
+    prefab: {fileID: 0}
     cost: 0
   turret2:
     prefab: {fileID: 3397290022146623055, guid: c8259c42735a18541b15e48a77c33dca, type: 3}
+    cost: 100
+  turret2Cost:
+    prefab: {fileID: 0}
     cost: 0
 --- !u!1001 &252770971
 PrefabInstance:

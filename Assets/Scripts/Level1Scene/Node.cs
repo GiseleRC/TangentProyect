@@ -12,14 +12,10 @@ public class Node : MonoBehaviour
     public GameObject turret;
     public Vector3 positionOffset;
 
-    protected BuildManager buildManager;
-
     void Start()
     {
         _rend = GetComponent<Renderer>();
         _startColor = _rend.material.color;
-
-        buildManager = BuildManager.instance;
     }
 
     private void OnMouseDown()
@@ -30,13 +26,13 @@ public class Node : MonoBehaviour
         if (_notBuildableNode)
             return;
 
-        if (!buildManager.CanBuild)
+        if (!BuildManager.Instance.CanBuild)
             return;
 
         if (turret != null)
             return;
 
-        buildManager.BuildTurretOn(this);
+        BuildManager.Instance.BuildTurretOn(this);
     }
 
     private void OnMouseEnter()
@@ -46,7 +42,7 @@ public class Node : MonoBehaviour
 
         _rend.material.color = _hoverColor;
 
-        if (buildManager.CanBuild)
+        if (BuildManager.Instance.CanBuild)
             return;
     }
 
@@ -54,6 +50,4 @@ public class Node : MonoBehaviour
     {
         _rend.material.color = _startColor;
     }
-
-    //Implementar la interaccion de los touch como inputs
 }
