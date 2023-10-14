@@ -48,13 +48,17 @@ public class WaveSpawner : MonoBehaviour
     {
         if (Random.Range(0, 101) <= 65)
         {
-            _enemyToSpawn = _enemyBasicPrefab;
+            EnemyBasicFactory.Instance.GetObjectFromPool();
+            //EnemyBasicFactory.Instance.GetObjectFromPool(EnemyBasicFactory.TypeEnemy.Basic);
+            //_enemyToSpawn = _enemyBasicPrefab;
         }
         else
         {
-            _enemyToSpawn = _enemyHeavyPrefab;
+            EnemyHeavyFactory.Instance.GetObjectFromPool();
+            //EnemyBasicFactory.Instance.GetObjectFromPool(EnemyBasicFactory.TypeEnemy.Heavy);
+            //_enemyToSpawn = _enemyHeavyPrefab;
         }
-        Instantiate(_enemyToSpawn, _spawnPoint.position, _spawnPoint.rotation);
+        //Instantiate(_enemyToSpawn, _spawnPoint.position, _spawnPoint.rotation);
     }
 
     public void NextWaveEarly()
