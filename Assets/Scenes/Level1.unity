@@ -21239,6 +21239,10 @@ PrefabInstance:
       propertyPath: waveCountdownText
       value: 
       objectReference: {fileID: 176808791}
+    - target: {fileID: 6754988302589739144, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+      propertyPath: InitialCoins
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 7847418220657493747, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: m_Name
       value: GameManager
