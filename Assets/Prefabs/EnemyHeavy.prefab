@@ -16,6 +16,10 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 726220783507680387, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 97e27cafba27861439a9a1fa0877d13d, type: 2}
+    - target: {fileID: 726220783507680387, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
       propertyPath: _typeEnemy
       value: 1
       objectReference: {fileID: 0}

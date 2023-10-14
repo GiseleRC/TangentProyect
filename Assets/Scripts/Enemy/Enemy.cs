@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour, IPooleableObject
 {
-    //HACER------ pasar a flyweights
-    [SerializeField] private float _speed = 10f;
-    [SerializeField] private float _health = 100f;
-
+    private float _health;
     private Transform _target;
     private int _waypointsIndex = 0;
 
     [SerializeField] private TypeEnemy _typeEnemy;
+    [SerializeField] private EnemyStats _stats;
 
     public enum TypeEnemy
     {
@@ -24,20 +22,13 @@ public class Enemy : MonoBehaviour, IPooleableObject
     {
         _target = Waypoints.points[0];
 
-        if (_typeEnemy == TypeEnemy.Basic)// cuando se apliue flyweight ya no va a ser necesario hacer esta distincion
-        {
-            _health = 100f;
-        }
-        else if (_typeEnemy == TypeEnemy.Heavy)
-        {
-            _health = 150f;
-        }
+        _health = _stats.Health;
     }
 
     void Update()
     {
         Vector3 _dir = _target.position - transform.position;
-        transform.Translate(_dir.normalized * _speed * Time.deltaTime, Space.World);
+        transform.Translate(_dir.normalized * _stats.Speed * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, _target.position) <= 0.4f)
         {
