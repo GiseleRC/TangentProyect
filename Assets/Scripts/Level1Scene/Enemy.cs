@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour, IPooleableObject
 {
     [SerializeField] private float _speed = 10f;
-    [SerializeField] private Transform _startingTransform;
 
     private Transform _target;
     private int _waypointsIndex = 0;
@@ -22,7 +21,6 @@ public class Enemy : MonoBehaviour, IPooleableObject
     void Start()
     {
         _target = Waypoints.points[0];
-        _startingTransform.position = new Vector3(58.5f, 2.5f, 20.1599998f);
     }
 
     void Update()
@@ -52,7 +50,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
     {
         _target = Waypoints.points[0];
         _waypointsIndex = 0;
-        transform.position = _startingTransform.position;
+        transform.position = new Vector3(58.5f, 2.5f, 20.1599998f);
     }
 
     public static void TurnOn(Enemy enemy)
