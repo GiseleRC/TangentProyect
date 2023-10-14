@@ -38,7 +38,12 @@ public class Arrow : MonoBehaviour, IPooleableObject
         GameObject effectGO = (GameObject)Instantiate(_impactEffectPrefab, transform.position, transform.rotation);
         Destroy(effectGO, 2f);
 
-        Destroy(_target.gameObject);
+        Enemy enemy = _target.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.Die();
+        }
+
         ArrowFactory.Instance.ReturnObjectToPool(this);
     }
 

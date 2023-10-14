@@ -22,7 +22,6 @@ public class Pool<T> where T : IPooleableObject
         {
             T newObj = _factoryMethod();
 
-            newObj.Reset();
             _turnOffCallback(newObj);
             _currentStock.Add(newObj);
         }
@@ -48,8 +47,8 @@ public class Pool<T> where T : IPooleableObject
 
     public void ReturnObject(T obj)
     {
-        obj.Reset();
         _turnOffCallback(obj);
+        obj.Reset();
         _currentStock.Add(obj);
     }
 }

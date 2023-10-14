@@ -7,7 +7,6 @@ public class EnemyBasicFactory : EnemyFactory
     public static EnemyBasicFactory Instance { get; private set; }
 
     [SerializeField] private Enemy _basicEnemyPrefab;
-    //[SerializeField] private int   _initialAmount;
 
     private Pool<Enemy> _myBasicEnemyPool;
 
