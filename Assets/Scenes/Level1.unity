@@ -8700,6 +8700,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 796574333}
+  - component: {fileID: 796574335}
+  - component: {fileID: 796574334}
   m_Layer: 0
   m_Name: EnemiesFactory
   m_TagString: Untagged
@@ -8722,6 +8724,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796574334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796574330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0c2702d1db7784abd7f101e123810b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialAmount: 10
+  _heavyEnemyPrefab: {fileID: 7794854100344542389, guid: 974b68268da22354392d9d817dcebc92, type: 3}
+--- !u!114 &796574335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796574330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed45f63a2752307448fa0a638b6f2ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialAmount: 10
+  _basicEnemyPrefab: {fileID: 726220783507680387, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
 --- !u!1001 &807666035
 PrefabInstance:
   m_ObjectHideFlags: 0
