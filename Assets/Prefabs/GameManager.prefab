@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1526609274739793611}
+  - component: {fileID: 6754988302589739144}
   - component: {fileID: 6490402899652959971}
   - component: {fileID: 4630775471910401311}
   - component: {fileID: 2497344882604189996}
@@ -34,6 +35,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6754988302589739144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847418220657493747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1520906bc57d04b4193a5a87954727d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6490402899652959971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,8 +61,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 0}
   _timeBetweenWaves: 5
-  _enemyBasicPrefab: {fileID: 4085918624819465892, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
-  _enemyHeavyPrefab: {fileID: 6813090964340995730, guid: 974b68268da22354392d9d817dcebc92, type: 3}
   waveCountdownText: {fileID: 0}
 --- !u!114 &4630775471910401311
 MonoBehaviour:
@@ -77,3 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770afe3c0a3d79143966bc3c6e3daffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startMoney: 500
