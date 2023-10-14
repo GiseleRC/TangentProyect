@@ -195,13 +195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49ec548d8fb4394ab7e8c077a17f016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 15
-  _fireRate: 1
-  _enemyTag: Enemy
-  _turnSpeed: 10
   _partToRotate: {fileID: 2676180131801444264}
   _firePoint: {fileID: 2914012619097187309}
-  _arrowPrefab: {fileID: 8490268208847804802, guid: 7f457a0161f44b342b91aa56e08a2d5c, type: 3}
+  _stats: {fileID: 11400000, guid: 11bee2c5d38c7014989df53330af0001, type: 2}
+  _turnSpeed: 10
+  _enemyTag: Enemy
 --- !u!1 &6554799952892077803
 GameObject:
   m_ObjectHideFlags: 0

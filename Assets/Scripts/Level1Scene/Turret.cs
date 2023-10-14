@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    [Header("***Attributes***")]
-
-    [SerializeField] private float _range = 15f;
-    [SerializeField] private float _fireRate = 1f;
-
     [Header("***Unity Setups Fields***")]
 
     [SerializeField] private Transform _partToRotate;
     [SerializeField] private Transform _firePoint;
+    [SerializeField] private TurretStats _stats;
     [SerializeField] private float _turnSpeed = 10f;
 
     private Transform _target;
@@ -41,7 +37,7 @@ public class Turret : MonoBehaviour
             }
         }
 
-        if (nearestEnemy != null && shortesDistance <= _range)
+        if (nearestEnemy != null && shortesDistance <= _stats.Range)
         {
             _target = nearestEnemy.transform;
         }
@@ -65,7 +61,7 @@ public class Turret : MonoBehaviour
         if (_fireCountdown <= 0f)
         {
             Shoot();
-            _fireCountdown = 1f / _fireRate;
+            _fireCountdown = 1f / _stats.FireRate;
         }
 
         _fireCountdown -= Time.deltaTime;
@@ -86,6 +82,6 @@ public class Turret : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _range);
+        Gizmos.DrawWireSphere(transform.position, _stats.Range);
     }
 }

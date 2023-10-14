@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour, IPooleableObject
 {
-    [SerializeField] private float _speed = 70f;
     [SerializeField] private GameObject _impactEffectPrefab;
+    [SerializeField] private ArrowStats _stats;
 
     private Transform _target = null;
 
@@ -21,7 +21,7 @@ public class Arrow : MonoBehaviour, IPooleableObject
         }
 
         Vector3 dir = _target.position - transform.position;
-        float distanceThisFrame = _speed * Time.deltaTime;
+        float distanceThisFrame = _stats.Speed * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame)
         {
