@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyBasicFactory : EnemyFactory
 {
-    public static EnemyBasicFactory Instance { get; private set; }
+    public static new EnemyBasicFactory Instance { get; private set; }
 
     [SerializeField] private Enemy _basicEnemyPrefab;
+    [SerializeField] private int _killPrice;
 
     private Pool<Enemy> _myBasicEnemyPool;
 
@@ -31,10 +32,13 @@ public class EnemyBasicFactory : EnemyFactory
     public override Enemy GetObjectFromPool()
     {
         return _myBasicEnemyPool.GetObject();
+
     }
 
     public override void ReturnObjectToPool(Enemy enemy)
     {
         _myBasicEnemyPool.ReturnObject(enemy);
+        GameManager.Instance.Coins += _killPrice;
+        GameManager.Instance.Kills++;
     }
 }

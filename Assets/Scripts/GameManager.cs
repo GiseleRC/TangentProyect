@@ -5,16 +5,21 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int InitialCoins;
+    [SerializeField] private int InitialKills;
 
     public static GameManager Instance { get; private set; }
 
     public delegate void CoinsChangedHandler(int coins);
     public event CoinsChangedHandler OnCoinsChanged;
 
-    private int coins;
-    public int Coins { get => coins; set { coins = value; OnCoinsChanged?.Invoke(coins); } }
+    public delegate void KillsChangedHandler(int kills);
+    public event KillsChangedHandler OnKillsChanged;
 
-    public int Kills { get; private set; }
+    private int coins;
+    private int kills;
+
+    public int Coins { get => coins; set { coins = value; OnCoinsChanged?.Invoke(coins); } }
+    public int Kills { get => kills; set { kills = value; OnKillsChanged?.Invoke(kills); } }
 
     private void Awake()
     {
@@ -29,5 +34,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Coins = InitialCoins;
+        Kills = InitialKills;
     }
 }

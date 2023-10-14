@@ -2,8 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIKills : MonoBehaviour
 {
-    [SerializeField] private Text _text;
+    [SerializeField] private TMP_Text _text;
+
+    private void Awake()
+    {
+        GameManager.Instance.OnKillsChanged += Instance_OnKillsChanged;
+    }
+
+    private void Instance_OnKillsChanged(int kills)
+    {
+        _text.text = kills.ToString();
+    }
 }
