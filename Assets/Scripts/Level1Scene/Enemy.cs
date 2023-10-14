@@ -6,13 +6,23 @@ using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour, IPooleableObject
 {
     [SerializeField] private float _speed = 10f;
+    [SerializeField] private Transform _startingTransform;
 
     private Transform _target;
     private int _waypointsIndex = 0;
 
+    [SerializeField] private TypeEnemy _typeEnemy;
+
+    public enum TypeEnemy
+    {
+        Basic,
+        Heavy
+    }
+
     void Start()
     {
         _target = Waypoints.points[0];
+        _startingTransform.position = new Vector3(58.5f, 2.5f, 20.1599998f);
     }
 
     void Update()
@@ -30,8 +40,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
     {
         if(_waypointsIndex >= Waypoints.points.Length -1)
         {
-            EnemyFactory.Instance.ReturnObjectToPool(this);
-            //Destroy(gameObject);
+            Die();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }
@@ -41,8 +50,9 @@ public class Enemy : MonoBehaviour, IPooleableObject
 
     public void Reset()
     {
-        //_target = Waypoints.points[0];
+        _target = Waypoints.points[0];
         _waypointsIndex = 0;
+        transform.position = _startingTransform.position;
     }
 
     public static void TurnOn(Enemy enemy)
@@ -54,5 +64,17 @@ public class Enemy : MonoBehaviour, IPooleableObject
     public static void TurnOff(Enemy enemy)
     {
         enemy.gameObject.SetActive(false);
+    }
+
+    public void Die()
+    {
+        if (_typeEnemy == TypeEnemy.Basic)
+        {
+            EnemyBasicFactory.Instance.ReturnObjectToPool(this);
+        }
+        else if (_typeEnemy == TypeEnemy.Heavy)
+        {
+            EnemyHeavyFactory.Instance.ReturnObjectToPool(this);
+        }
     }
 }
