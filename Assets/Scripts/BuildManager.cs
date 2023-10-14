@@ -18,6 +18,7 @@ public class BuildManager : MonoBehaviour
     }
 
     public bool CanBuild { get { return _turretToBuild != null; } }
+    public bool HasMoney { get { return GameManager.Instance.Coins >= _turretToBuild.cost; } }
 
     public void BuildTurretOn(Node node)
     {
@@ -35,5 +36,4 @@ public class BuildManager : MonoBehaviour
     {
         _turretToBuild = turret;
     }
-
 }

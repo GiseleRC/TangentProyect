@@ -5,6 +5,7 @@ public class Node : MonoBehaviour
 {
     [SerializeField] private bool _notBuildableNode = false;
     [SerializeField] private Color _hoverColor;
+    [SerializeField] private Color _noMoneyColor;
     private Renderer _rend;
     private Color _startColor;
 
@@ -40,10 +41,16 @@ public class Node : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        _rend.material.color = _hoverColor;
-
-        if (BuildManager.Instance.CanBuild)
+        if (!BuildManager.Instance.CanBuild)
             return;
+        if (BuildManager.Instance.HasMoney)
+        {
+            _rend.material.color = _hoverColor;
+        }
+        else
+        {
+            _rend.material.color = _noMoneyColor;
+        }
     }
 
     private void OnMouseExit()
