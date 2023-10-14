@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour, IPooleableObject
 {
+    //HACER------ pasar a flyweights
     [SerializeField] private float _speed = 10f;
+    [SerializeField] private float _health = 100f;
 
     private Transform _target;
     private int _waypointsIndex = 0;
@@ -21,6 +23,15 @@ public class Enemy : MonoBehaviour, IPooleableObject
     void Start()
     {
         _target = Waypoints.points[0];
+
+        if (_typeEnemy == TypeEnemy.Basic)// cuando se apliue flyweight ya no va a ser necesario hacer esta distincion
+        {
+            _health = 100f;
+        }
+        else if (_typeEnemy == TypeEnemy.Heavy)
+        {
+            _health = 150f;
+        }
     }
 
     void Update()
@@ -64,7 +75,17 @@ public class Enemy : MonoBehaviour, IPooleableObject
         enemy.gameObject.SetActive(false);
     }
 
-    public void Die()
+    public void TakeDamage(int damageAmounth)
+    {
+        _health -= damageAmounth;
+
+        if (_health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
     {
         if (_typeEnemy == TypeEnemy.Basic)
         {

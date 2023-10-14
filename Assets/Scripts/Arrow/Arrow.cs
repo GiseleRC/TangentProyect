@@ -25,7 +25,7 @@ public class Arrow : MonoBehaviour, IPooleableObject
 
         if (dir.magnitude <= distanceThisFrame)
         {
-            HitTarget();
+            HitTarget(_stats.Damage);
             return;
         }
 
@@ -33,7 +33,7 @@ public class Arrow : MonoBehaviour, IPooleableObject
         transform.LookAt(_target);
     }
 
-    void HitTarget()
+    void HitTarget(int damageArrow)
     {
         GameObject effectGO = (GameObject)Instantiate(_impactEffectPrefab, transform.position, transform.rotation);
         Destroy(effectGO, 2f);
@@ -41,7 +41,7 @@ public class Arrow : MonoBehaviour, IPooleableObject
         Enemy enemy = _target.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
-            enemy.Die();
+            enemy.TakeDamage(damageArrow);
         }
 
         ArrowFactory.Instance.ReturnObjectToPool(this);

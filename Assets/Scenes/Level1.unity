@@ -8743,17 +8743,6 @@ MonoBehaviour:
   _initialAmount: 10
   _basicEnemyPrefab: {fileID: 726220783507680387, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
   _killPrice: 10
---- !u!114 &802031372 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9165483450526976109, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-  m_PrefabInstance: {fileID: 673025733507783858}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &807666035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20982,10 +20971,6 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 111.383286
       objectReference: {fileID: 0}
-    - target: {fileID: 1475345076298356548, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-      propertyPath: _text
-      value: 
-      objectReference: {fileID: 802031372}
     - target: {fileID: 1758478991748249894, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
