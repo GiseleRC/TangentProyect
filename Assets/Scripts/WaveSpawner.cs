@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour
     private float _countdown = 2f;
     private int _waveIndex = 0;
     private float _secondsToWaitWave = 0.5f;
+    private string _waveText = "Wave: ";
 
     public TMP_Text waveCountdownText;
 
@@ -17,7 +18,6 @@ public class WaveSpawner : MonoBehaviour
     {
         StartWave();
         _countdown -= Time.deltaTime;
-        waveCountdownText.text = Mathf.Round(_countdown).ToString();
     }
 
     //Corrutina para leer los datos de la colección
@@ -26,6 +26,7 @@ public class WaveSpawner : MonoBehaviour
         _waveIndex++;
         for (int i = 0; i < _waveIndex; i++)
         {
+            waveCountdownText.text = (_waveText + _waveIndex.ToString());
             SpawnEnemy();
             yield return new WaitForSeconds(_secondsToWaitWave);
         }
@@ -40,7 +41,6 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    //Nico
     private void SpawnEnemy()
     {
         if (Random.Range(0, 101) <= 65)
@@ -51,7 +51,6 @@ public class WaveSpawner : MonoBehaviour
         {
             EnemyHeavyFactory.Instance.GetObjectFromPool();
         }
-        //Instantiate(_enemyToSpawn, _spawnPoint.position, _spawnPoint.rotation);
     }
 
     public void NextWaveEarly()
