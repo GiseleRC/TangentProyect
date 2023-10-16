@@ -43,6 +43,7 @@ public class Node : MonoBehaviour
 
         if (!BuildManager.Instance.CanBuild)
             return;
+
         if (BuildManager.Instance.HasMoney)
         {
             _rend.material.color = _hoverColor;

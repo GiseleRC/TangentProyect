@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1520906bc57d04b4193a5a87954727d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialCoins: 0
+  InitialCoins: 500
   InitialKills: 0
 --- !u!114 &6490402899652959971
 MonoBehaviour:

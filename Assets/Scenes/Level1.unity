@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.172768, g: 0.21589169, b: 0.29782546, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21204,14 +21204,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3397290022146623055, guid: c8259c42735a18541b15e48a77c33dca, type: 3}
     - target: {fileID: 4630775471910401311, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
-      propertyPath: _turret1Prefab
-      value: 
-      objectReference: {fileID: 3397290022146623055, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
-    - target: {fileID: 4630775471910401311, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
-      propertyPath: _turret2Prefab
-      value: 
-      objectReference: {fileID: 3397290022146623055, guid: c8259c42735a18541b15e48a77c33dca, type: 3}
-    - target: {fileID: 4630775471910401311, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: standarTurretPrefab
       value: 
       objectReference: {fileID: 3397290022146623055, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
@@ -21231,10 +21223,6 @@ PrefabInstance:
       propertyPath: waveCountdownText
       value: 
       objectReference: {fileID: 176808791}
-    - target: {fileID: 6754988302589739144, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
-      propertyPath: InitialCoins
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 7847418220657493747, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: m_Name
       value: GameManager
