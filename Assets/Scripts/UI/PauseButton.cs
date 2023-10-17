@@ -3,25 +3,25 @@ using TMPro;
 
 public class PauseButton : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject playManu;
-    [SerializeField] private TextMeshProUGUI pauseButtonText;
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _playMenu;
+    [SerializeField] private TextMeshProUGUI _pauseButtonText;
 
     public void Pause()
     {
-        if (pauseMenu.activeSelf)
+        if (_pauseMenu.activeSelf)
         {
-            pauseMenu.SetActive(false);
-            playManu.SetActive(true);
+            _pauseMenu.SetActive(false);
+            _playMenu.SetActive(true);
             Time.timeScale = 1;
-            pauseButtonText.text = "Pause";
+            _pauseButtonText.text = "Pause";
         }
         else
         {
-            pauseMenu.SetActive(true);
-            playManu.SetActive(false);
+            _pauseMenu.SetActive(true);
+            _playMenu.SetActive(false);
             Time.timeScale = 0;
-            pauseButtonText.text = "Unpause";
+            _pauseButtonText.text = "Unpause";
         }
     }
 }
