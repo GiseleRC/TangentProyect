@@ -22,7 +22,6 @@ public class Enemy : MonoBehaviour, IPooleableObject
     void Start()
     {
         _target = Waypoints.points[0];
-
         _health = _stats.Health;
     }
 

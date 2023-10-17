@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Enemy Basic Stats
   m_EditorClassIdentifier: 
   _health: 100
-  _speed: 10
+  _speed: 5
