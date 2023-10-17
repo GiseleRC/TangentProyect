@@ -32,7 +32,6 @@ public class EnemyBasicFactory : EnemyFactory
     public override Enemy GetObjectFromPool()
     {
         return _myBasicEnemyPool.GetObject();
-
     }
 
     public override void ReturnObjectToPool(Enemy enemy)

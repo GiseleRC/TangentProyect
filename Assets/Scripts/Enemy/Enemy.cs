@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
 
     [SerializeField] private TypeEnemy _typeEnemy;
     [SerializeField] private EnemyStats _stats;
+    [SerializeField] private Transform _startPoint;
 
     public enum TypeEnemy
     {
@@ -52,7 +53,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
     {
         _target = Waypoints.points[0];
         _waypointsIndex = 0;
-        transform.position = new Vector3(58.5f, 2.5f, 20.1599998f);
+        transform.position = GameManager.Instance._spawnPoint.position;
     }
 
     public static void TurnOn(Enemy enemy)

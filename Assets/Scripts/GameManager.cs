@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private int InitialCoins;
     [SerializeField] private int InitialKills;
+    public Transform _spawnPoint;
 
     public static GameManager Instance { get; private set; }
 
