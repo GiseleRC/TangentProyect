@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _notBuildableNode: 0
-  _hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  _hoverColor: {r: 0, g: 0.5754717, b: 0.04651132, a: 0}
   _noMoneyColor: {r: 1, g: 0.32010546, b: 0, a: 1}
   turret: {fileID: 0}
   positionOffset: {x: 0, y: 2, z: 2}
