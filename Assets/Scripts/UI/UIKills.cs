@@ -8,7 +8,7 @@ public class UIKills : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
 
-    private void Awake()
+    private void Start()
     {
         GameManager.Instance.OnKillsChanged += Instance_OnKillsChanged;
     }

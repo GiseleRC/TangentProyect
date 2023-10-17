@@ -24,12 +24,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance)
         {
+            Destroy(gameObject);
             return;
         }
-        Instance = this;
 
+        Instance = this;
     }
 
     private void Start()

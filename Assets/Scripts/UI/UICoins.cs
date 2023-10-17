@@ -8,7 +8,7 @@ public class UICoins : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
 
-    private void Awake()
+    private void Start()
     {
         GameManager.Instance.OnCoinsChanged += Instance_OnCoinsChanged;
     }
