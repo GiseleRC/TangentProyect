@@ -14,11 +14,10 @@ public class WaveSpawner : MonoBehaviour
 
     public TMP_Text waveCountdownText;
 
-    #region TEST
+    #region ReworkedSpawnerVariables
 
     [SerializeField] private int _enemiesInitialNumber;
-    [SerializeField] private int _waveNumber;
-    [SerializeField] private int _roundNumber;
+    private int _roundIndex = 1;
     private int _remainingEnemiesInWave;
     private bool _spawningEnemies = false;
 
@@ -34,18 +33,31 @@ public class WaveSpawner : MonoBehaviour
     {
         if (!_spawningEnemies)
         {
+            if (_waveIndex >= 3)
+            {
+                _roundIndex++;
+
+                if(_roundIndex > 3)
+                {
+                    print("Ganaste capo");
+                    _spawningEnemies = true;
+                    return;
+                }
+
+                _waveIndex = 0;
+            }
             StartCoroutine(SpawnWaveTest());
         }
         /*if (_countdown <= 0f)
         {
-            //StartCoroutine(SpawnWave());
+            StartCoroutine(SpawnWaveOriginal());
             
             _countdown = _timeBetweenWaves;
         }*/
     }
 
     //Corrutina para leer los datos de la colección
-    IEnumerator SpawnWave()
+    /*IEnumerator SpawnWaveOriginal()
     {
         _waveIndex++;
         for (int i = 0; i < _waveIndex; i++)
@@ -54,13 +66,13 @@ public class WaveSpawner : MonoBehaviour
             SpawnEnemy();
             yield return new WaitForSeconds(_secondsToWaitWave);
         }
-    }
+    }*/
 
     IEnumerator SpawnWaveTest()
     {
         _spawningEnemies = true;
-        _remainingEnemiesInWave = _enemiesInitialNumber;
         _waveIndex++;
+        _remainingEnemiesInWave = (_enemiesInitialNumber + _waveIndex * 5) * _roundIndex;
         waveCountdownText.text = (_waveText + _waveIndex.ToString());
 
         while (_remainingEnemiesInWave > 0) // Al número inicial de enemigos los divido en grupos aleatorios que no sean mayores a la mitad del número inicial, ni a la cantidad de enemigos restantes
@@ -69,13 +81,13 @@ public class WaveSpawner : MonoBehaviour
             _remainingEnemiesInWave -= enemiesInThisGroupOfTheWave;
 
             StartCoroutine(SpawnGroup(enemiesInThisGroupOfTheWave));
-            yield return new WaitForSeconds(_secondsToWaitWave * 4); // tiempo entre grupo y grupo
+            yield return new WaitForSeconds(_secondsToWaitWave * 4); // Tiempo entre grupo y grupo
         }
         yield return new WaitForSeconds(_timeBetweenWaves);
         _spawningEnemies = false;
     }
 
-    IEnumerator SpawnGroup(int enemiesAmount)
+    IEnumerator SpawnGroup(int enemiesAmount) // Spawnea al grupo completo antes de seguir con la oleada
     {
         for (int i = 0; i < enemiesAmount; i++)
         {
@@ -86,7 +98,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        if (Random.Range(0, 101) <= 65)
+        if (Random.Range(0, 101) <= 100 - _waveIndex * 10 - (_roundIndex - 1) * 25)
         {
             EnemyBasicFactory.Instance.GetObjectFromPool();
         }
