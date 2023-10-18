@@ -5,6 +5,6 @@ using UnityEngine;
 [Serializable]
 public class SaveData
 {
-    public int currency = 10;
-    public float life = 100;
+    public int currency = 0;
+    public bool level1Winn = false;
 }

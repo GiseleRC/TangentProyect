@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    [SerializeField] private SaveData _saveData;
+
     [SerializeField] private Button SelectLevelButton;
     [SerializeField] private Button ControlsButton;
     [SerializeField] private Button CreditsButton;
@@ -30,6 +32,10 @@ public class UIController : MonoBehaviour
         LoadScene2Button.onClick.AddListener(() => LoadScene("Level2"));
     }
 
+    private void Update()
+    {
+        Level2Enable(_saveData.level1Winn);
+    }
     private void LevelsSelected()
     {
         OptionsContainer.SetActive(false);
@@ -58,6 +64,11 @@ public class UIController : MonoBehaviour
         LevelsContainer.SetActive(false);
         CreditsContainer.SetActive(false);
         ControlsContainer.SetActive(false);
+    }
+
+    private void Level2Enable(bool leve1Winn)
+    {
+        LoadScene2Button.gameObject.SetActive(leve1Winn);
     }
 
     private void LoadScene(string scene)
