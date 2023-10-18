@@ -45,7 +45,7 @@ public class WaveSpawner : MonoBehaviour
 
                 if(_roundIndex > 3)
                 {
-                    JsonSaveSystem.Instance._level1Winn = true;
+                    JsonSaveSystem.Instance._level1Win = true;
                     _spawningEnemies = true;
                     return;
                 }

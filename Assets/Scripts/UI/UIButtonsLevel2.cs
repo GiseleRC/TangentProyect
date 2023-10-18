@@ -10,7 +10,7 @@ public class UIButtonsLevel2 : MonoBehaviour
 
     private void Update()
     {
-        _enableButtonsLevel2 = JsonSaveSystem.Instance._level1Winn;
+        _enableButtonsLevel2 = JsonSaveSystem.Instance._level1Win;
 
         if (_enableButtonsLevel2 && JsonSaveSystem.Instance._sceneIndex == 2)
         {

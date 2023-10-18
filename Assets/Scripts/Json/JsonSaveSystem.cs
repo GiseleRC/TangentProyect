@@ -13,9 +13,10 @@ public class JsonSaveSystem : MonoBehaviour
     private string _path;
     private Scene _scene;
 
-    public bool _level1Winn;
+    public bool _level1Win;
     public bool _level2Win;
     public int _sceneIndex;
+    public int _currency;
 
     void Awake()
     {
@@ -36,7 +37,7 @@ public class JsonSaveSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S)) SaveGame();//cambiar
         else if (Input.GetKeyDown(KeyCode.L)) LoadGame();
 
-        if (_level1Winn)
+        if (_level1Win)
         {
             UpgradeLevel1Winn();
             SaveGame();
@@ -53,12 +54,18 @@ public class JsonSaveSystem : MonoBehaviour
 
     private void UpgradeLevel1Winn()
     {
-        _saveData.level1Winn = _level1Winn;
+        _saveData.level1Winn = _level1Win;
     }
 
     private void UpgradeLevel2Win()
     {
         _saveData.level2Winn = _level2Win;
+    }
+
+    private void UpgradeCuurency()
+    {
+        _currency++;
+        _saveData.currency = _currency;
     }
 
     private void UpgradeScene()
@@ -88,14 +95,15 @@ public class JsonSaveSystem : MonoBehaviour
         string json = File.ReadAllText(_path);
         JsonUtility.FromJsonOverwrite(json, _saveData);
 
-        _level1Winn =_saveData.level1Winn;
-        _level2Win = _saveData.level2Winn;
+        _level1Win =_saveData.level1Win;
+        _level2Win = _saveData.level2Win;
+        _currency = _saveData.currency;
     }
 
     public void DeleteGame()
     {
-        _saveData.level1Winn = false;
-        _saveData.level1Winn = false;
+        _saveData.level1Win = false;
+        _saveData.level2Win = false;
         _saveData.currency = 0;
         SaveGame();
         LoadGame();
