@@ -70,7 +70,7 @@ public class WaveSpawner : MonoBehaviour
     {
         _spawningEnemies = true;
         _waveIndex++;
-        _remainingEnemiesInWave = (_enemiesInitialNumber + _waveIndex * 5) * _roundIndex;
+        _remainingEnemiesInWave = _enemiesInitialNumber;
         waveCountdownText.text = (_waveText + _waveIndex.ToString());
 
         while (_remainingEnemiesInWave > 0) // Al número inicial de enemigos los divido en grupos aleatorios que no sean mayores a la mitad del número inicial, ni a la cantidad de enemigos restantes
