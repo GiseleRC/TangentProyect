@@ -2352,6 +2352,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
+--- !u!114 &716555580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1748284994472829192, guid: cc00f2aa7622e5341a4bcd1d699ed3eb, type: 3}
+  m_PrefabInstance: {fileID: 1003782117}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7561610c5ee74824483b38f0e5be28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &721227681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5620,6 +5631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
+--- !u!1 &1844367599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8864263831283743817, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+  m_PrefabInstance: {fileID: 1970332313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1875407964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490604439956475444, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
@@ -6046,6 +6062,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartWave
       objectReference: {fileID: 0}
+    - target: {fileID: 4403982951455113227, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: _jsonSaves
+      value: 
+      objectReference: {fileID: 716555580}
+    - target: {fileID: 4403982951455113227, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: _powerUpButton
+      value: 
+      objectReference: {fileID: 1844367599}
+    - target: {fileID: 4403982951455113227, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: _nodeEnableButton
+      value: 
+      objectReference: {fileID: 2072929972}
     - target: {fileID: 5929571801843693000, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6568,6 +6596,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490604439956475444, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
   m_PrefabInstance: {fileID: 1829434462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2072929972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5929571801843693003, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+  m_PrefabInstance: {fileID: 1970332313}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2081011250 stripped
 Transform:

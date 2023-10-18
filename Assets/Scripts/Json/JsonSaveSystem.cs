@@ -7,16 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class JsonSaveSystem : MonoBehaviour
 {
-    public static JsonSaveSystem Instance { get; private set; }
+    public static JsonSaveSystem Instance;
 
     [SerializeField] private SaveData _saveData = new SaveData();
     private string _path;
-    private int _sceneIndex;
-    private bool _level1Win;
     private Scene _scene;
 
-    public int SceneIndex { get => _sceneIndex; set { } }
-    public bool Level1Winn { get => _level1Win; set { } }
+    public bool _level1Winn = true;
+    public int _sceneIndex;
 
     void Awake()
     {
@@ -26,7 +24,6 @@ public class JsonSaveSystem : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         CreateDirectory();
     }
@@ -42,13 +39,14 @@ public class JsonSaveSystem : MonoBehaviour
 
     private void UpgradeLevelWinn()
     {
-        _level1Win = _saveData.level1Winn;
+        _saveData.level1Winn = _level1Winn;
     }
 
     private void UpgradeScene()
     {
         _scene = SceneManager.GetActiveScene();
-        _saveData.sceneIndex = _scene.buildIndex;
+        _sceneIndex = _scene.buildIndex;
+        _saveData.sceneIndex = _sceneIndex;
     }
 
     private void CreateDirectory()

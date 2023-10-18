@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private SaveData _saveData;
+    [SerializeField] private JsonSaveSystem _jsonSaves;
 
     [SerializeField] private Button SelectLevelButton;
     [SerializeField] private Button ControlsButton;
@@ -35,7 +35,7 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        Level2Enable(JsonSaveSystem.Instance.Level1Winn);
+        Level2Enable(_jsonSaves._level1Winn);
     }
     private void LevelsSelected()
     {

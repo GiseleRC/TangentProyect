@@ -1124,10 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8856504d6b9f2e479acdf27d292e6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _saveData:
-    currency: 0
-    level1Winn: 0
-    level2Winn: 0
+  _jsonSaves: {fileID: 1091942864}
   SelectLevelButton: {fileID: 759986408}
   ControlsButton: {fileID: 1130709743}
   CreditsButton: {fileID: 186514513}
@@ -1800,6 +1797,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc00f2aa7622e5341a4bcd1d699ed3eb, type: 3}
+--- !u!114 &1091942864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1748284994472829192, guid: cc00f2aa7622e5341a4bcd1d699ed3eb, type: 3}
+  m_PrefabInstance: {fileID: 1091942863}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7561610c5ee74824483b38f0e5be28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1130709741
 GameObject:
   m_ObjectHideFlags: 0
