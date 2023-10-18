@@ -37,7 +37,8 @@ public class WaveSpawner : MonoBehaviour
 
                 if(_roundIndex > 3)
                 {
-                    print("Ganaste capo");
+                    JsonSaveSystem.Instance._level1Winn = true;
+                    JsonSaveSystem.Instance.SaveGame();
                     _spawningEnemies = true;
                     return;
                 }

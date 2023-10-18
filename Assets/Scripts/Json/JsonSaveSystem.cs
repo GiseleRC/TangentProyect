@@ -13,7 +13,7 @@ public class JsonSaveSystem : MonoBehaviour
     private string _path;
     private Scene _scene;
 
-    public bool _level1Winn = true;
+    public bool _level1Winn;
     public int _sceneIndex;
 
     void Awake()
@@ -58,7 +58,7 @@ public class JsonSaveSystem : MonoBehaviour
         _path = customDirectory + "/SaveDataJson.save";
     }
 
-    private void SaveGame()
+    public void SaveGame()
     {
         string json = JsonUtility.ToJson(_saveData);
         File.WriteAllText(_path, json);

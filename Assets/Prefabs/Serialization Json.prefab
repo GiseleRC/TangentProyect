@@ -49,5 +49,5 @@ MonoBehaviour:
     sceneIndex: 0
     level1Winn: 0
     level2Winn: 0
-  _level1Winn: 1
+  _level1Winn: 0
   _sceneIndex: 0
