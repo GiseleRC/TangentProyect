@@ -3985,6 +3985,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathCanvas: {fileID: 38397707}
+--- !u!114 &1365775515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365775504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128b3c52c0966154dba14f4747925567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winCanvas: {fileID: 1977220745}
 --- !u!4 &1386874709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490604439956475444, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
@@ -5753,6 +5766,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490604439956475444, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
   m_PrefabInstance: {fileID: 299828993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1977220745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6292067469566756015, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+  m_PrefabInstance: {fileID: 1715766123}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1982613923
 GameObject:

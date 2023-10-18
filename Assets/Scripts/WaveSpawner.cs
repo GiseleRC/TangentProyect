@@ -47,6 +47,7 @@ public class WaveSpawner : MonoBehaviour
                 {
                     JsonSaveSystem.Instance._level1Win = true;
                     _spawningEnemies = true;
+                    UIWin.Instance.WinScreen();
                     return;
                 }
 
