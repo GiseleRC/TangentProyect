@@ -22,6 +22,14 @@ public class WaveSpawner : MonoBehaviour
 
     #endregion
 
+    private void Awake() // if everything else fails...
+    {
+        if (waveCountdownText == null)
+        {
+            waveCountdownText = GameObject.Find("WaveCountdownTimer").GetComponent<TMP_Text>();
+        }
+    }
+
     void Update()
     {
         StartWave();
@@ -109,6 +117,6 @@ public class WaveSpawner : MonoBehaviour
 
     public void NextWaveEarly()
     {
-        _countdown = 0;
+        //_countdown = 0;
     }
 }

@@ -17,7 +17,7 @@ public class StartNextWave : MonoBehaviour
     {
         if (waveSpawner.isActiveAndEnabled)
         {
-            waveSpawner.NextWaveEarly();
+            //waveSpawner.NextWaveEarly();
         }
         else
         {
