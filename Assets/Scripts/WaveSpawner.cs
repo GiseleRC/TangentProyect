@@ -14,10 +14,34 @@ public class WaveSpawner : MonoBehaviour
 
     public TMP_Text waveCountdownText;
 
+    #region TEST
+
+    [SerializeField] private int _enemiesInitialNumber;
+    [SerializeField] private int _waveNumber;
+    [SerializeField] private int _roundNumber;
+    private int _remainingEnemiesInWave;
+    private bool _spawningEnemies = false;
+
+    #endregion
+
     void Update()
     {
         StartWave();
-        _countdown -= Time.deltaTime;
+        //_countdown -= Time.deltaTime;
+    }
+
+    private void StartWave()
+    {
+        if (!_spawningEnemies)
+        {
+            StartCoroutine(SpawnWaveTest());
+        }
+        /*if (_countdown <= 0f)
+        {
+            //StartCoroutine(SpawnWave());
+            
+            _countdown = _timeBetweenWaves;
+        }*/
     }
 
     //Corrutina para leer los datos de la colección
@@ -32,12 +56,31 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    private void StartWave()
+    IEnumerator SpawnWaveTest()
     {
-        if (_countdown <= 0f)
+        _spawningEnemies = true;
+        _remainingEnemiesInWave = _enemiesInitialNumber;
+        _waveIndex++;
+        waveCountdownText.text = (_waveText + _waveIndex.ToString());
+
+        while (_remainingEnemiesInWave > 0) // Al número inicial de enemigos los divido en grupos aleatorios que no sean mayores a la mitad del número inicial, ni a la cantidad de enemigos restantes
         {
-            StartCoroutine(SpawnWave());
-            _countdown = _timeBetweenWaves;
+            int enemiesInThisGroupOfTheWave = Mathf.Clamp(Random.Range(1, _enemiesInitialNumber / 2), 1, _remainingEnemiesInWave);
+            _remainingEnemiesInWave -= enemiesInThisGroupOfTheWave;
+
+            StartCoroutine(SpawnGroup(enemiesInThisGroupOfTheWave));
+            yield return new WaitForSeconds(_secondsToWaitWave * 4); // tiempo entre grupo y grupo
+        }
+        yield return new WaitForSeconds(_timeBetweenWaves);
+        _spawningEnemies = false;
+    }
+
+    IEnumerator SpawnGroup(int enemiesAmount)
+    {
+        for (int i = 0; i < enemiesAmount; i++)
+        {
+            SpawnEnemy();
+            yield return new WaitForSeconds(_secondsToWaitWave);
         }
     }
 
@@ -51,7 +94,7 @@ public class WaveSpawner : MonoBehaviour
         {
             EnemyHeavyFactory.Instance.GetObjectFromPool();
         }
-    }
+    }   
 
     public void NextWaveEarly()
     {
