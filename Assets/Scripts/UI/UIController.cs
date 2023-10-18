@@ -33,7 +33,7 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        Level2Enable(JsonSaveSystem.Instance._level1Winn);
+        Level2Enable(JsonSaveSystem.Instance._level1Win);
     }
     private void LevelsSelected()
     {

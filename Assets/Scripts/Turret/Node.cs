@@ -6,6 +6,7 @@ public class Node : MonoBehaviour
     [SerializeField] private bool _notBuildableNode = false;
     [SerializeField] private Color _hoverColor;
     [SerializeField] private Color _noMoneyColor;
+    //[SerializeField] private GameObject _obstacles;
     private Renderer _rend;
     private Color _startColor;
 
@@ -17,6 +18,14 @@ public class Node : MonoBehaviour
     {
         _rend = GetComponent<Renderer>();
         _startColor = _rend.material.color;
+    }
+
+    private void Update()
+    {
+        //if (_notBuildableNode ==  true)
+        //{
+        //    _obstacles.SetActive(true);
+        //}
     }
 
     private void OnMouseDown()

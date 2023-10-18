@@ -54,12 +54,12 @@ public class JsonSaveSystem : MonoBehaviour
 
     private void UpgradeLevel1Winn()
     {
-        _saveData.level1Winn = _level1Win;
+        _saveData.level1Win = _level1Win;
     }
 
     private void UpgradeLevel2Win()
     {
-        _saveData.level2Winn = _level2Win;
+        _saveData.level2Win = _level2Win;
     }
 
     private void UpgradeCuurency()
