@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
         if(_waypointsIndex >= Waypoints.points.Length -1)
         {
             Die();
+            GameManager.Instance.Lifes--;
             return;
         }
         _waypointsIndex++;

@@ -242,17 +242,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
---- !u!114 &109826066 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2453981596142455226, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-  m_PrefabInstance: {fileID: 1715766123}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35bff19d13321c546800c52d32ae699d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &110635566 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
@@ -321,17 +310,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
---- !u!114 &151887271 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 673025733107353537, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-  m_PrefabInstance: {fileID: 1715766123}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dd30a2e2e1d0d6498e5e554be8c54fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &166844750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490604439956475444, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
@@ -2326,7 +2304,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initialAmount: 10
   _heavyEnemyPrefab: {fileID: 7794854100344542389, guid: 974b68268da22354392d9d817dcebc92, type: 3}
-  _killPrice: 20
 --- !u!114 &796574335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2341,7 +2318,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initialAmount: 10
   _basicEnemyPrefab: {fileID: 726220783507680387, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
-  _killPrice: 10
 --- !u!4 &812285897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490604439956475444, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
@@ -5031,14 +5007,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 673025733107353538, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 151887271}
-    - target: {fileID: 673025733107353538, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
     - target: {fileID: 673025733418305684, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5059,14 +5027,6 @@ PrefabInstance:
       propertyPath: waveSpawner
       value: 
       objectReference: {fileID: 110635566}
-    - target: {fileID: 6454941051470033772, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 109826066}
-    - target: {fileID: 6454941051470033772, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Pause
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
 --- !u!114 &1715766124 stripped
@@ -6488,10 +6448,6 @@ PrefabInstance:
       propertyPath: waveCountdownText
       value: 
       objectReference: {fileID: 1715766124}
-    - target: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
-      propertyPath: _enemiesInitialNumber
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6754988302589739144, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: _spawnPoint
       value: 
