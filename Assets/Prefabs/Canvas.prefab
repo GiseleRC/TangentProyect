@@ -38,7 +38,6 @@ RectTransform:
   - {fileID: 673025733408402700}
   - {fileID: 1544861982050632300}
   - {fileID: 8804582249503872877}
-  - {fileID: 2442007170306308329}
   - {fileID: 7677856770997597605}
   - {fileID: 5741741075745382652}
   m_Father: {fileID: 0}
@@ -183,11 +182,11 @@ RectTransform:
   m_Children:
   - {fileID: 673025733745566779}
   m_Father: {fileID: 2470184408340039422}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: 0}
+  m_AnchoredPosition: {x: 858, y: 332}
   m_SizeDelta: {x: 160, y: 102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &673025733107353536
@@ -859,11 +858,11 @@ RectTransform:
   m_Children:
   - {fileID: 673025734031675621}
   m_Father: {fileID: 2470184408340039422}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -124}
+  m_AnchoredPosition: {x: 859, y: 189}
   m_SizeDelta: {x: 160, y: 102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &673025734521257917
@@ -1157,7 +1156,7 @@ RectTransform:
   m_Children:
   - {fileID: 1419600204127162922}
   m_Father: {fileID: 673025732606106431}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1255,7 +1254,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 91.418, w: 0}
+  m_margin: {x: 0, y: 0, z: 109.053955, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1424,6 +1423,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2442007170306308329}
   - {fileID: 673025734521257918}
   - {fileID: 673025733107353565}
   m_Father: {fileID: 1544861982050632300}
@@ -1431,7 +1431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -105, y: -196}
+  m_AnchoredPosition: {x: -960, y: -540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6117175226859363671
@@ -1679,7 +1679,7 @@ RectTransform:
   m_Children:
   - {fileID: 4119440494023086663}
   m_Father: {fileID: 673025732606106431}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1777,7 +1777,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 148.85492, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2221,12 +2221,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5618223802221451221}
-  m_Father: {fileID: 673025732606106431}
-  m_RootOrder: 4
+  m_Father: {fileID: 2470184408340039422}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 874.0657, y: 426.15042}
+  m_AnchoredPosition: {x: 858, y: 469}
   m_SizeDelta: {x: 160, y: 102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4950681455360193581
@@ -2539,6 +2539,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 673025733408402800}
+    - target: {fileID: 8979384656310314989, guid: 67772525995c6684d9dc3cd1a328d566, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchasesTurret1
+      objectReference: {fileID: 0}
     - target: {fileID: 8979384656310314991, guid: 67772525995c6684d9dc3cd1a328d566, type: 3}
       propertyPath: m_Name
       value: GetTurret1
