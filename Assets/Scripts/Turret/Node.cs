@@ -20,14 +20,6 @@ public class Node : MonoBehaviour
         _startColor = _rend.material.color;
     }
 
-    private void Update()
-    {
-        //if (_notBuildableNode ==  true)
-        //{
-        //    _obstacles.SetActive(true);
-        //}
-    }
-
     private void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
