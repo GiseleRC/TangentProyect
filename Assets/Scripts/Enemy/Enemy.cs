@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour, IPooleableObject
     [SerializeField] private EnemyStats _stats;
     [SerializeField] private Transform _startPoint;
 
+    [SerializeField] private int _enemyDamageToBase;
+
     public enum TypeEnemy
     {
         Basic,
@@ -41,7 +43,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
         if(_waypointsIndex >= Waypoints.points.Length -1)
         {
             Die();
-            GameManager.Instance.Lifes--;
+            UIDeath.Instance.BaseDamage(_enemyDamageToBase);
             return;
         }
         _waypointsIndex++;

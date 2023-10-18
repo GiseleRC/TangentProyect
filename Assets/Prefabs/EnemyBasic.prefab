@@ -112,3 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeEnemy: 0
   _stats: {fileID: 11400000, guid: 949b0571307bd4241ace2588c3c95214, type: 2}
+  _startPoint: {fileID: 0}
+  _enemyDamageToBase: 1
