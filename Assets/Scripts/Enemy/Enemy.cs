@@ -41,7 +41,6 @@ public class Enemy : MonoBehaviour, IPooleableObject
         if(_waypointsIndex >= Waypoints.points.Length -1)
         {
             Die();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }
         _waypointsIndex++;
@@ -72,6 +71,8 @@ public class Enemy : MonoBehaviour, IPooleableObject
 
         if (_health <= 0)
         {
+            GameManager.Instance.Coins += _stats.KillPrice;
+            GameManager.Instance.Kills++;
             Die();
         }
     }

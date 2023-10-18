@@ -7,7 +7,6 @@ public class EnemyBasicFactory : EnemyFactory
     public static new EnemyBasicFactory Instance { get; private set; }
 
     [SerializeField] private Enemy _basicEnemyPrefab;
-    [SerializeField] private int _killPrice;
 
     private Pool<Enemy> _myBasicEnemyPool;
 
@@ -37,7 +36,5 @@ public class EnemyBasicFactory : EnemyFactory
     public override void ReturnObjectToPool(Enemy enemy)
     {
         _myBasicEnemyPool.ReturnObject(enemy);
-        GameManager.Instance.Coins += _killPrice;
-        GameManager.Instance.Kills++;
     }
 }

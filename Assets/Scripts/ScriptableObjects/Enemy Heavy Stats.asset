@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 250
   _speed: 10
+  _killPrice: 20
