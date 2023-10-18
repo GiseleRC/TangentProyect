@@ -6477,6 +6477,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4622376716164188862}
     - target: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+      propertyPath: _waveNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: startNextWaveText
       value: 
       objectReference: {fileID: 0}
@@ -6484,6 +6488,10 @@ PrefabInstance:
       propertyPath: waveCountdownText
       value: 
       objectReference: {fileID: 1715766124}
+    - target: {fileID: 6490402899652959971, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+      propertyPath: _enemiesInitialNumber
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6754988302589739144, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: _spawnPoint
       value: 
