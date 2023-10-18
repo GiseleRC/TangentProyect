@@ -75,10 +75,12 @@ public class Arrow : MonoBehaviour, IPooleableObject
     public static void TurnOn(Arrow arrow)
     {
         arrow.gameObject.SetActive(true);
+        arrow._impactFXGO.Stop();
     }
 
     public static void TurnOff(Arrow arrow)
     {
         arrow.gameObject.SetActive(false);
+        arrow._impactFXGO.Stop();
     }
 }
