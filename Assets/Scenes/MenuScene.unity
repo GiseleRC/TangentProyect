@@ -1126,7 +1126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _saveData:
     currency: 0
-    level1Winn: 1
+    level1Winn: 0
+    level2Winn: 0
   SelectLevelButton: {fileID: 759986408}
   ControlsButton: {fileID: 1130709743}
   CreditsButton: {fileID: 186514513}

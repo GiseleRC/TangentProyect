@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
+using UnityEngine.SceneManagement;
 
 public class JsonSaveSystem : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class JsonSaveSystem : MonoBehaviour
 
     [SerializeField] private SaveData _saveData = new SaveData();
     private string _path;
+    private int _sceneIndex;
+    private bool _level1Win;
+    private Scene _scene;
+
+    public int SceneIndex { get => _sceneIndex; set { } }
+    public bool Level1Winn { get => _level1Win; set { } }
 
     void Awake()
     {
@@ -28,6 +35,20 @@ public class JsonSaveSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S)) SaveGame();//cambiar
         else if (Input.GetKeyDown(KeyCode.L)) LoadGame();
+
+        UpgradeScene();
+        UpgradeLevelWinn();
+    }
+
+    private void UpgradeLevelWinn()
+    {
+        _level1Win = _saveData.level1Winn;
+    }
+
+    private void UpgradeScene()
+    {
+        _scene = SceneManager.GetActiveScene();
+        _saveData.sceneIndex = _scene.buildIndex;
     }
 
     private void CreateDirectory()
@@ -38,6 +59,7 @@ public class JsonSaveSystem : MonoBehaviour
 
         _path = customDirectory + "/SaveDataJson.save";
     }
+
     private void SaveGame()
     {
         string json = JsonUtility.ToJson(_saveData);

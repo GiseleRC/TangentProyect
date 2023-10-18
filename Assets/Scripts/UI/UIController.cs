@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Button LoadScene1Button;
     [SerializeField] private Button LoadScene2Button;
 
+
     [SerializeField] private GameObject CreditsContainer;
     [SerializeField] private GameObject OptionsContainer;
     [SerializeField] private GameObject ControlsContainer;
@@ -34,7 +35,7 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        Level2Enable(_saveData.level1Winn);
+        Level2Enable(JsonSaveSystem.Instance.Level1Winn);
     }
     private void LevelsSelected()
     {

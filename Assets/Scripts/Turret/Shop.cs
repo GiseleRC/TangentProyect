@@ -14,4 +14,13 @@ public class Shop : MonoBehaviour
     {
         BuildManager.Instance.SelectTurretToBuild(turret2);
     }
+    public void EnableNode()
+    {
+        //desbloqueo un nodo
+    }
+
+    public void EnablePowerUp()
+    {
+        //activo un power up
+    }
 }
