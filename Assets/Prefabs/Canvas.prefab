@@ -738,6 +738,9 @@ MonoBehaviour:
   turret2:
     prefab: {fileID: 3397290022146623055, guid: c8259c42735a18541b15e48a77c33dca, type: 3}
     cost: 100
+  obstaclesStats:
+    cost: 200
+    axeSelected: 0
 --- !u!114 &4295050350365482500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4498,6 +4501,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 673025733408402800}
+    - target: {fileID: 8979384656310314989, guid: 387e679ea6ffc9249a21a6037e96ac67, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchasesAxe
+      objectReference: {fileID: 0}
     - target: {fileID: 8979384656310314991, guid: 387e679ea6ffc9249a21a6037e96ac67, type: 3}
       propertyPath: m_Name
       value: GetNode

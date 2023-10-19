@@ -6,8 +6,8 @@ public class BuildManager : MonoBehaviour
 
     [SerializeField] private GameObject _turret1Prefab;
     [SerializeField] private GameObject _turret2Prefab;
-    [SerializeField] private Obstacles _obstacles;
     private TurretBlueprints _turretToBuild;
+    private ObstacleStats obstacleStats;
 
     private void Awake()
     {
@@ -20,15 +20,15 @@ public class BuildManager : MonoBehaviour
 
     public bool CanBuild { get { return _turretToBuild != null; } }
     public bool HasMoney { get { return GameManager.Instance.Coins >= _turretToBuild.cost; } }
-    public bool HasMoneyToObstacles { get { return GameManager.Instance.Coins >= _obstacles.cost; } }
+    public bool HasMoneyToObstacles { get { return GameManager.Instance.Coins >= Shop.Instance.obstaclesStats.cost; } }
 
     public void RemoveObstacles(Obstacles obstacle)
     {
-        if (GameManager.Instance.Coins < _obstacles.cost)
+        if (GameManager.Instance.Coins < Shop.Instance.obstaclesStats.cost)
         {
             return;
         }
-        GameManager.Instance.Coins -= _obstacles.cost;
+        GameManager.Instance.Coins -= Shop.Instance.obstaclesStats.cost;
         obstacle.node.GetComponent<Collider>().enabled = true;
     }
 

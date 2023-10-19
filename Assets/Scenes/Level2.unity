@@ -3644,6 +3644,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1748284994472829192, guid: cc00f2aa7622e5341a4bcd1d699ed3eb, type: 3}
+      propertyPath: _level1Win
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748284994472829192, guid: cc00f2aa7622e5341a4bcd1d699ed3eb, type: 3}
+      propertyPath: _level2Win
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1748284994472829194, guid: cc00f2aa7622e5341a4bcd1d699ed3eb, type: 3}
       propertyPath: m_Name
       value: Serialization Json
@@ -6320,6 +6328,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadThisScene
       objectReference: {fileID: 0}
+    - target: {fileID: 673025733408402800, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: obstaclesBool
+      value: 
+      objectReference: {fileID: 2073325345808988616, guid: 5a8ea4c445a4f174585bca140e799ab1, type: 3}
     - target: {fileID: 673025733418305684, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7225,6 +7237,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4630775471910401311, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
       propertyPath: _obstacles
+      value: 
+      objectReference: {fileID: 2073325345808988616, guid: 5a8ea4c445a4f174585bca140e799ab1, type: 3}
+    - target: {fileID: 4630775471910401311, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+      propertyPath: _currObstacle
       value: 
       objectReference: {fileID: 2073325345808988616, guid: 5a8ea4c445a4f174585bca140e799ab1, type: 3}
     - target: {fileID: 4630775471910401311, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}

@@ -4,6 +4,19 @@ public class Shop : MonoBehaviour
 {
     public TurretBlueprints turret1;
     public TurretBlueprints turret2;
+    public ObstacleStats obstaclesStats;
+
+    public static Shop Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     public void PurchasesTurret1()
     {
@@ -14,9 +27,10 @@ public class Shop : MonoBehaviour
     {
         BuildManager.Instance.SelectTurretToBuild(turret2);
     }
-    public void EnableNode()
+    public void PurchasesAxe()
     {
-        //desbloqueo un nodo
+        BuildManager.Instance.SelectTurretToBuild(null);
+        obstaclesStats.axeSelected = true;
     }
 
     public void EnablePowerUp()

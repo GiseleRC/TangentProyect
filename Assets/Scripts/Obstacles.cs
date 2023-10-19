@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Obstacles : MonoBehaviour
 {
-    public int cost;
     public Node node;
 
     private void OnMouseDown()
     {
-        BuildManager.Instance.RemoveObstacles(this);
-        gameObject.SetActive(false);
+        if (Shop.Instance.obstaclesStats.axeSelected)
+        {
+            BuildManager.Instance.RemoveObstacles(this);
+            gameObject.SetActive(false);
+            Shop.Instance.obstaclesStats.axeSelected = false;
+        }
     }
 }
