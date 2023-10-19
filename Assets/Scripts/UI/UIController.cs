@@ -41,7 +41,7 @@ public class UIController : MonoBehaviour
     {
         Level2Enable(JsonSaveSystem.Instance._level1Win);
     }
-    private void LevelsSelected()
+    public void LevelsSelected()
     {
         OptionsContainer.SetActive(false);
         LevelsContainer.SetActive(true);
@@ -71,7 +71,7 @@ public class UIController : MonoBehaviour
         ControlsContainer.SetActive(false);
     }
 
-    private void DeleteConfirmationSelected()
+    public void DeleteConfirmationSelected()
     {
         ConfirmDeleteDataContainer.SetActive(true);
         OptionsContainer.SetActive(false);
