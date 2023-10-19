@@ -13,12 +13,15 @@ public class UIController : MonoBehaviour
     [SerializeField] private Button BackButton;
     [SerializeField] private Button LoadScene1Button;
     [SerializeField] private Button LoadScene2Button;
-
+    [SerializeField] private Button ConfirmDeleteDataButtom;
+    [SerializeField] private Button YesButtom;
+    [SerializeField] private Button NoButtom;
 
     [SerializeField] private GameObject CreditsContainer;
     [SerializeField] private GameObject OptionsContainer;
     [SerializeField] private GameObject ControlsContainer;
     [SerializeField] private GameObject LevelsContainer;
+    [SerializeField] private GameObject ConfirmDeleteDataContainer;
 
     private void Start()
     {
@@ -29,6 +32,9 @@ public class UIController : MonoBehaviour
         BackButton.onClick.AddListener(BackSelected);
         LoadScene1Button.onClick.AddListener(() => LoadScene("Level1"));
         LoadScene2Button.onClick.AddListener(() => LoadScene("Level2"));
+        ConfirmDeleteDataButtom.onClick.AddListener(DeleteConfirmationSelected);
+        YesButtom.onClick.AddListener(DeleteConfirmed);
+        NoButtom.onClick.AddListener(DeleteConfirmed);
     }
 
     private void Update()
@@ -63,6 +69,18 @@ public class UIController : MonoBehaviour
         LevelsContainer.SetActive(false);
         CreditsContainer.SetActive(false);
         ControlsContainer.SetActive(false);
+    }
+
+    private void DeleteConfirmationSelected()
+    {
+        ConfirmDeleteDataContainer.SetActive(true);
+        OptionsContainer.SetActive(false);
+    }
+
+    private void DeleteConfirmed()
+    {
+        ConfirmDeleteDataContainer.SetActive(false);
+        OptionsContainer.SetActive(true);
     }
 
     private void Level2Enable(bool leve1Winn)
