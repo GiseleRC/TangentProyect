@@ -152,6 +152,8 @@ GameObject:
   - component: {fileID: 7862492149464480652}
   - component: {fileID: 7860924965110801026}
   - component: {fileID: 4403982951455113227}
+  - component: {fileID: 7725783467742858708}
+  - component: {fileID: 9215713827156165230}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -316,6 +318,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nodeEnableButton: {fileID: 8979384656310314991, guid: 387e679ea6ffc9249a21a6037e96ac67, type: 3}
   _powerUpButton: {fileID: 8979384656310314991, guid: b687b025b2566334c82f656bd589b8ac, type: 3}
+--- !u!114 &7725783467742858708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673025732606106427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac79e2e12adfce4b819a5c6819686df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathCanvas: {fileID: 8400883244619209644}
+--- !u!114 &9215713827156165230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673025732606106427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128b3c52c0966154dba14f4747925567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winCanvas: {fileID: 6292067469566756015}
 --- !u!1 &673025733107353564
 GameObject:
   m_ObjectHideFlags: 0
