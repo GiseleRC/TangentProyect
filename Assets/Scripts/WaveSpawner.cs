@@ -6,7 +6,7 @@ using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private float _timeBetweenWaves = 5f;
-    private float _countdown = 2f;
+    //private float _countdown = 2f;
     private int _waveIndex = 0;
     private float _secondsToWaitWave = 0.5f;
     private string _waveText = "Wave: ";

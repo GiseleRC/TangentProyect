@@ -25,7 +25,6 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        SelectLevelButton.onClick.AddListener(LevelsSelected);
         ControlsButton.onClick.AddListener(ControlsSelected);
         CreditsButton.onClick.AddListener(CreditsSelected);
         ExitButton.onClick.AddListener(ExitSelected);
@@ -34,7 +33,8 @@ public class UIController : MonoBehaviour
         LoadScene2Button.onClick.AddListener(() => LoadScene("Level2"));
         ConfirmDeleteDataButtom.onClick.AddListener(DeleteConfirmationSelected);
         YesButtom.onClick.AddListener(DeleteConfirmed);
-        NoButtom.onClick.AddListener(DeleteConfirmed);
+        NoButtom.onClick.AddListener(BackSelected);
+        SelectLevelButton.onClick.AddListener(LevelsSelected);
     }
 
     private void Update()
