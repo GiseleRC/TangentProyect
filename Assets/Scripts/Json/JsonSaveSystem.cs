@@ -28,14 +28,13 @@ public class JsonSaveSystem : MonoBehaviour
         Instance = this;
 
         CreateDirectory();
-
         LoadGame();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S)) SaveGame();//cambiar
-        else if (Input.GetKeyDown(KeyCode.L)) LoadGame();
+        //if (Input.GetKeyDown(KeyCode.S)) SaveGame();//cambiar
+        //else if (Input.GetKeyDown(KeyCode.L)) LoadGame();
 
         if (_level1Win)
         {
@@ -77,6 +76,7 @@ public class JsonSaveSystem : MonoBehaviour
 
     private void CreateDirectory()
     {
+        //Application.persistentDataPath
         string customDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("\\", "/") + "/" + Application.companyName + "/" + Application.productName;
 
         if (!Directory.Exists(customDirectory)) Directory.CreateDirectory(customDirectory);
@@ -92,12 +92,13 @@ public class JsonSaveSystem : MonoBehaviour
 
     public void LoadGame()
     {
-        string json = File.ReadAllText(_path);
-        JsonUtility.FromJsonOverwrite(json, _saveData);
-
-        _level1Win =_saveData.level1Win;
+        _level1Win = _saveData.level1Win;
         _level2Win = _saveData.level2Win;
         _currency = _saveData.currency;
+        _sceneIndex = _saveData.sceneIndex;
+
+        string json = File.ReadAllText(_path);
+        JsonUtility.FromJsonOverwrite(json, _saveData);
     }
 
     public void DeleteGame()
@@ -105,6 +106,7 @@ public class JsonSaveSystem : MonoBehaviour
         _saveData.level1Win = false;
         _saveData.level2Win = false;
         _saveData.currency = 0;
+
         SaveGame();
         LoadGame();
     }

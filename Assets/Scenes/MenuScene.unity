@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -894,7 +894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &410087040
 Light:
   m_ObjectHideFlags: 0
@@ -1260,11 +1260,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8856504d6b9f2e479acdf27d292e6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectLevelButton: {fileID: 759986408}
-  ControlsButton: {fileID: 1130709743}
-  CreditsButton: {fileID: 186514513}
   ExitButton: {fileID: 920455506}
+  CreditsButton: {fileID: 186514513}
+  ControlsButton: {fileID: 1130709743}
   BackButton: {fileID: 377666268}
+  SelectLevelButton: {fileID: 759986408}
   LoadScene1Button: {fileID: 390614614}
   LoadScene2Button: {fileID: 1881414669}
   ConfirmDeleteDataButtom: {fileID: 2064614098}
@@ -1504,7 +1504,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 812728079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 707341693}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: BackSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &812728079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1559,7 +1571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &832575518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1977,7 +1989,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.2
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2471,18 +2483,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091942864}
-        m_TargetAssemblyTypeName: JsonSaveSystem, Assembly-CSharp
-        m_MethodName: LoadGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1091942864}
         m_TargetAssemblyTypeName: JsonSaveSystem, Assembly-CSharp
         m_MethodName: DeleteGame
@@ -3996,6 +3996,18 @@ MonoBehaviour:
       - m_Target: {fileID: 707341693}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: DeleteConfirmationSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1091942864}
+        m_TargetAssemblyTypeName: JsonSaveSystem, Assembly-CSharp
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

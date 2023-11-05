@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private Button SelectLevelButton;
-    [SerializeField] private Button ControlsButton;
-    [SerializeField] private Button CreditsButton;
     [SerializeField] private Button ExitButton;
+    [SerializeField] private Button CreditsButton;
+    [SerializeField] private Button ControlsButton;
     [SerializeField] private Button BackButton;
+    [SerializeField] private Button SelectLevelButton;
     [SerializeField] private Button LoadScene1Button;
     [SerializeField] private Button LoadScene2Button;
     [SerializeField] private Button ConfirmDeleteDataButtom;
@@ -25,16 +25,18 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        ControlsButton.onClick.AddListener(ControlsSelected);
-        CreditsButton.onClick.AddListener(CreditsSelected);
         ExitButton.onClick.AddListener(ExitSelected);
+        CreditsButton.onClick.AddListener(CreditsSelected);
+        ControlsButton.onClick.AddListener(ControlsSelected);
         BackButton.onClick.AddListener(BackSelected);
+
+        SelectLevelButton.onClick.AddListener(LevelsSelected);
         LoadScene1Button.onClick.AddListener(() => LoadScene("Level1"));
         LoadScene2Button.onClick.AddListener(() => LoadScene("Level2"));
+        
         ConfirmDeleteDataButtom.onClick.AddListener(DeleteConfirmationSelected);
         YesButtom.onClick.AddListener(DeleteConfirmed);
         NoButtom.onClick.AddListener(BackSelected);
-        SelectLevelButton.onClick.AddListener(LevelsSelected);
     }
 
     private void Update()
@@ -62,13 +64,14 @@ public class UIController : MonoBehaviour
         BackButton.gameObject.SetActive(true);
     }
 
-    private void BackSelected()
+    public void BackSelected()
     {
         OptionsContainer.SetActive(true);
         BackButton.gameObject.SetActive(false);
         LevelsContainer.SetActive(false);
         CreditsContainer.SetActive(false);
         ControlsContainer.SetActive(false);
+        ConfirmDeleteDataContainer.SetActive(false);
     }
 
     public void DeleteConfirmationSelected()
