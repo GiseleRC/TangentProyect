@@ -23,5 +23,7 @@ public class PauseButton : MonoBehaviour
             Time.timeScale = 0;
             _pauseButtonText.text = "Unpause";
         }
+
+        JsonSaveSystem.Instance.SaveGame();
     }
 }

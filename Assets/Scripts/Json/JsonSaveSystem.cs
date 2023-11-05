@@ -72,12 +72,14 @@ public class JsonSaveSystem : MonoBehaviour
         _scene = SceneManager.GetActiveScene();
         _sceneIndex = _scene.buildIndex;
         _saveData.sceneIndex = _sceneIndex;
+        LoadGame();
+        SaveGame();
     }
 
     private void CreateDirectory()
     {
         //Application.persistentDataPath
-        string customDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("\\", "/") + "/" + Application.companyName + "/" + Application.productName;
+        string customDirectory = Application.persistentDataPath;
 
         if (!Directory.Exists(customDirectory)) Directory.CreateDirectory(customDirectory);
 
@@ -99,6 +101,7 @@ public class JsonSaveSystem : MonoBehaviour
 
         string json = File.ReadAllText(_path);
         JsonUtility.FromJsonOverwrite(json, _saveData);
+        SaveGame();
     }
 
     public void DeleteGame()

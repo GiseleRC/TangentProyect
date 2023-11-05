@@ -48,6 +48,7 @@ public class UIController : MonoBehaviour
         OptionsContainer.SetActive(false);
         LevelsContainer.SetActive(true);
         BackButton.gameObject.SetActive(true);
+        JsonSaveSystem.Instance.LoadGame();
     }
 
     private void ControlsSelected()
@@ -78,12 +79,15 @@ public class UIController : MonoBehaviour
     {
         ConfirmDeleteDataContainer.SetActive(true);
         OptionsContainer.SetActive(false);
+        JsonSaveSystem.Instance.LoadGame();
     }
 
-    private void DeleteConfirmed()
+    public void DeleteConfirmed()
     {
         ConfirmDeleteDataContainer.SetActive(false);
         OptionsContainer.SetActive(true);
+        JsonSaveSystem.Instance.DeleteGame();
+        JsonSaveSystem.Instance.LoadGame();
     }
 
     private void Level2Enable(bool leve1Winn)
