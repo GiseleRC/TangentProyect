@@ -13,6 +13,7 @@ public class PauseButton : MonoBehaviour
         _pauseMenu.SetActive(true);
         _playMenu.SetActive(false);
         _pauseButton.SetActive(false);
+        _unpauseButton.SetActive(true);
         Time.timeScale = 0;
 
         JsonSaveSystem.Instance.SaveGame();
@@ -22,6 +23,7 @@ public class PauseButton : MonoBehaviour
         _pauseMenu.SetActive(false);
         _playMenu.SetActive(true);
         _unpauseButton.SetActive(false);
+        _pauseButton.SetActive(true);
         Time.timeScale = 1;
 
         JsonSaveSystem.Instance.SaveGame();
