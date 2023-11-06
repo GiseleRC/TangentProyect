@@ -5,24 +5,24 @@ public class PauseButton : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _playMenu;
-    [SerializeField] private TextMeshProUGUI _pauseButtonText;
+    [SerializeField] private GameObject _pauseButton;
+    [SerializeField] private GameObject _unpauseButton;
 
     public void Pause()
     {
-        if (_pauseMenu.activeSelf)
-        {
-            _pauseMenu.SetActive(false);
-            _playMenu.SetActive(true);
-            Time.timeScale = 1;
-            _pauseButtonText.text = "Pause";
-        }
-        else
-        {
-            _pauseMenu.SetActive(true);
-            _playMenu.SetActive(false);
-            Time.timeScale = 0;
-            _pauseButtonText.text = "Unpause";
-        }
+        _pauseMenu.SetActive(true);
+        _playMenu.SetActive(false);
+        _pauseButton.SetActive(false);
+        Time.timeScale = 0;
+
+        JsonSaveSystem.Instance.SaveGame();
+    }
+    public void Unpause()
+    {
+        _pauseMenu.SetActive(false);
+        _playMenu.SetActive(true);
+        _unpauseButton.SetActive(false);
+        Time.timeScale = 1;
 
         JsonSaveSystem.Instance.SaveGame();
     }

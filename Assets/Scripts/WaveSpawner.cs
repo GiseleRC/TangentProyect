@@ -6,7 +6,7 @@ using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private float _timeBetweenWaves = 5f;
-    //private float _countdown = 2f;
+
     private int _waveIndex = 0;
     private float _secondsToWaitWave = 0.5f;
     private string _waveText = "Wave: ";
@@ -20,6 +20,9 @@ public class WaveSpawner : MonoBehaviour
     private int _remainingEnemiesInWave;
     private bool _spawningEnemies = false;
 
+    Coroutine SpawnWaveTestCoroutine = null;
+    Coroutine SpawnGroupCoroutine = null;
+
     #endregion
 
     private void Awake() // if everything else fails...
@@ -28,11 +31,27 @@ public class WaveSpawner : MonoBehaviour
         {
             waveCountdownText = GameObject.Find("WaveCountdownTimer").GetComponent<TMP_Text>();
         }
+
+        _timeBetweenWaves = 5f;
+        _waveIndex = 0;
+        _secondsToWaitWave = 0.5f;
+        _remainingEnemiesInWave = 0;
+        _spawningEnemies = false;
+        _roundIndex = 1;
+        _enemiesInitialNumber = 10;
     }
 
     void Update()
     {
         StartWave();
+    }
+
+    void OnDestroy()
+    {
+        if (SpawnWaveTestCoroutine != null)
+            StopCoroutine(SpawnWaveTestCoroutine);
+        if (SpawnGroupCoroutine != null)
+            StopCoroutine(SpawnGroupCoroutine);
     }
 
     private void StartWave()
@@ -53,7 +72,7 @@ public class WaveSpawner : MonoBehaviour
 
                 _waveIndex = 0;
             }
-            StartCoroutine(SpawnWaveTest());
+            SpawnWaveTestCoroutine = StartCoroutine(SpawnWaveTest());
         }
         /*if (_countdown <= 0f)
         {
@@ -87,7 +106,7 @@ public class WaveSpawner : MonoBehaviour
             int enemiesInThisGroupOfTheWave = Mathf.Clamp(Random.Range(1, _enemiesInitialNumber / 2), 1, _remainingEnemiesInWave);
             _remainingEnemiesInWave -= enemiesInThisGroupOfTheWave;
 
-            StartCoroutine(SpawnGroup(enemiesInThisGroupOfTheWave));
+            SpawnGroupCoroutine = StartCoroutine(SpawnGroup(enemiesInThisGroupOfTheWave));
             yield return new WaitForSeconds(_secondsToWaitWave * 4); // Tiempo entre grupo y grupo
         }
         yield return new WaitForSeconds(_timeBetweenWaves);
