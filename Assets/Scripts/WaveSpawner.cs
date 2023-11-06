@@ -53,27 +53,8 @@ public class WaveSpawner : MonoBehaviour
 
                 _waveIndex = 0;
             }
-            SpawnWaveTestCoroutine = StartCoroutine(SpawnWaveTest());
         }
-        /*if (_countdown <= 0f)
-        {
-            StartCoroutine(SpawnWaveOriginal());
-            
-            _countdown = _timeBetweenWaves;
-        }*/
     }
-
-    //Corrutina para leer los datos de la colección
-    /*IEnumerator SpawnWaveOriginal()
-    {
-        _waveIndex++;
-        for (int i = 0; i < _waveIndex; i++)
-        {
-            waveCountdownText.text = (_waveText + _waveIndex.ToString());
-            SpawnEnemy();
-            yield return new WaitForSeconds(_secondsToWaitWave);
-        }
-    }*/
 
     IEnumerator SpawnWaveTest()
     {
@@ -87,7 +68,6 @@ public class WaveSpawner : MonoBehaviour
             int enemiesInThisGroupOfTheWave = Mathf.Clamp(Random.Range(1, _enemiesInitialNumber / 2), 1, _remainingEnemiesInWave);
             _remainingEnemiesInWave -= enemiesInThisGroupOfTheWave;
 
-            SpawnGroupCoroutine = StartCoroutine(SpawnGroup(enemiesInThisGroupOfTheWave));
             yield return new WaitForSeconds(_secondsToWaitWave * 4); // Tiempo entre grupo y grupo
         }
         yield return new WaitForSeconds(_timeBetweenWaves);
