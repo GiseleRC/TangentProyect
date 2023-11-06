@@ -33,9 +33,6 @@ public class JsonSaveSystem : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.S)) SaveGame();//cambiar
-        //else if (Input.GetKeyDown(KeyCode.L)) LoadGame();
-
         if (_level1Win)
         {
             UpgradeLevel1Winn();
@@ -78,7 +75,6 @@ public class JsonSaveSystem : MonoBehaviour
 
     private void CreateDirectory()
     {
-        //Application.persistentDataPath
         string customDirectory = Application.persistentDataPath;
 
         if (!Directory.Exists(customDirectory)) Directory.CreateDirectory(customDirectory);

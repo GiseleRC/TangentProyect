@@ -20,38 +20,19 @@ public class WaveSpawner : MonoBehaviour
     private int _remainingEnemiesInWave;
     private bool _spawningEnemies = false;
 
-    Coroutine SpawnWaveTestCoroutine = null;
-    Coroutine SpawnGroupCoroutine = null;
-
     #endregion
 
-    private void Awake() // if everything else fails...
+    private void Awake()
     {
         if (waveCountdownText == null)
         {
             waveCountdownText = GameObject.Find("WaveCountdownTimer").GetComponent<TMP_Text>();
         }
-
-        _timeBetweenWaves = 5f;
-        _waveIndex = 0;
-        _secondsToWaitWave = 0.5f;
-        _remainingEnemiesInWave = 0;
-        _spawningEnemies = false;
-        _roundIndex = 1;
-        _enemiesInitialNumber = 10;
     }
 
     void Update()
     {
         StartWave();
-    }
-
-    void OnDestroy()
-    {
-        if (SpawnWaveTestCoroutine != null)
-            StopCoroutine(SpawnWaveTestCoroutine);
-        if (SpawnGroupCoroutine != null)
-            StopCoroutine(SpawnGroupCoroutine);
     }
 
     private void StartWave()
