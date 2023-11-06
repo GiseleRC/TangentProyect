@@ -6,16 +6,17 @@ public class UIButtonsLevel2 : MonoBehaviour
 {
     [SerializeField] private GameObject _nodeEnableButton;
     [SerializeField] private GameObject _powerUpButton;
-    private bool _enableButtonsLevel2;
+    private bool _enableButtonsLevel2 = true;
 
     private void Update()
     {
-        _enableButtonsLevel2 = JsonSaveSystem.Instance._level1Win;
-
-        if (_enableButtonsLevel2 && JsonSaveSystem.Instance._sceneIndex == 2)
+        if (JsonSaveSystem.Instance._level1Win && JsonSaveSystem.Instance._sceneIndex == 2)
         {
-            EnableButtons();
-            _enableButtonsLevel2 = false;
+            if (_enableButtonsLevel2)
+            {
+                EnableButtons();
+                _enableButtonsLevel2 = false;
+            }
         }
     }
 

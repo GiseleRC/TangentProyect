@@ -87,7 +87,6 @@ public class UIController : MonoBehaviour
         ConfirmDeleteDataContainer.SetActive(false);
         OptionsContainer.SetActive(true);
         JsonSaveSystem.Instance.DeleteGame();
-        JsonSaveSystem.Instance.LoadGame();
     }
 
     private void Level2Enable(bool leve1Winn)

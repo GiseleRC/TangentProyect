@@ -47,7 +47,9 @@ MonoBehaviour:
   _saveData:
     currency: 0
     sceneIndex: 0
-    level1Winn: 0
-    level2Winn: 0
-  _level1Winn: 0
+    level1Win: 0
+    level2Win: 0
+  _level1Win: 0
+  _level2Win: 0
   _sceneIndex: 0
+  _currency: 0
