@@ -53,6 +53,7 @@ public class WaveSpawner : MonoBehaviour
 
                 _waveIndex = 0;
             }
+            StartCoroutine(SpawnWaveTest());
         }
     }
 
@@ -68,6 +69,7 @@ public class WaveSpawner : MonoBehaviour
             int enemiesInThisGroupOfTheWave = Mathf.Clamp(Random.Range(1, _enemiesInitialNumber / 2), 1, _remainingEnemiesInWave);
             _remainingEnemiesInWave -= enemiesInThisGroupOfTheWave;
 
+            StartCoroutine(SpawnGroup(enemiesInThisGroupOfTheWave));
             yield return new WaitForSeconds(_secondsToWaitWave * 4); // Tiempo entre grupo y grupo
         }
         yield return new WaitForSeconds(_timeBetweenWaves);
