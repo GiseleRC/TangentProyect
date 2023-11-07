@@ -1,22 +1,10 @@
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+public class Shop : Singleton<Shop>
 {
     public TurretBlueprints turret1;
     public TurretBlueprints turret2;
     public ObstacleStats obstaclesStats;
-
-    public static Shop Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
 
     public void PurchasesTurret1()
     {
@@ -33,7 +21,7 @@ public class Shop : MonoBehaviour
         obstaclesStats.axeSelected = true;
     }
 
-    public void EnablePowerUp()
+    public void PurchasePowerUp()
     {
         //activo un power up
     }

@@ -5,10 +5,8 @@ using System.IO;
 using System;
 using UnityEngine.SceneManagement;
 
-public class JsonSaveSystem : MonoBehaviour
+public class JsonSaveSystem : Singleton<JsonSaveSystem>
 {
-    public static JsonSaveSystem Instance;
-
     [SerializeField] private SaveData _saveData = new SaveData();
     private string _path;
     private Scene _scene;
@@ -20,13 +18,6 @@ public class JsonSaveSystem : MonoBehaviour
 
     void Awake()
     {
-        if (Instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-
         CreateDirectory();
         LoadGame();
     }
