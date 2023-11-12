@@ -9,4 +9,5 @@ public class SaveData
     public int sceneIndex = 0;
     public bool level1Win = false;
     public bool level2Win = false;
+    public bool tutorialMenu = false;
 }

@@ -7,12 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class JsonSaveSystem : Singleton<JsonSaveSystem>
 {
+    private static string _customDirectory;
+    private static string _path;
+
     [SerializeField] private SaveData _saveData = new SaveData();
-    private string _path;
+    //[SerializeField] private UIScreenController _tutorialMenuScript;
+
     private Scene _scene;
 
     public bool _level1Win;
     public bool _level2Win;
+    public bool _tutorialMenu;
     public int _sceneIndex;
     public int _currency;
 
@@ -24,6 +29,7 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
 
     void Update()
     {
+        //ver de poner boton
         if (_level1Win)
         {
             UpgradeLevel1Winn();
@@ -36,7 +42,14 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
             SaveGame();
         }
 
+        if (_tutorialMenu)
+        {
+            UpgradeTutorialMenu();
+            SaveGame();
+        }
+
         UpgradeScene();
+
     }
 
     private void UpgradeLevel1Winn()
@@ -49,10 +62,15 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
         _saveData.level2Win = _level2Win;
     }
 
-    private void UpgradeCuurency()
+    //private void UpgradeCuurency()
+    //{
+    //    _currency++;
+    //    _saveData.currency = _currency;
+    //}
+
+    private void UpgradeTutorialMenu()
     {
-        _currency++;
-        _saveData.currency = _currency;
+        _saveData.tutorialMenu = _tutorialMenu;
     }
 
     private void UpgradeScene()
@@ -66,11 +84,11 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
 
     private void CreateDirectory()
     {
-        string customDirectory = Application.persistentDataPath;
+        _customDirectory = Application.persistentDataPath;
+        _path = _customDirectory + "/SaveDataJson.save";
 
-        if (!Directory.Exists(customDirectory)) Directory.CreateDirectory(customDirectory);
-
-        _path = customDirectory + "/SaveDataJson.save";
+        if (!Directory.Exists(_customDirectory))
+            Directory.CreateDirectory(_customDirectory);
     }
 
     public void SaveGame()
@@ -85,6 +103,7 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
         _level2Win = _saveData.level2Win;
         _currency = _saveData.currency;
         _sceneIndex = _saveData.sceneIndex;
+        _tutorialMenu = _saveData.tutorialMenu;
 
         string json = File.ReadAllText(_path);
         JsonUtility.FromJsonOverwrite(json, _saveData);
@@ -95,6 +114,7 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
     {
         _saveData.level1Win = false;
         _saveData.level2Win = false;
+        _saveData.tutorialMenu = false;
         _saveData.currency = 0;
 
         SaveGame();

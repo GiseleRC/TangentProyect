@@ -22,6 +22,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject ControlsContainer;
     [SerializeField] private GameObject LevelsContainer;
     [SerializeField] private GameObject ConfirmDeleteDataContainer;
+    
+    [SerializeField] private UIScreenController TutorialMenuContainer;
 
     private void Start()
     {
@@ -43,6 +45,21 @@ public class UIController : MonoBehaviour
     {
         Level2Enable(JsonSaveSystem.Instance._level1Win);
     }
+
+    public void EnableMenu(bool enable)
+    {
+        ExitButton.interactable = enable;
+        CreditsButton.interactable = enable;
+        ControlsButton.interactable = enable;
+        BackButton.interactable = enable;
+        SelectLevelButton.interactable = enable;
+        LoadScene1Button.interactable = enable;
+        LoadScene2Button.interactable = enable;
+        ConfirmDeleteDataButtom.interactable = enable;
+        YesButtom.interactable = enable;
+        NoButtom.interactable = enable;
+    }
+
     public void LevelsSelected()
     {
         OptionsContainer.SetActive(false);
@@ -86,6 +103,8 @@ public class UIController : MonoBehaviour
     {
         ConfirmDeleteDataContainer.SetActive(false);
         OptionsContainer.SetActive(true);
+
+        TutorialMenuContainer.PlayTutorial();
         JsonSaveSystem.Instance.DeleteGame();
     }
 
