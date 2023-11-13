@@ -104,8 +104,9 @@ public class UIController : MonoBehaviour
         ConfirmDeleteDataContainer.SetActive(false);
         OptionsContainer.SetActive(true);
 
-        TutorialMenuContainer.PlayTutorial();
         JsonSaveSystem.Instance.DeleteGame();
+        TutorialMenuContainer.gameObject.SetActive(true);
+        TutorialMenuContainer.PlayTutorial();
     }
 
     private void Level2Enable(bool leve1Winn)
