@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
-public class PauseButton : MonoBehaviour
+public class UIPauseController : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _playMenu;
@@ -27,5 +28,17 @@ public class PauseButton : MonoBehaviour
         Time.timeScale = 1;
 
         JsonSaveSystem.Instance.SaveGame();
+    }
+
+    public void ReloadThisScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+    }
+
+    public void LoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+        Time.timeScale = 1;
     }
 }

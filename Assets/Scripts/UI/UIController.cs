@@ -33,8 +33,8 @@ public class UIController : MonoBehaviour
         BackButton.onClick.AddListener(BackSelected);
 
         SelectLevelButton.onClick.AddListener(LevelsSelected);
-        LoadScene1Button.onClick.AddListener(() => LoadScene("Level1"));
-        LoadScene2Button.onClick.AddListener(() => LoadScene("Level2"));
+        LoadScene1Button.onClick.AddListener(() => SceneManager.LoadScene("Level1"));
+        LoadScene2Button.onClick.AddListener(() => SceneManager.LoadScene("Level2"));
         
         ConfirmDeleteDataButtom.onClick.AddListener(DeleteConfirmationSelected);
         YesButtom.onClick.AddListener(DeleteConfirmed);
@@ -112,11 +112,6 @@ public class UIController : MonoBehaviour
     private void Level2Enable(bool leve1Winn)
     {
         LoadScene2Button.gameObject.SetActive(leve1Winn);
-    }
-
-    private void LoadScene(string scene)
-    {
-        SceneManager.LoadScene(scene);
     }
 
     private void ExitSelected()

@@ -8,7 +8,7 @@ public class UIButtonsLevel2 : MonoBehaviour
     [SerializeField] private GameObject _powerUpButton;
     private bool _enableButtonsLevel2 = true;
 
-    private void Update()
+    private void Start()
     {
         if (JsonSaveSystem.Instance.SaveData.reachedLevel >= 1 && GameManager.Instance.CurrentLevel >= 2)
         {
