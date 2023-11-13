@@ -1,7 +1,7 @@
-using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -24,6 +24,8 @@ public class WaveSpawner : MonoBehaviour
 
     private void Awake()
     {
+        EventManager.TriggerEvent(EventType.LevelStarted, SceneManager.GetActiveScene().buildIndex);
+
         if (waveCountdownText == null)
         {
             waveCountdownText = GameObject.Find("WaveCountdownTimer").GetComponent<TMP_Text>();
@@ -45,7 +47,7 @@ public class WaveSpawner : MonoBehaviour
 
                 if(_roundIndex > 3)
                 {
-                    JsonSaveSystem.Instance._level1Win = true;
+                    EventManager.TriggerEvent(EventType.LevelEnded, SceneManager.GetActiveScene().buildIndex, true);
                     _spawningEnemies = true;
                     UIWin.Instance.WinScreen();
                     return;

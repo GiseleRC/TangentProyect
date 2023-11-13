@@ -6,8 +6,13 @@ using UnityEngine;
 public class SaveData
 {
     public int currency = 0;
-    public int sceneIndex = 0;
-    public bool level1Win = false;
-    public bool level2Win = false;
+    public int reachedLevel = 0;
     public bool tutorialMenu = false;
+
+    public void Reset()
+    {
+        currency = 0;
+        reachedLevel = 0;
+        tutorialMenu = false;
+    }
 }

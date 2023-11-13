@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private int InitialCoins;
     [SerializeField] private int InitialKills;
-    [SerializeField] private int InitialLifes;
+    [SerializeField] private int InitialLives;
     public Transform _spawnPoint;
 
     public delegate void CoinsChangedHandler(int coins);
@@ -20,16 +21,30 @@ public class GameManager : Singleton<GameManager>
 
     private int coins;
     private int kills;
-    private int lifes;
+    private int lives;
 
     public int Coins { get => coins; set { coins = value; OnCoinsChanged?.Invoke(coins); } }
     public int Kills { get => kills; set { kills = value; OnKillsChanged?.Invoke(kills); } }
-    public int Lifes { get => lifes; set { lifes = value; OnLifesChanged?.Invoke(lifes); } }
+    public int Lives { get => lives; set { lives = value; OnLifesChanged?.Invoke(lives); } }
 
-    private void Start()
+    public int CurrentLevel { get; private set; } = 0;
+
+    private void Awake()
     {
         Coins = InitialCoins;
         Kills = InitialKills;
-        Lifes = InitialLifes;
+        Lives = InitialLives;
+
+        EventManager.SubscribeToEvent(EventType.LevelStarted, OnLevelStarted);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.UnsubscribeToEvent(EventType.LevelStarted, OnLevelStarted);
+    }
+
+    private void OnLevelStarted(object[] parameters)
+    {
+        CurrentLevel = (int)parameters[0];
     }
 }

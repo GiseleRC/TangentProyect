@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialCoins: 500
   InitialKills: 0
-  InitialLifes: 10
+  InitialLives: 10
   _spawnPoint: {fileID: 0}
 --- !u!114 &6490402899652959971
 MonoBehaviour:

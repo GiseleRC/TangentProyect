@@ -17,7 +17,7 @@ public class UIScreenController : MonoBehaviour
     {
         _tutorialImageGO.SetActive(true);
         JsonSaveSystem.Instance.LoadGame();
-        if (!JsonSaveSystem.Instance._tutorialMenu)
+        if (!JsonSaveSystem.Instance.SaveData.tutorialMenu)
         {
             PlayTutorial();
         }
@@ -34,13 +34,16 @@ public class UIScreenController : MonoBehaviour
         _tutorialImageGO.SetActive(true);
 
         _currSection = _firstSection;
+
+        EventManager.TriggerEvent(EventType.TutorialStarted);
     }
 
     private void EndTutorial()
     {
-        JsonSaveSystem.Instance._tutorialMenu = true;
         _uIController.EnableMenu(true);
         gameObject.SetActive(false);
+
+        EventManager.TriggerEvent(EventType.TutorialCompleted);
     }
 
     public void CloseSection()
