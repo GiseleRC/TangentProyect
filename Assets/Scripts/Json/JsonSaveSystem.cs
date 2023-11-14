@@ -36,6 +36,7 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
         if (!levelWon) return;
 
         SaveData.reachedLevel = Math.Max(SaveData.reachedLevel, level);
+        SaveData.orbs += GameManager.Instance.RewardOrbs;
 
         SaveGame();
     }

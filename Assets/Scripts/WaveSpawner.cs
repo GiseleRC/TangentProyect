@@ -13,12 +13,13 @@ public class WaveSpawner : MonoBehaviour
 
     public TMP_Text waveCountdownText;
 
-    #region ReworkedSpawnerVariables
-
     [SerializeField] private int _enemiesInitialNumber;
     private int _roundIndex = 1;
     private int _remainingEnemiesInWave;
     private bool _spawningEnemies = false;
+
+    #region ReworkedSpawnerVariables
+
 
     #endregion
 

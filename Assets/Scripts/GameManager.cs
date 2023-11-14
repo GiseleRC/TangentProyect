@@ -16,8 +16,8 @@ public class GameManager : Singleton<GameManager>
     public delegate void KillsChangedHandler(int kills);
     public event KillsChangedHandler OnKillsChanged;
 
-    public delegate void LifesChangedHandler(int life);
-    public event LifesChangedHandler OnLifesChanged;
+    public delegate void LivesChangedHandler(int life);
+    public event LivesChangedHandler OnLivesChanged;
 
     private int coins;
     private int kills;
@@ -25,8 +25,9 @@ public class GameManager : Singleton<GameManager>
 
     public int Coins { get => coins; set { coins = value; OnCoinsChanged?.Invoke(coins); } }
     public int Kills { get => kills; set { kills = value; OnKillsChanged?.Invoke(kills); } }
-    public int Lives { get => lives; set { lives = value; OnLifesChanged?.Invoke(lives); } }
+    public int Lives { get => lives; set { lives = value; OnLivesChanged?.Invoke(lives); } }
 
+    public int RewardOrbs { get; private set; } = 100;
     public int CurrentLevel { get; private set; } = 0;
 
     private void Awake()

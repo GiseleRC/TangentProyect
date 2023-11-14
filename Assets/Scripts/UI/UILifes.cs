@@ -9,10 +9,10 @@ public class UILifes : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.OnLifesChanged += Instance_OnLifesChanged;
+        GameManager.Instance.OnLivesChanged += Instance_OnLivesChanged;
     }
 
-    private void Instance_OnLifesChanged(int lifes)
+    private void Instance_OnLivesChanged(int lifes)
     {
         _text.text = lifes.ToString();
     }
