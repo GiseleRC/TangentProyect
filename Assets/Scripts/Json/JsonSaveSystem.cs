@@ -6,11 +6,8 @@ using System;
 
 public class JsonSaveSystem
 {
-    private static string _customDirectory;
-    private static string _path;
-
-    private string SaveFolder => Application.persistentDataPath;
-    private string SaveFile => Path.Combine(SaveFolder, "SaveDataJson.save");
+    private static string SaveFolder => Application.persistentDataPath;
+    private static string SaveFile => Path.Combine(SaveFolder, "SaveDataJson.save");
 
     public void LoadPersistentData(ref PersistentData persistentData)
     {
