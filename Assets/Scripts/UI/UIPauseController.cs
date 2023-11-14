@@ -17,7 +17,7 @@ public class UIPauseController : MonoBehaviour
         _unpauseButton.SetActive(true);
         Time.timeScale = 0;
 
-        JsonSaveSystem.Instance.SaveGame();
+        GameManager.Instance.SavePersistentData();
     }
     public void Unpause()
     {
@@ -27,7 +27,7 @@ public class UIPauseController : MonoBehaviour
         _pauseButton.SetActive(true);
         Time.timeScale = 1;
 
-        JsonSaveSystem.Instance.SaveGame();
+        GameManager.Instance.SavePersistentData();
     }
 
     public void ReloadThisScene()

@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: _typeEnemy
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 726220783507680387, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
+      propertyPath: waveSpawner
+      value: 
+      objectReference: {fileID: 8092432966952246727, guid: 1a4ace83fbcf22343a791d474fbe17d9, type: 3}
     - target: {fileID: 4085918624819465892, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
       propertyPath: m_RootOrder
       value: 0

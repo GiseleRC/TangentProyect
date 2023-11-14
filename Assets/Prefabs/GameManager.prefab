@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1526609274739793611}
   - component: {fileID: 6754988302589739144}
-  - component: {fileID: 6490402899652959971}
-  - component: {fileID: 4630775471910401311}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,33 +47,4 @@ MonoBehaviour:
   InitialCoins: 500
   InitialKills: 0
   InitialLives: 10
-  _spawnPoint: {fileID: 0}
---- !u!114 &6490402899652959971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7847418220657493747}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9af16dfc63750f4299913ce55060e17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeBetweenWaves: 5
-  waveCountdownText: {fileID: 0}
-  _enemiesInitialNumber: 10
---- !u!114 &4630775471910401311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7847418220657493747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884b088ad2eac7842afe52a543814904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _turret1Prefab: {fileID: 3397290022146623055, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
-  _turret2Prefab: {fileID: 3397290022146623055, guid: c8259c42735a18541b15e48a77c33dca, type: 3}
+  OrbsPerLevel: 100

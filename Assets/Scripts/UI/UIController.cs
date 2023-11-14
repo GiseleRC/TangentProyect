@@ -43,7 +43,7 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        Level2Enable(JsonSaveSystem.Instance.PersistentData.reachedLevel >= 1);
+        Level2Enable(GameManager.Instance.PersistentData.reachedLevel >= 1);
     }
 
     public void EnableMenu(bool enable)
@@ -65,7 +65,7 @@ public class UIController : MonoBehaviour
         OptionsContainer.SetActive(false);
         LevelsContainer.SetActive(true);
         BackButton.gameObject.SetActive(true);
-        JsonSaveSystem.Instance.LoadGame();
+        GameManager.Instance.LoadPersistentData();
     }
 
     private void ControlsSelected()
@@ -96,7 +96,7 @@ public class UIController : MonoBehaviour
     {
         ConfirmDeleteDataContainer.SetActive(true);
         OptionsContainer.SetActive(false);
-        JsonSaveSystem.Instance.LoadGame();
+        GameManager.Instance.LoadPersistentData();
     }
 
     public void DeleteConfirmed()
@@ -104,7 +104,7 @@ public class UIController : MonoBehaviour
         ConfirmDeleteDataContainer.SetActive(false);
         OptionsContainer.SetActive(true);
 
-        JsonSaveSystem.Instance.DeleteGame();
+        GameManager.Instance.ResetPersistentData();
         TutorialMenuContainer.gameObject.SetActive(true);
         TutorialMenuContainer.PlayTutorial();
     }

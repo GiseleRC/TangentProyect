@@ -16,8 +16,8 @@ public class UIScreenController : MonoBehaviour
     private void Start()
     {
         _tutorialImageGO.SetActive(true);
-        JsonSaveSystem.Instance.LoadGame();
-        if (!JsonSaveSystem.Instance.PersistentData.tutorialMenu)
+        GameManager.Instance.LoadPersistentData();
+        if (!GameManager.Instance.PersistentData.tutorialMenu)
         {
             PlayTutorial();
         }

@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
     [SerializeField] private TypeEnemy _typeEnemy;
     [SerializeField] private EnemyStats _stats;
     [SerializeField] private Transform _startPoint;
+    [SerializeField] private WaveSpawner waveSpawner;
 
     [SerializeField] private int _enemyDamageToBase;
 
@@ -54,7 +55,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
     {
         _target = Waypoints.points[0];
         _waypointsIndex = 0;
-        transform.position = GameManager.Instance._spawnPoint.position;
+        transform.position = waveSpawner._spawnPoint.position;
     }
 
     public static void TurnOn(Enemy enemy)

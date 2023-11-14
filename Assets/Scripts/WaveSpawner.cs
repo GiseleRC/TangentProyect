@@ -18,10 +18,7 @@ public class WaveSpawner : MonoBehaviour
     private int _remainingEnemiesInWave;
     private bool _spawningEnemies = false;
 
-    #region ReworkedSpawnerVariables
-
-
-    #endregion
+    public Transform _spawnPoint;
 
     private void Awake()
     {

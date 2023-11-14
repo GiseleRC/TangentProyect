@@ -4,69 +4,33 @@ using UnityEngine;
 using System.IO;
 using System;
 
-public class JsonSaveSystem : Singleton<JsonSaveSystem>
+public class JsonSaveSystem
 {
     private static string _customDirectory;
     private static string _path;
 
-    public PersistentData PersistentData { get; private set; } = new PersistentData();
+    private string SaveFolder => Application.persistentDataPath;
+    private string SaveFile => Path.Combine(SaveFolder, "SaveDataJson.save");
 
-    void Awake()
+    public void LoadPersistentData(ref PersistentData persistentData)
     {
-        _customDirectory = Application.persistentDataPath;
-        _path = _customDirectory + "/SaveDataJson.save";
-
-        EventManager.SubscribeToEvent(EventType.LevelEnded, OnLevelEnded);
-        EventManager.SubscribeToEvent(EventType.TutorialCompleted, OnTutorialCompleted);
-
-        LoadGame();
+        if (!File.Exists(SaveFile))
+        {
+            persistentData = new PersistentData();
+        }
+        else
+        {
+            string json = File.ReadAllText(SaveFile);
+            JsonUtility.FromJsonOverwrite(json, persistentData);
+        }
     }
 
-    private void OnDestroy()
+    public void SavePersistentData(in PersistentData persistentData)
     {
-        EventManager.UnsubscribeToEvent(EventType.LevelEnded, OnLevelEnded);
-        EventManager.UnsubscribeToEvent(EventType.TutorialCompleted, OnTutorialCompleted);
-    }
+        if (!Directory.Exists(SaveFolder))
+            Directory.CreateDirectory(SaveFolder);
 
-    private void OnLevelEnded(object[] parameters)
-    {
-        int level = (int)parameters[0];
-        bool levelWon = (bool)parameters[1];
-
-        if (!levelWon) return;
-
-        PersistentData.reachedLevel = Math.Max(PersistentData.reachedLevel, level);
-        PersistentData.orbs += GameManager.Instance.RewardOrbs;
-
-        SaveGame();
-    }
-
-    private void OnTutorialCompleted(object[] parameters)
-    {
-        PersistentData.tutorialMenu = true;
-
-        SaveGame();
-    }
-
-    public void LoadGame()
-    {
-        string json = File.ReadAllText(_path);
-        JsonUtility.FromJsonOverwrite(json, PersistentData);
-    }
-
-    public void SaveGame()
-    {
-        if (!Directory.Exists(_customDirectory))
-            Directory.CreateDirectory(_customDirectory);
-
-        string json = JsonUtility.ToJson(PersistentData);
-        File.WriteAllText(_path, json);
-    }
-
-    public void DeleteGame()
-    {
-        PersistentData.Reset();
-
-        SaveGame();
+        string json = JsonUtility.ToJson(persistentData);
+        File.WriteAllText(SaveFile, json);
     }
 }

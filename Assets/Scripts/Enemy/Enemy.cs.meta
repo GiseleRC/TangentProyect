@@ -3,7 +3,10 @@ guid: b9200a9049813a144986dd8c1194cbc2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _stats: {instanceID: 0}
+  - _startPoint: {fileID: 8679815270613672910, guid: 4e422c49bcb6988489f908a00cfaa9b9, type: 3}
+  - waveSpawner: {fileID: 8092432966952246727, guid: 1a4ace83fbcf22343a791d474fbe17d9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
