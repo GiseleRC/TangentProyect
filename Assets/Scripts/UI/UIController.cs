@@ -43,7 +43,7 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        Level2Enable(JsonSaveSystem.Instance.SaveData.reachedLevel >= 1);
+        Level2Enable(JsonSaveSystem.Instance.PersistentData.reachedLevel >= 1);
     }
 
     public void EnableMenu(bool enable)

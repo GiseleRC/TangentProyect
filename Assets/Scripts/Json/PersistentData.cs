@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class SaveData
+public class PersistentData
 {
     public int orbs = 0;
     public int reachedLevel = 0;

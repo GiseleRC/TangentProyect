@@ -10,7 +10,7 @@ public class UIButtonsLevel2 : MonoBehaviour
 
     private void Start()
     {
-        if (JsonSaveSystem.Instance.SaveData.reachedLevel >= 1 && GameManager.Instance.CurrentLevel >= 2)
+        if (JsonSaveSystem.Instance.PersistentData.reachedLevel >= 1 && GameManager.Instance.CurrentLevel >= 2)
         {
             if (_enableButtonsLevel2)
             {

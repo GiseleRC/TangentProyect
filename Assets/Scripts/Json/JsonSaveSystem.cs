@@ -9,7 +9,7 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
     private static string _customDirectory;
     private static string _path;
 
-    public SaveData SaveData { get; private set; } = new SaveData();
+    public PersistentData PersistentData { get; private set; } = new PersistentData();
 
     void Awake()
     {
@@ -35,15 +35,15 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
 
         if (!levelWon) return;
 
-        SaveData.reachedLevel = Math.Max(SaveData.reachedLevel, level);
-        SaveData.orbs += GameManager.Instance.RewardOrbs;
+        PersistentData.reachedLevel = Math.Max(PersistentData.reachedLevel, level);
+        PersistentData.orbs += GameManager.Instance.RewardOrbs;
 
         SaveGame();
     }
 
     private void OnTutorialCompleted(object[] parameters)
     {
-        SaveData.tutorialMenu = true;
+        PersistentData.tutorialMenu = true;
 
         SaveGame();
     }
@@ -51,7 +51,7 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
     public void LoadGame()
     {
         string json = File.ReadAllText(_path);
-        JsonUtility.FromJsonOverwrite(json, SaveData);
+        JsonUtility.FromJsonOverwrite(json, PersistentData);
     }
 
     public void SaveGame()
@@ -59,13 +59,13 @@ public class JsonSaveSystem : Singleton<JsonSaveSystem>
         if (!Directory.Exists(_customDirectory))
             Directory.CreateDirectory(_customDirectory);
 
-        string json = JsonUtility.ToJson(SaveData);
+        string json = JsonUtility.ToJson(PersistentData);
         File.WriteAllText(_path, json);
     }
 
     public void DeleteGame()
     {
-        SaveData.Reset();
+        PersistentData.Reset();
 
         SaveGame();
     }
