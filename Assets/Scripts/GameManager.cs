@@ -8,7 +8,6 @@ public class GameManager : PersistentSingleton<GameManager>
     [SerializeField] private int OrbsRewardPerLevel;
     [SerializeField] private int ManaCostPerLevel;
 
-    //Volatile
     [SerializeField] private int InitialCoins;
     [SerializeField] private int InitialKills;
     [SerializeField] private int InitialLives;

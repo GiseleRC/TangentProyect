@@ -22,7 +22,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject ControlsContainer;
     [SerializeField] private GameObject LevelsContainer;
     [SerializeField] private GameObject ConfirmDeleteDataContainer;
-    
+    [SerializeField] private GameObject SimpleShopContainer;
+
     [SerializeField] private UIScreenController TutorialMenuContainer;
 
     private void Start()
@@ -73,6 +74,8 @@ public class UIController : MonoBehaviour
         {
             SelectLevelButton.interactable = enable;
         }
+
+        SimpleShopContainer.GetComponent<UISimpleShop>().enabled = enable;
     }
 
     public void EnoughMana(int mana)
