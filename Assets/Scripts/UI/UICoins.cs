@@ -10,10 +10,10 @@ public class UICoins : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.OnCoinsChanged += Instance_OnCoinsChanged;
+        GameManager.Instance.VolatileData.OnCoinsChanged += OnCoinsChanged;
     }
 
-    private void Instance_OnCoinsChanged(int coins)
+    private void OnCoinsChanged(int coins)
     {
         _text.text = coins.ToString();
     }

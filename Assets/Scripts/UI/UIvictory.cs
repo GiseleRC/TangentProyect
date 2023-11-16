@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIWin : MonoBehaviour
+public class UIvictory : MonoBehaviour
 {
-    public static UIWin Instance { get; private set; }
+    public static UIvictory Instance { get; private set; }
 
-    [SerializeField] private GameObject winCanvas;
+    [SerializeField] private GameObject victoryCanvas;
 
     private void Awake()
     {
@@ -18,8 +18,8 @@ public class UIWin : MonoBehaviour
         Instance = this;
     }
 
-    public void WinScreen()
+    public void WonScreen()
     {
-        winCanvas.SetActive(true);
+        victoryCanvas.SetActive(true);
     }
 }

@@ -27,6 +27,8 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Instance.PersistentData.OnManaChanged += EnoughMana;
+
         ExitButton.onClick.AddListener(ExitSelected);
         CreditsButton.onClick.AddListener(CreditsSelected);
         ControlsButton.onClick.AddListener(ControlsSelected);
@@ -41,9 +43,14 @@ public class UIController : MonoBehaviour
         NoButtom.onClick.AddListener(BackSelected);
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.PersistentData.OnManaChanged -= EnoughMana;
+    }
+
     private void Update()
     {
-        Level2Enable(GameManager.Instance.PersistentData.reachedLevel >= 1);
+        Level2Enable(GameManager.Instance.PersistentData.ReachedLevel >= 1);
     }
 
     public void EnableMenu(bool enable)
@@ -52,20 +59,46 @@ public class UIController : MonoBehaviour
         CreditsButton.interactable = enable;
         ControlsButton.interactable = enable;
         BackButton.interactable = enable;
-        SelectLevelButton.interactable = enable;
         LoadScene1Button.interactable = enable;
         LoadScene2Button.interactable = enable;
         ConfirmDeleteDataButtom.interactable = enable;
         YesButtom.interactable = enable;
         NoButtom.interactable = enable;
+
+        if(GameManager.Instance.PersistentData.Mana <= 0)
+        {
+            SelectLevelButton.interactable = false;
+        }
+        else
+        {
+            SelectLevelButton.interactable = enable;
+        }
+    }
+
+    public void EnoughMana(int mana)
+    {
+        if (mana <= 0f)
+        {
+            SelectLevelButton.interactable = false;
+        }
+        else
+        {
+            SelectLevelButton.interactable = true;
+        }
     }
 
     public void LevelsSelected()
     {
-        OptionsContainer.SetActive(false);
-        LevelsContainer.SetActive(true);
-        BackButton.gameObject.SetActive(true);
-        GameManager.Instance.LoadPersistentData();
+        if (GameManager.Instance.PersistentData.Mana <= 0f)
+        {
+            SelectLevelButton.interactable = false;
+        }
+        else
+        {
+            OptionsContainer.SetActive(false);
+            LevelsContainer.SetActive(true);
+            BackButton.gameObject.SetActive(true);
+        }
     }
 
     private void ControlsSelected()

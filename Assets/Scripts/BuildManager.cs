@@ -19,26 +19,26 @@ public class BuildManager : MonoBehaviour
     }
 
     public bool CanBuild { get { return _turretToBuild != null; } }
-    public bool HasMoney { get { return GameManager.Instance.Coins >= _turretToBuild.cost; } }
-    public bool HasMoneyToObstacles { get { return GameManager.Instance.Coins >= Shop.Instance.obstaclesStats.cost; } }
+    public bool HasMoney { get { return GameManager.Instance.VolatileData.Coins >= _turretToBuild.cost; } }
+    public bool HasMoneyToObstacles { get { return GameManager.Instance.VolatileData.Coins >= Shop.Instance.obstaclesStats.cost; } }
 
     public void RemoveObstacles(Obstacles obstacle)
     {
-        if (GameManager.Instance.Coins < Shop.Instance.obstaclesStats.cost)
+        if (GameManager.Instance.VolatileData.Coins < Shop.Instance.obstaclesStats.cost)
         {
             return;
         }
-        GameManager.Instance.Coins -= Shop.Instance.obstaclesStats.cost;
+        GameManager.Instance.VolatileData.Coins -= Shop.Instance.obstaclesStats.cost;
         obstacle.node.GetComponent<Collider>().enabled = true;
     }
 
     public void BuildTurretOn(Node node)
     {
-        if (GameManager.Instance.Coins < _turretToBuild.cost)
+        if (GameManager.Instance.VolatileData.Coins < _turretToBuild.cost)
         {
             return;
         }
-        GameManager.Instance.Coins -= _turretToBuild.cost;
+        GameManager.Instance.VolatileData.Coins -= _turretToBuild.cost;
 
         GameObject turret = (GameObject)Instantiate(_turretToBuild.prefab, node.transform.position + node.positionOffset, node.transform.rotation);
         node.turret = turret;

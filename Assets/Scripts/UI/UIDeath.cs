@@ -20,11 +20,11 @@ public class UIDeath : MonoBehaviour
 
     public void BaseDamage(int damage)
     {
-        if (damage > 0 && GameManager.Instance.Lives > 0)
+        if (damage > 0 && GameManager.Instance.VolatileData.Lives > 0)
         {
-            GameManager.Instance.Lives -= damage;
+            GameManager.Instance.VolatileData.Lives -= damage;
         }
-        if (GameManager.Instance.Lives <= 0)
+        if (GameManager.Instance.VolatileData.Lives <= 0)
         {
             deathCanvas.SetActive(true);
         }

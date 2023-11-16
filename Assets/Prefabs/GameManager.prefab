@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1520906bc57d04b4193a5a87954727d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrbsRewardPerLevel: 100
+  ManaCostPerLevel: 100
   InitialCoins: 500
   InitialKills: 0
   InitialLives: 10
-  OrbsPerLevel: 100

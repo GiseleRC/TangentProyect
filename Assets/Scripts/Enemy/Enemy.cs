@@ -75,8 +75,8 @@ public class Enemy : MonoBehaviour, IPooleableObject
 
         if (_health <= 0)
         {
-            GameManager.Instance.Coins += _stats.KillPrice;
-            GameManager.Instance.Kills++;
+            GameManager.Instance.VolatileData.Coins += _stats.KillPrice;
+            GameManager.Instance.VolatileData.Kills++;
             Die();
         }
     }

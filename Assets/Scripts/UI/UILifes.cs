@@ -9,7 +9,7 @@ public class UILifes : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.OnLivesChanged += Instance_OnLivesChanged;
+        GameManager.Instance.VolatileData.OnLivesChanged += Instance_OnLivesChanged;
     }
 
     private void Instance_OnLivesChanged(int lifes)

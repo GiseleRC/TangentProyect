@@ -47,7 +47,7 @@ public class WaveSpawner : MonoBehaviour
                 {
                     EventManager.TriggerEvent(EventType.LevelEnded, SceneManager.GetActiveScene().buildIndex, true);
                     _spawningEnemies = true;
-                    UIWin.Instance.WinScreen();
+                    UIvictory.Instance.WonScreen();
                     return;
                 }
 

@@ -10,7 +10,7 @@ public class UIKills : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.OnKillsChanged += Instance_OnKillsChanged;
+        GameManager.Instance.VolatileData.OnKillsChanged += Instance_OnKillsChanged;
     }
 
     private void Instance_OnKillsChanged(int kills)

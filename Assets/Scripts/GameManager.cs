@@ -5,38 +5,29 @@ using UnityEngine;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
+    [SerializeField] private int OrbsRewardPerLevel;
+    [SerializeField] private int ManaCostPerLevel;
+
+    //Volatile
     [SerializeField] private int InitialCoins;
     [SerializeField] private int InitialKills;
     [SerializeField] private int InitialLives;
-    [SerializeField] private int OrbsPerLevel;
 
     private JsonSaveSystem jsonSaveSystem = new JsonSaveSystem();
 
+    // Persistent Data
     private PersistentData persistentData = new PersistentData();
     public PersistentData PersistentData { get => persistentData; }
 
-    public int CurrentLevel { get; private set; } = 0;
-
-    private int coins;
-    private int kills;
-    private int lives;
-
-    public int Coins { get => coins; set { coins = value; OnCoinsChanged?.Invoke(coins); } }
-    public int Kills { get => kills; set { kills = value; OnKillsChanged?.Invoke(kills); } }
-    public int Lives { get => lives; set { lives = value; OnLivesChanged?.Invoke(lives); } }
-
-    public delegate void CoinsChangedHandler(int coins);
-    public event CoinsChangedHandler OnCoinsChanged;
-
-    public delegate void KillsChangedHandler(int kills);
-    public event KillsChangedHandler OnKillsChanged;
-
-    public delegate void LivesChangedHandler(int life);
-    public event LivesChangedHandler OnLivesChanged;
+    // Volatile (Level) Data
+    private VolatileData volatileData = new VolatileData();
+    public VolatileData VolatileData { get => volatileData; }
 
     public override void Awake()
     {
         base.Awake();
+
+        LoadPersistentData();
 
         EventManager.SubscribeToEvent(EventType.LevelStarted, OnLevelStarted);
         EventManager.SubscribeToEvent(EventType.LevelEnded, OnLevelEnded);
@@ -52,8 +43,16 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void OnLevelStarted(object[] parameters)
     {
-        CurrentLevel = (int)parameters[0];
+        volatileData.CurrentLevel = (int)parameters[0];
+
+        int mana = Math.Min(persistentData.Mana - ManaCostPerLevel, 300);
+        if (mana >= 0)
+        {
+            persistentData.Mana = mana;
+        }
+
         ResetVolatileData();
+        SavePersistentData();
     }
 
     private void OnLevelEnded(object[] parameters)
@@ -63,15 +62,17 @@ public class GameManager : PersistentSingleton<GameManager>
 
         if (!levelWon) return;
 
-        persistentData.reachedLevel = Math.Max(persistentData.reachedLevel, level);
-        persistentData.orbs += OrbsPerLevel;
+        persistentData.ReachedLevel = Math.Max(persistentData.ReachedLevel, level);
+        int orbs = Math.Min(persistentData.Orbs + OrbsRewardPerLevel, 1000);
+        persistentData.Orbs = orbs;
 
         SavePersistentData();
     }
 
     private void OnTutorialCompleted(object[] parameters)
     {
-        persistentData.tutorialMenu = true;
+        persistentData.tutorialMenuPased = true;
+        persistentData.Mana = 300;
 
         SavePersistentData();
     }
@@ -94,8 +95,8 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void ResetVolatileData()
     {
-        Coins = InitialCoins;
-        Kills = InitialKills;
-        Lives = InitialLives;
+        volatileData.Coins = InitialCoins;
+        volatileData.Kills = InitialKills;
+        volatileData.Lives = InitialLives;
     }
 }
