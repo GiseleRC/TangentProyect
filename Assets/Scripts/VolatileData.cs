@@ -5,10 +5,6 @@ using UnityEngine;
 [Serializable]
 public class VolatileData
 {
-    public int _initialCoins;
-    public int _initialKills;
-    public int _initialLives;
-
     private int _coins;
     private int _kills;
     private int _lives;

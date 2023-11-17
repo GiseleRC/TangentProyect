@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
+    [SerializeField] private int _initialCoins;
+    [SerializeField] private int _initialKills;
+    [SerializeField] private int _initialLives;
+
     [SerializeField] private int OrbsRewardPerLevel;
     [SerializeField] private int ManaCostPerLevel;
 
@@ -90,8 +94,8 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void ResetVolatileData()
     {
-        volatileData.Coins = volatileData._initialCoins;
-        volatileData.Kills = volatileData._initialKills;
-        volatileData.Lives = volatileData._initialLives;
+        volatileData.Coins = _initialCoins;
+        volatileData.Kills = _initialKills;
+        volatileData.Lives = _initialLives;
     }
 }

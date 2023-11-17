@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScreenController : MonoBehaviour
+public class UITutorialMenuController : MonoBehaviour
 {
     [SerializeField] private UIController _uIController;
     [SerializeField] private GameObject _tutorialImageGO;
     [SerializeField] private GameObject _firstSection;
     [SerializeField] private GameObject _secondSection;
     [SerializeField] private GameObject _thirdSection;
+    [SerializeField] private GameObject _fourthSection;
 
     private GameObject _currSection;
 
@@ -64,6 +65,14 @@ public class UIScreenController : MonoBehaviour
         }
         else if (_currSection == _thirdSection)
         {
+            _currSection.SetActive(false);
+            _fourthSection.SetActive(true);
+
+            _currSection = _fourthSection;
+        }
+        else if (_currSection == _fourthSection)
+        {
+            _currSection.SetActive(false);
             EndTutorial();
         }
     }

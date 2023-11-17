@@ -24,7 +24,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject ConfirmDeleteDataContainer;
     [SerializeField] private GameObject SimpleShopContainer;
 
-    [SerializeField] private UIScreenController TutorialMenuContainer;
+    [SerializeField] private UITutorialMenuController TutorialMenuContainer;
 
     private void Start()
     {

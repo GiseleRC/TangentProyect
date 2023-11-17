@@ -37,5 +37,6 @@ public class PersistentData
         Orbs = 0;
         ReachedLevel = 0;
         tutorialCompleted = false;
+        CurrentAvatar = 0;
     }
 }
