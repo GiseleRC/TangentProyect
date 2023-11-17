@@ -70,7 +70,7 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void OnTutorialCompleted(object[] parameters)
     {
-        persistentData.tutorialMenuPased = true;
+        persistentData.tutorialCompleted = true;
         persistentData.Mana = 300;
 
         SavePersistentData();

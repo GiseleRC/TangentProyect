@@ -24,7 +24,7 @@ public class UIOrbs : MonoBehaviour
         UpdateUI(orbs);
     }
 
-    private void UpdateUI(int orbs)
+    public void UpdateUI(int orbs)
     {
         _orbsValue.value = orbs;
     }
