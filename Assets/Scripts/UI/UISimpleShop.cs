@@ -18,8 +18,6 @@ public class UISimpleShop : MonoBehaviour
     [SerializeField] private GameObject _avatar2;
     [SerializeField] private GameObject _avatar3;
 
-    [SerializeField] private UIOrbs _uiOrbs;
-
     private void Start()
     {
         GameManager.Instance.PersistentData.OnOrbsChanged += EnableButtonsToShop;
@@ -29,6 +27,10 @@ public class UISimpleShop : MonoBehaviour
         if (GameManager.Instance.PersistentData.CurrentAvatar == null)//funca
         {
             GameManager.Instance.PersistentData.CurrentAvatar = _avatarDefault;
+            GameManager.Instance.PersistentData.CurrentAvatar.SetActive(true);
+        }
+        else
+        {
             GameManager.Instance.PersistentData.CurrentAvatar.SetActive(true);
         }
 
@@ -43,7 +45,7 @@ public class UISimpleShop : MonoBehaviour
 
     private void EnableButtonsToShop(int orbs)
     {
-        if (orbs >= 500)
+        if (orbs >= 0/*500*/)
         {
             _shopAvatar1.interactable = true;
             _shopAvatar2.interactable = true;
@@ -72,19 +74,20 @@ public class UISimpleShop : MonoBehaviour
     public void ShopAvatar(GameObject avatar)
     {
         EnableButtonsToShop(GameManager.Instance.PersistentData.Orbs);
-
-        if (avatar != GameManager.Instance.PersistentData.CurrentAvatar && GameManager.Instance.PersistentData.Orbs >= 500)
+        if(GameManager.Instance.PersistentData.CurrentAvatar == null && GameManager.Instance.PersistentData.Orbs >= 0/*500*/)
         {
-            GameManager.Instance.PersistentData.Orbs -= 500;
-
+            GameManager.Instance.PersistentData.Orbs -= 0/*500*/;
+            GameManager.Instance.PersistentData.CurrentAvatar = avatar;
+            GameManager.Instance.PersistentData.CurrentAvatar.SetActive(true);
+            GameManager.Instance.SavePersistentData();
+        }
+        else if (avatar != GameManager.Instance.PersistentData.CurrentAvatar && GameManager.Instance.PersistentData.Orbs >= 0/*500*/)
+        {
+            GameManager.Instance.PersistentData.Orbs -= 0/*500*/;
             GameManager.Instance.PersistentData.CurrentAvatar.SetActive(false);
             GameManager.Instance.PersistentData.CurrentAvatar = avatar;
             GameManager.Instance.PersistentData.CurrentAvatar.SetActive(true);
-
-            _uiOrbs.UpdateUI(GameManager.Instance.PersistentData.Orbs);
-
             GameManager.Instance.SavePersistentData();
         }
     }
-
 }
