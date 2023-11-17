@@ -7,11 +7,15 @@ public class UIOrbs : MonoBehaviour
 {
     [SerializeField] private Slider _orbsValue;
 
+    [SerializeField] private Button _orbsRecharge;
+
     private void Start()
     {
         UpdateUI(GameManager.Instance.PersistentData.Orbs);
 
         GameManager.Instance.PersistentData.OnOrbsChanged += OnOrbsChanged;
+
+        _orbsRecharge.onClick.AddListener(RechargeOrbs);
     }
 
     private void OnDestroy()
@@ -27,5 +31,11 @@ public class UIOrbs : MonoBehaviour
     public void UpdateUI(int orbs)
     {
         _orbsValue.value = orbs;
+    }
+
+    private void RechargeOrbs()
+    {
+        GameManager.Instance.PersistentData.Orbs = 500;
+        UpdateUI(GameManager.Instance.PersistentData.Orbs);
     }
 }

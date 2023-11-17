@@ -5,15 +5,19 @@ using UnityEngine;
 [Serializable]
 public class VolatileData
 {
-    private int coins;
-    private int kills;
-    private int lives;
-    private int currentLevel;
+    public int _initialCoins;
+    public int _initialKills;
+    public int _initialLives;
 
-    public int Coins { get => coins; set { coins = value; OnCoinsChanged?.Invoke(coins); } }
-    public int Kills { get => kills; set { kills = value; OnKillsChanged?.Invoke(kills); } }
-    public int Lives { get => lives; set { lives = value; OnLivesChanged?.Invoke(lives); } }
-    public int CurrentLevel { get => currentLevel; set { currentLevel = value; OnLevelChanged?.Invoke(currentLevel); } }
+    private int _coins;
+    private int _kills;
+    private int _lives;
+    private int _currentLevel;
+
+    public int Coins { get => _coins; set { _coins = value; OnCoinsChanged?.Invoke(_coins); } }
+    public int Kills { get => _kills; set { _kills = value; OnKillsChanged?.Invoke(_kills); } }
+    public int Lives { get => _lives; set { _lives = value; OnLivesChanged?.Invoke(_lives); } }
+    public int CurrentLevel { get => _currentLevel; set { _currentLevel = value; OnLevelChanged?.Invoke(_currentLevel); } }
 
     public delegate void CoinsChangedHandler(int coins);
     public event CoinsChangedHandler OnCoinsChanged;

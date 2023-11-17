@@ -18,21 +18,18 @@ public class UISimpleShop : MonoBehaviour
     [SerializeField] private GameObject _avatar2;
     [SerializeField] private GameObject _avatar3;
 
+    private int _avatarDefaultIndex = 0;
+    private int _avatar1Index = 1;
+    private int _avatar2Index = 2;
+    private int _avatar3Index = 3;
+
     private void Start()
     {
         GameManager.Instance.PersistentData.OnOrbsChanged += EnableButtonsToShop;
+        GameManager.Instance.PersistentData.OnAvatarChanged += EnableAvatar;
 
         EnableButtonsToShop(GameManager.Instance.PersistentData.Orbs);
-
-        if (GameManager.Instance.PersistentData.CurrentAvatar == null)//funca
-        {
-            GameManager.Instance.PersistentData.CurrentAvatar = _avatarDefault;
-            GameManager.Instance.PersistentData.CurrentAvatar.SetActive(true);
-        }
-        else
-        {
-            GameManager.Instance.PersistentData.CurrentAvatar.SetActive(true);
-        }
+        EnableAvatar(GameManager.Instance.PersistentData.CurrentAvatar);
 
         _openShopButton.onClick.AddListener(OpenShop);
         _closeShopButton.onClick.AddListener(CloseShop);
@@ -41,11 +38,12 @@ public class UISimpleShop : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.Instance.PersistentData.OnOrbsChanged -= EnableButtonsToShop;
+        GameManager.Instance.PersistentData.OnAvatarChanged -= EnableAvatar;
     }
 
     private void EnableButtonsToShop(int orbs)
     {
-        if (orbs >= 0/*500*/)
+        if (orbs >= 500)
         {
             _shopAvatar1.interactable = true;
             _shopAvatar2.interactable = true;
@@ -71,22 +69,47 @@ public class UISimpleShop : MonoBehaviour
         _optionContainer.SetActive(true);
     }
 
-    public void ShopAvatar(GameObject avatar)
+    private void EnableAvatar(int avatarIndex)
+    {
+        if (avatarIndex == _avatarDefaultIndex)
+        {
+            _avatarDefault.SetActive(true);
+            _avatar1.SetActive(false);
+            _avatar2.SetActive(false);
+            _avatar3.SetActive(false);
+        }
+        else if (avatarIndex == _avatar1Index)
+        {
+            _avatarDefault.SetActive(false);
+            _avatar1.SetActive(true);
+            _avatar2.SetActive(false);
+            _avatar3.SetActive(false);
+        }
+        else if (avatarIndex == _avatar2Index)
+        {
+            _avatarDefault.SetActive(false);
+            _avatar1.SetActive(false);
+            _avatar2.SetActive(true);
+            _avatar3.SetActive(false);
+        }
+        else if (avatarIndex == _avatar3Index)
+        {
+            _avatarDefault.SetActive(false);
+            _avatar1.SetActive(false);
+            _avatar2.SetActive(false);
+            _avatar3.SetActive(true);
+        }
+    }
+
+    public void ShopAvatar(int avatarIndex)
     {
         EnableButtonsToShop(GameManager.Instance.PersistentData.Orbs);
-        if(GameManager.Instance.PersistentData.CurrentAvatar == null && GameManager.Instance.PersistentData.Orbs >= 0/*500*/)
+
+        if (avatarIndex != GameManager.Instance.PersistentData.CurrentAvatar && GameManager.Instance.PersistentData.Orbs >= 500)
         {
-            GameManager.Instance.PersistentData.Orbs -= 0/*500*/;
-            GameManager.Instance.PersistentData.CurrentAvatar = avatar;
-            GameManager.Instance.PersistentData.CurrentAvatar.SetActive(true);
-            GameManager.Instance.SavePersistentData();
-        }
-        else if (avatar != GameManager.Instance.PersistentData.CurrentAvatar && GameManager.Instance.PersistentData.Orbs >= 0/*500*/)
-        {
-            GameManager.Instance.PersistentData.Orbs -= 0/*500*/;
-            GameManager.Instance.PersistentData.CurrentAvatar.SetActive(false);
-            GameManager.Instance.PersistentData.CurrentAvatar = avatar;
-            GameManager.Instance.PersistentData.CurrentAvatar.SetActive(true);
+            GameManager.Instance.PersistentData.Orbs -= 500;
+            EnableAvatar(avatarIndex);
+            GameManager.Instance.PersistentData.CurrentAvatar = avatarIndex;
             GameManager.Instance.SavePersistentData();
         }
     }

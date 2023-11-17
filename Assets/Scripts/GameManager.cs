@@ -8,10 +8,6 @@ public class GameManager : PersistentSingleton<GameManager>
     [SerializeField] private int OrbsRewardPerLevel;
     [SerializeField] private int ManaCostPerLevel;
 
-    [SerializeField] private int InitialCoins;
-    [SerializeField] private int InitialKills;
-    [SerializeField] private int InitialLives;
-
     private JsonSaveSystem jsonSaveSystem = new JsonSaveSystem();
 
     // Persistent Data
@@ -94,8 +90,8 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void ResetVolatileData()
     {
-        volatileData.Coins = InitialCoins;
-        volatileData.Kills = InitialKills;
-        volatileData.Lives = InitialLives;
+        volatileData.Coins = volatileData._initialCoins;
+        volatileData.Kills = volatileData._initialKills;
+        volatileData.Lives = volatileData._initialLives;
     }
 }
