@@ -7,6 +7,7 @@ public class UISimpleShop : MonoBehaviour
 {
     [SerializeField] private Button _openShopButton;
     [SerializeField] private Button _closeShopButton;
+    [SerializeField] private Button _shopAvatarDefault0;
     [SerializeField] private Button _shopAvatar1;
     [SerializeField] private Button _shopAvatar2;
     [SerializeField] private Button _shopAvatar3;
@@ -45,12 +46,14 @@ public class UISimpleShop : MonoBehaviour
     {
         if (orbs >= 500)
         {
+            _shopAvatarDefault0.interactable = true;
             _shopAvatar1.interactable = true;
             _shopAvatar2.interactable = true;
             _shopAvatar3.interactable = true;
         }
         else
         {
+            _shopAvatarDefault0.interactable = false;
             _shopAvatar1.interactable = false;
             _shopAvatar2.interactable = false;
             _shopAvatar3.interactable = false;
@@ -105,7 +108,11 @@ public class UISimpleShop : MonoBehaviour
     {
         EnableButtonsToShop(GameManager.Instance.PersistentData.Orbs);
 
-        if (avatarIndex != GameManager.Instance.PersistentData.CurrentAvatar && GameManager.Instance.PersistentData.Orbs >= 500)
+        if (avatarIndex == 0  && GameManager.Instance.PersistentData.CurrentAvatar != 0)
+        {
+            EnableAvatar(avatarIndex);
+        }
+        else if (avatarIndex != GameManager.Instance.PersistentData.CurrentAvatar && GameManager.Instance.PersistentData.Orbs >= 500)
         {
             GameManager.Instance.PersistentData.Orbs -= 500;
             EnableAvatar(avatarIndex);
