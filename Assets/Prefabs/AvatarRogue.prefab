@@ -131,5 +131,9 @@ PrefabInstance:
       propertyPath: _typeOfAvatar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7295420093267526134, guid: ae13e317040365547a9498a4ff915848, type: 3}
+      propertyPath: _typeOfRarity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae13e317040365547a9498a4ff915848, type: 3}

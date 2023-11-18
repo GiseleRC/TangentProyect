@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f0c7897e2ea434ab46da10111afde4, type: 3}
   m_Name: Avatar Rogue Stats
   m_EditorClassIdentifier: 
-  _price: 500
+  _price: 300
   _description: Rogue
   _avatarSprite: {fileID: 21300000, guid: c8a69ecdf54ac8e4b873466605de27ff, type: 3}
