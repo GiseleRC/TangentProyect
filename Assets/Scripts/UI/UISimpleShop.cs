@@ -53,7 +53,7 @@ public class UISimpleShop : MonoBehaviour
         }
         else
         {
-            _shopAvatarDefault0.interactable = false;
+            _shopAvatarDefault0.interactable = true;
             _shopAvatar1.interactable = false;
             _shopAvatar2.interactable = false;
             _shopAvatar3.interactable = false;
@@ -111,6 +111,8 @@ public class UISimpleShop : MonoBehaviour
         if (avatarIndex == 0  && GameManager.Instance.PersistentData.CurrentAvatar != 0)
         {
             EnableAvatar(avatarIndex);
+            GameManager.Instance.PersistentData.CurrentAvatar = avatarIndex;
+            GameManager.Instance.SavePersistentData();
         }
         else if (avatarIndex != GameManager.Instance.PersistentData.CurrentAvatar && GameManager.Instance.PersistentData.Orbs >= 500)
         {
