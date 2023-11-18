@@ -6,8 +6,16 @@ using UnityEngine.UI;
 public class UIMana : MonoBehaviour
 {
     [SerializeField] private Slider _manaValue;
-
     [SerializeField] private Button _manaRecharge;
+
+    //[SerializeField] private int _maxMana = 300;//volatile?
+    //[SerializeField] private float _timerToRecharge = 10f;//volatile?
+
+    //private bool recharging;
+
+    //DateTime _nextManaTime;
+    //DateTime _lastManaTime;
+    //TimeSpan timer;
 
     private void Start()
     {
