@@ -668,6 +668,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _manaValue: {fileID: 3545668952096048151}
   _manaRecharge: {fileID: 3877881053885630656}
+  _maxMana: 3
+  _timerToRecharge: 10
+  _titleNotif: Full Stamina
+  _textNotif: Tenes la stamina full, volve a jugar conmigo
+  _staminaText: {fileID: 0}
+  _timertext: {fileID: 0}
 --- !u!1 &3545668951523967068
 GameObject:
   m_ObjectHideFlags: 0

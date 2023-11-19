@@ -6,7 +6,7 @@ using UnityEngine;
 public class PersistentData
 {
     [SerializeField] private int orbs = 0;
-    [SerializeField] private int mana = 300;
+    [SerializeField] private int mana = 3;
     [SerializeField] private int reachedLevel = 0;
     [SerializeField] private int currentAvatar = 0;
 
@@ -33,7 +33,7 @@ public class PersistentData
 
     public void Reset()
     {
-        Mana = 300;
+        Mana = 3;
         Orbs = 0;
         ReachedLevel = 0;
         tutorialCompleted = false;

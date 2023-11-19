@@ -5,14 +5,9 @@ using UnityEngine;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
-    [SerializeField] private int _initialCoins;
-    [SerializeField] private int _initialKills;
-    [SerializeField] private int _initialLives;
-
-    [SerializeField] private int OrbsRewardPerLevel;
-    [SerializeField] private int ManaCostPerLevel;
-
-    private JsonSaveSystem jsonSaveSystem = new JsonSaveSystem();
+    //Constant Data
+    [SerializeField] private ConstantDataStats constantsDataStats;
+    public ConstantDataStats ConstantsDataStats { get => constantsDataStats; }
 
     // Persistent Data
     private PersistentData persistentData = new PersistentData();
@@ -21,6 +16,9 @@ public class GameManager : PersistentSingleton<GameManager>
     // Volatile (Level) Data
     private VolatileData volatileData = new VolatileData();
     public VolatileData VolatileData { get => volatileData; }
+
+    // Json
+    private JsonSaveSystem jsonSaveSystem = new JsonSaveSystem();
 
     public override void Awake()
     {
@@ -44,7 +42,7 @@ public class GameManager : PersistentSingleton<GameManager>
     {
         volatileData.CurrentLevel = (int)parameters[0];
 
-        int mana = Math.Min(persistentData.Mana - ManaCostPerLevel, 300);
+        int mana = Math.Min(persistentData.Mana - ConstantsDataStats.ManaCostPerLevel, ConstantsDataStats.MaxManaCapacity);
         if (mana >= 0)
         {
             persistentData.Mana = mana;
@@ -62,7 +60,7 @@ public class GameManager : PersistentSingleton<GameManager>
         if (!levelWon) return;
 
         persistentData.ReachedLevel = Math.Max(persistentData.ReachedLevel, level);
-        int orbs = Math.Min(persistentData.Orbs + OrbsRewardPerLevel, 1000);
+        int orbs = Math.Min(persistentData.Orbs + ConstantsDataStats.OrbsRewardPerLevel, ConstantsDataStats.OrbsRewardPerLevel);
         persistentData.Orbs = orbs;
 
         SavePersistentData();
@@ -94,8 +92,8 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void ResetVolatileData()
     {
-        volatileData.Coins = _initialCoins;
-        volatileData.Kills = _initialKills;
-        volatileData.Lives = _initialLives;
+        volatileData.Coins = ConstantsDataStats.InitialCoins;
+        volatileData.Kills = ConstantsDataStats.InitialKills;
+        volatileData.Lives = ConstantsDataStats.InitialLives;
     }
 }

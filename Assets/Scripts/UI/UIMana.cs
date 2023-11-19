@@ -8,22 +8,18 @@ public class UIMana : MonoBehaviour
     [SerializeField] private Slider _manaValue;
     [SerializeField] private Button _manaRecharge;
 
-    //[SerializeField] private int _maxMana = 300;//volatile?
-    //[SerializeField] private float _timerToRecharge = 10f;//volatile?
-
-    //private bool recharging;
-
-    //DateTime _nextManaTime;
-    //DateTime _lastManaTime;
-    //TimeSpan timer;
-
     private void Start()
     {
         UpdateUI(GameManager.Instance.PersistentData.Mana);
 
         GameManager.Instance.PersistentData.OnManaChanged += OnManaChanged;
 
-        _manaRecharge.onClick.AddListener(RechargeMana);
+        _manaRecharge.onClick.AddListener(RechargeMana);//Boton de para el profe
+    }
+    private void RechargeMana()//Boton para el profe
+    {
+        GameManager.Instance.PersistentData.Mana = 300;
+        UpdateUI(GameManager.Instance.PersistentData.Mana);
     }
 
     private void OnDestroy()
@@ -39,11 +35,5 @@ public class UIMana : MonoBehaviour
     private void UpdateUI(int mana)
     {
         _manaValue.value = mana;
-    }
-
-    private void RechargeMana()
-    {
-        GameManager.Instance.PersistentData.Mana = 300;
-        UpdateUI(GameManager.Instance.PersistentData.Mana);
     }
 }
