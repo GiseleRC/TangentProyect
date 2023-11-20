@@ -5,8 +5,10 @@ using System;
 
 public class ManaManager : Singleton<ManaManager>
 {
+    [SerializeField] string _titleNotif = "Full Stamina";
+    [SerializeField] string _textNotif = "Tenes la stamina full, volve a jugar conmigo";
+
     private bool _rechargingMana;
-    //private bool _addingMana;
     private TimeSpan timer;
     private int id;
 
@@ -18,8 +20,7 @@ public class ManaManager : Singleton<ManaManager>
         if (GameManager.Instance.PersistentData.Mana < GameManager.Instance.ConstantsDataStats.MaxManaCapacity)
         {
             timer = GameManager.Instance.PersistentData.NextManaTime - DateTime.Now;
-            //id = NotificationManager.Instance.DisplayNotification(_titleNotif, _textNotif, _smallIcon, _largeIcon,
-            //    AddDuration(DateTime.Now, ((_maxStamina - _currentStamina + 1) * _timerToRecharge) + 1 + (float)timer.TotalSeconds));
+            id = NotificationManager.Instance.DisplayNotification(_titleNotif, _textNotif, AddTime(DateTime.Now, ((GameManager.Instance.ConstantsDataStats.MaxManaCapacity - GameManager.Instance.PersistentData.Mana + 1) * GameManager.Instance.ConstantsDataStats.RechargeTime) + 1 + (float)timer.TotalSeconds));
         }
     }
 
@@ -29,17 +30,13 @@ public class ManaManager : Singleton<ManaManager>
     {
         if (GameManager.Instance.PersistentData.Mana >= mana)
         {
-            //Jugar nivel
             GameManager.Instance.PersistentData.Mana -= mana;
-            //UpdateStamina();
 
-            //NotificationManager.Instance.CancelNotification(id);
-            //id = NotificationManager.Instance.DisplayNotification(_titleNotif, _textNotif, _smallIcon, _largeIcon,
-            //    AddDuration(DateTime.Now, ((_maxStamina - _currentStamina + 1) * _timerToRecharge) + 1 + (float)timer.TotalSeconds));
+            NotificationManager.Instance.CancelNotification(id);
+            id = NotificationManager.Instance.DisplayNotification(_titleNotif, _textNotif, AddTime(DateTime.Now, ((GameManager.Instance.ConstantsDataStats.MaxManaCapacity - GameManager.Instance.PersistentData.Mana + 1) * GameManager.Instance.ConstantsDataStats.RechargeTime) + 1 + (float)timer.TotalSeconds));
 
             if (!_rechargingMana)
             {
-                //Setear next stamina time y comenzar recarga
                 GameManager.Instance.PersistentData.NextManaTime = AddTime(DateTime.Now, GameManager.Instance.ConstantsDataStats.RechargeTime);
                 StartCoroutine(RechargeManaCourutine());
             }
@@ -53,7 +50,6 @@ public class ManaManager : Singleton<ManaManager>
     private IEnumerator RechargeManaCourutine()
     {
         _rechargingMana = true;
-        //UpdateTimer();
 
         while (GameManager.Instance.PersistentData.Mana < GameManager.Instance.ConstantsDataStats.MaxManaCapacity)
         {
@@ -69,8 +65,6 @@ public class ManaManager : Singleton<ManaManager>
                 GameManager.Instance.PersistentData.Mana += 1;//en el video dice que se suma un valor?
                 _addingStamina = true;
 
-                //UpdateStamina();
-
                 DateTime timeToAdd = nextT;
                 if (GameManager.Instance.PersistentData.LastManaTime > nextT) timeToAdd = GameManager.Instance.PersistentData.LastManaTime;//Checkear si el usuario cerro la app
 
@@ -84,8 +78,7 @@ public class ManaManager : Singleton<ManaManager>
             }
 
             GameManager.Instance.SavePersistentData();
-            //UpdateStamina();
-            //UpdateTimer();
+
             yield return new WaitForEndOfFrame();
         }
         _rechargingMana = false;
