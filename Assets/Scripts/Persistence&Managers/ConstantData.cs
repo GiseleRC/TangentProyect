@@ -12,7 +12,7 @@ public class ConstantData : MonoBehaviour
     private int _orbsRewardPerLevel;
     private int _manaCostPerLevel;
     private int _maxManaCapacity;//3
-    private float _timerToRecharge;//10f
+    private float _rechargeTime;//10
 
     void Start()
     {
@@ -27,5 +27,6 @@ public class ConstantData : MonoBehaviour
         _orbsRewardPerLevel = _constantDataStats.OrbsRewardPerLevel;
         _manaCostPerLevel = _constantDataStats.ManaCostPerLevel;
         _maxManaCapacity = _constantDataStats.MaxManaCapacity;
+        _rechargeTime = _constantDataStats.RechargeTime;
     }
 }

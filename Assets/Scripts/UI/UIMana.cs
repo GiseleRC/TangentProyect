@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIMana : MonoBehaviour
 {
     [SerializeField] private Slider _manaValue;
     [SerializeField] private Button _manaRecharge;
+
+    [SerializeField] private TextMeshProUGUI _currentManaValue= null;//ver como gamemanager notifica para que se ejeccute el cambio interno
+    [SerializeField] private TextMeshProUGUI _manaTimerValue = null;
 
     private void Start()
     {
@@ -18,8 +22,10 @@ public class UIMana : MonoBehaviour
     }
     private void RechargeMana()//Boton para el profe
     {
-        GameManager.Instance.PersistentData.Mana = 300;
+        GameManager.Instance.PersistentData.Mana = 3;
         UpdateUI(GameManager.Instance.PersistentData.Mana);
+
+        Debug.Log(GameManager.Instance.PersistentData.NextManaTime + " ----------- " + GameManager.Instance.PersistentData.LastManaTime);
     }
 
     private void OnDestroy()

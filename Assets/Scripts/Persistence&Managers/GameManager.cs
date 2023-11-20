@@ -42,11 +42,7 @@ public class GameManager : PersistentSingleton<GameManager>
     {
         volatileData.CurrentLevel = (int)parameters[0];
 
-        int mana = Math.Min(persistentData.Mana - ConstantsDataStats.ManaCostPerLevel, ConstantsDataStats.MaxManaCapacity);
-        if (mana >= 0)
-        {
-            persistentData.Mana = mana;
-        }
+        ManaManager.Instance.UseMana(ConstantsDataStats.ManaCostPerLevel);
 
         ResetVolatileData();
         SavePersistentData();
@@ -69,7 +65,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private void OnTutorialCompleted(object[] parameters)
     {
         persistentData.tutorialCompleted = true;
-        persistentData.Mana = 300;
+        persistentData.Mana = 3;
 
         SavePersistentData();
     }

@@ -11,6 +11,7 @@ public class ConstantDataStats : ScriptableObject
     [SerializeField] private int _orbsRewardPerLevel;
     [SerializeField] private int _manaCostPerLevel;
     [SerializeField] private int _maxManaCapacity;
+    [SerializeField] private float _rechargeTime;
 
     public int InitialCoins { get => _initialCoins; }
     public int InitialKills { get => _initialKills; }
@@ -18,4 +19,5 @@ public class ConstantDataStats : ScriptableObject
     public int OrbsRewardPerLevel { get => _orbsRewardPerLevel; }
     public int ManaCostPerLevel { get => _manaCostPerLevel; }
     public int MaxManaCapacity { get => _maxManaCapacity; }
+    public float RechargeTime { get => _rechargeTime; }
 }

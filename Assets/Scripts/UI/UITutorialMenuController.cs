@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UITutorialMenuController : MonoBehaviour
 {
     [SerializeField] private UIController _uIController;
+
     [SerializeField] private GameObject _tutorialImageGO;
     [SerializeField] private GameObject _firstSection;
     [SerializeField] private GameObject _secondSection;
@@ -17,6 +18,7 @@ public class UITutorialMenuController : MonoBehaviour
     private void Start()
     {
         _tutorialImageGO.SetActive(true);
+
         GameManager.Instance.LoadPersistentData();
         if (!GameManager.Instance.PersistentData.tutorialCompleted)
         {

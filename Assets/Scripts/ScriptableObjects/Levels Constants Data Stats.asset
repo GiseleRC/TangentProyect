@@ -18,3 +18,4 @@ MonoBehaviour:
   _orbsRewardPerLevel: 100
   _manaCostPerLevel: 1
   _maxManaCapacity: 3
+  _rechargeTime: 20
