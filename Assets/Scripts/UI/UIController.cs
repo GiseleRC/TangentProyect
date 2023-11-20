@@ -42,6 +42,8 @@ public class UIController : MonoBehaviour
         ConfirmDeleteDataButtom.onClick.AddListener(DeleteConfirmationSelected);
         YesButtom.onClick.AddListener(DeleteConfirmed);
         NoButtom.onClick.AddListener(BackSelected);
+
+        EnableMenu(GameManager.Instance.PersistentData.tutorialCompleted);
     }
 
     private void OnDestroy()
@@ -65,24 +67,35 @@ public class UIController : MonoBehaviour
         ConfirmDeleteDataButtom.interactable = enable;
         YesButtom.interactable = enable;
         NoButtom.interactable = enable;
-        SelectLevelButton.interactable = ManaManager.Instance.HasEnoughMana(GameManager.Instance.PersistentData.Mana);
+
+        SelectLevelButton.interactable = enable && ManaManager.Instance.HasEnoughMana(GameManager.Instance.ConstantsDataStats.ManaCostPerLevel);
+
         SimpleShopContainer.GetComponent<UISimpleShop>().enabled = enable;
     }
 
     public void EnoughMana(int mana)
     {
-        if (GameManager.Instance.PersistentData.tutorialCompleted && ManaManager.Instance.HasEnoughMana(mana))
+        if (GameManager.Instance.PersistentData.tutorialCompleted && ManaManager.Instance.HasEnoughMana(GameManager.Instance.ConstantsDataStats.ManaCostPerLevel))
         {
             SelectLevelButton.interactable = true;
+        }
+        else
+        {
+            SelectLevelButton.interactable = false;
         }
     }
 
     public void LevelsSelected()
     {
-        if (GameManager.Instance.PersistentData.tutorialCompleted && ManaManager.Instance.HasEnoughMana(GameManager.Instance.PersistentData.Mana))
+        if (GameManager.Instance.PersistentData.tutorialCompleted && ManaManager.Instance.HasEnoughMana(GameManager.Instance.ConstantsDataStats.ManaCostPerLevel))
         {
-            SelectLevelButton.interactable = true ;
+            SelectLevelButton.interactable = true;
         }
+        else
+        {
+            SelectLevelButton.interactable = false;
+        }
+
         OptionsContainer.SetActive(false);
         LevelsContainer.SetActive(true);
         BackButton.gameObject.SetActive(true);

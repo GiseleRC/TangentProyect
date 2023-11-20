@@ -3730,7 +3730,6 @@ MonoBehaviour:
   ConfirmDeleteDataContainer: {fileID: 1831946844}
   SimpleShopContainer: {fileID: 37674347}
   TutorialMenuContainer: {fileID: 1493283308}
-  _manaManager: {fileID: 3545668952086062610}
 --- !u!1 &755024134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3890,19 +3889,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 759986409}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 707341693}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: LevelsSelected
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &759986409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7277,7 +7264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uIController: {fileID: 707341693}
-  _manaManager: {fileID: 3545668952086062610}
   _tutorialImageGO: {fileID: 1347747970}
   _firstSection: {fileID: 111497738}
   _secondSection: {fileID: 30317826}
@@ -10735,17 +10721,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afbd6afe842d1304e86878f1268980f0, type: 3}
---- !u!114 &3545668952086062610 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3425987890411935455, guid: afbd6afe842d1304e86878f1268980f0, type: 3}
-  m_PrefabInstance: {fileID: 3545668952086062609}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6acb31cd10fe6144ab1bb38fb15d85ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5199840709709782265
 PrefabInstance:
   m_ObjectHideFlags: 0
