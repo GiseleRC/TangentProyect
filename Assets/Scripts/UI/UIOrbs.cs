@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIOrbs : MonoBehaviour
 {
     [SerializeField] private Slider _orbsValue;
+
+    [SerializeField] private TextMeshProUGUI _orbsValueNum;
 
     [SerializeField] private Button _orbsRecharge;
 
@@ -31,6 +34,7 @@ public class UIOrbs : MonoBehaviour
     public void UpdateUI(int orbs)
     {
         _orbsValue.value = orbs;
+        _orbsValueNum.text = orbs.ToString() + "/1000";
     }
 
     private void RechargeOrbs()

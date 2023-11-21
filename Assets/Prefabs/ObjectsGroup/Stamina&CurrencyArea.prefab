@@ -1440,6 +1440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orbsValue: {fileID: 3545668952558119118}
+  _orbsValueNum: {fileID: 3545668952852116116}
   _orbsRecharge: {fileID: 6450129316069860330}
 --- !u!1 &3545668952437242519
 GameObject:
