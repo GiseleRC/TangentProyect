@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UITutorialMenuController : MonoBehaviour
+public class UITutorialLevelController : MonoBehaviour
 {
-    [SerializeField] private UIController _uIController;
+    [SerializeField] private Button GetTurret1;
+    [SerializeField] private Button GetTurret2;
+    [SerializeField] private Button StartNextWave;
+    [SerializeField] private Button ReloadScene;
 
-    [SerializeField] private GameObject _tutorialImageGO;
+    [SerializeField] private GameObject _tutorialLevelGO;
     [SerializeField] private GameObject _firstSection;
     [SerializeField] private GameObject _secondSection;
     [SerializeField] private GameObject _thirdSection;
@@ -18,36 +21,44 @@ public class UITutorialMenuController : MonoBehaviour
 
     private void Start()
     {
-        _tutorialImageGO.SetActive(true);
+        _tutorialLevelGO.SetActive(true);
 
         GameManager.Instance.LoadPersistentData();
-        if (!GameManager.Instance.PersistentData.tutorialCompleted)
+        if (!GameManager.Instance.PersistentData.tutorialLevelCompleted)
         {
-            PlayTutorial();
+            PlayLevelTutorial();
         }
         else
         {
-            _tutorialImageGO.SetActive(false);
+            _tutorialLevelGO.SetActive(false);
         }
+
+        EnableMenu(GameManager.Instance.PersistentData.tutorialLevelCompleted);
     }
 
-    public void PlayTutorial()
+    public void PlayLevelTutorial()
     {
-        _uIController.EnableMenu(false);
         _firstSection.SetActive(true);
-        _tutorialImageGO.SetActive(true);
+        _tutorialLevelGO.SetActive(true);
 
         _currSection = _firstSection;
 
-        EventManager.TriggerEvent(EventType.TutorialStarted);
+        EventManager.TriggerEvent(EventType.TutorialLevelStarted);
     }
 
     private void EndTutorial()
     {
-        _uIController.EnableMenu(true);
         gameObject.SetActive(false);
 
-        EventManager.TriggerEvent(EventType.TutorialCompleted);
+        EventManager.TriggerEvent(EventType.TutorialLevelCompleted);
+    }
+
+    public void EnableMenu(bool enable)
+    {
+        GetTurret1.interactable = enable;
+        GetTurret2.interactable = enable;
+        StartNextWave.interactable = enable;
+        ReloadScene.interactable = enable;
     }
 
     public void CloseSection()
@@ -83,6 +94,9 @@ public class UITutorialMenuController : MonoBehaviour
         else if (_currSection == _fifthSection)
         {
             _currSection.SetActive(false);
+            GameManager.Instance.PersistentData.tutorialLevelCompleted = true;
+            EnableMenu(GameManager.Instance.PersistentData.tutorialLevelCompleted);
+            GameManager.Instance.SavePersistentData();
             EndTutorial();
         }
     }

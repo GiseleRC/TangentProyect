@@ -29,6 +29,7 @@ public class GameManager : PersistentSingleton<GameManager>
         EventManager.SubscribeToEvent(EventType.LevelStarted, OnLevelStarted);
         EventManager.SubscribeToEvent(EventType.LevelEnded, OnLevelEnded);
         EventManager.SubscribeToEvent(EventType.TutorialCompleted, OnTutorialCompleted);
+        EventManager.SubscribeToEvent(EventType.TutorialLevelCompleted, OnTutorialLevelCompleted);
     }
 
     private void OnDestroy()
@@ -36,11 +37,19 @@ public class GameManager : PersistentSingleton<GameManager>
         EventManager.UnsubscribeToEvent(EventType.LevelStarted, OnLevelStarted);
         EventManager.UnsubscribeToEvent(EventType.LevelEnded, OnLevelEnded);
         EventManager.UnsubscribeToEvent(EventType.TutorialCompleted, OnTutorialCompleted);
+        EventManager.UnsubscribeToEvent(EventType.TutorialLevelCompleted, OnTutorialLevelCompleted);
     }
 
     private void OnLevelStarted(object[] parameters)
     {
         volatileData.CurrentLevel = (int)parameters[0];
+
+        bool levelWon = (bool)parameters[1];
+
+        if (levelWon)
+        {
+            volatileData.Coins = 750;
+        }
 
         ManaManager.Instance.UseMana(ConstantsDataStats.ManaCostPerLevel);
 
@@ -65,7 +74,14 @@ public class GameManager : PersistentSingleton<GameManager>
     private void OnTutorialCompleted(object[] parameters)
     {
         persistentData.tutorialCompleted = true;
-        persistentData.Mana = 3;
+        persistentData.Mana = constantsDataStats.MaxManaCapacity;
+
+        SavePersistentData();
+    }
+
+    private void OnTutorialLevelCompleted(object[] parameters)
+    {
+        persistentData.tutorialLevelCompleted = true;
 
         SavePersistentData();
     }

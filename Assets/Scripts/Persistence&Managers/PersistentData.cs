@@ -13,6 +13,7 @@ public class PersistentData
     [SerializeField] private DateTime _lastManaTime;
 
     public bool tutorialCompleted = false;
+    public bool tutorialLevelCompleted = false;
 
     public int Orbs { get => orbs; set { orbs = value; OnOrbsChanged?.Invoke(orbs); } }
     public int Mana { get => mana; set { mana = value; OnManaChanged?.Invoke(mana); } }
@@ -46,5 +47,6 @@ public class PersistentData
         ReachedLevel = 0;
         CurrentAvatar = 0;
         tutorialCompleted = false;
+        tutorialLevelCompleted = false;
     }
 }

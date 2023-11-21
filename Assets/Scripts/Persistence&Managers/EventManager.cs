@@ -8,6 +8,8 @@ public enum EventType
     LevelEnded,
     TutorialStarted,
     TutorialCompleted,
+    TutorialLevelStarted,
+    TutorialLevelCompleted,
     GamePaused,
     GameResumend,
     GameSaved,

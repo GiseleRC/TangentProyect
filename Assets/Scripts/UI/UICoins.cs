@@ -13,6 +13,11 @@ public class UICoins : MonoBehaviour
         GameManager.Instance.VolatileData.OnCoinsChanged += OnCoinsChanged;
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.VolatileData.OnCoinsChanged -= OnCoinsChanged;
+    }
+
     private void OnCoinsChanged(int coins)
     {
         _text.text = coins.ToString();

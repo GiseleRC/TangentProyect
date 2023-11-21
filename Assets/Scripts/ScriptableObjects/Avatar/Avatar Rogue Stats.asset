@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 404256c340148734da5619ba92227abb, type: 3}
-  m_Name: Levels Constants Data Stats
+  m_Script: {fileID: 11500000, guid: 75f0c7897e2ea434ab46da10111afde4, type: 3}
+  m_Name: Avatar Rogue Stats
   m_EditorClassIdentifier: 
-  _initialCoins: 500
-  _initialKills: 0
-  _initialLives: 10
-  _orbsRewardPerLevel: 50
-  _manaCostPerLevel: 1
-  _maxManaCapacity: 3
-  _rechargeTime: 20
+  _price: 300
+  _avatarIndex: 1
+  _description: Rogue
+  _avatarSprite: {fileID: 21300000, guid: c8a69ecdf54ac8e4b873466605de27ff, type: 3}

@@ -8,7 +8,8 @@ public class Avatar : MonoBehaviour
     [SerializeField] private TypeOfAvatar _typeOfAvatar;
     [SerializeField] private AvatarStats _stats;
 
-    private string _price;
+    private int _price;
+    private int _avatarIndex;
     private string _description;
     private Sprite _avatarSprite;
 
@@ -23,6 +24,7 @@ public class Avatar : MonoBehaviour
     void Start()
     {
         _price = _stats.Price;
+        _avatarIndex = _stats.AvatarIndex;
         _description = _stats.Description;
         gameObject.GetComponent<Image>().sprite = _stats.AvatarSprite;
     }
