@@ -44,13 +44,6 @@ public class GameManager : PersistentSingleton<GameManager>
     {
         volatileData.CurrentLevel = (int)parameters[0];
 
-        bool levelWon = (bool)parameters[1];
-
-        if (levelWon)
-        {
-            volatileData.Coins = 750;
-        }
-
         ManaManager.Instance.UseMana(ConstantsDataStats.ManaCostPerLevel);
 
         ResetVolatileData();
