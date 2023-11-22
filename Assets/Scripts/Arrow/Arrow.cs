@@ -4,22 +4,21 @@ using UnityEngine;
 public class Arrow : MonoBehaviour, IPooleableObject
 {
     [SerializeField] private ParticleSystem _impactFXPrefab;
-    [SerializeField] private ArrowStats _stats;
+    [SerializeField] private PowerUpStats _powerUpstats;
 
     private Renderer _renderer = null;
     private Transform _target = null;
     private ParticleSystem _impactFXGO = null;
-
-    public void Seek(Transform target)
-    {
-        _target = target;
-    }
 
     void Awake()
     {
         _renderer = GetComponent<Renderer>();
         _impactFXGO = (ParticleSystem)Instantiate(_impactFXPrefab, transform);
         _impactFXGO.Stop();
+    }
+    public void Seek(Transform target)
+    {
+        _target = target;
     }
 
     void Update()
@@ -33,11 +32,11 @@ public class Arrow : MonoBehaviour, IPooleableObject
         }
 
         Vector3 dir = _target.position - transform.position;
-        float distanceThisFrame = _stats.Speed * Time.deltaTime;
+        float distanceThisFrame = Shop.Instance._arrowStats.Speed * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame)
         {
-            HitTarget(_stats.Damage);
+            HitTarget(Shop.Instance._currDamage);
             return;
         }
 

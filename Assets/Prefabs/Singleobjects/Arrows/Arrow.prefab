@@ -98,3 +98,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impactFXPrefab: {fileID: 5559777982059055497, guid: 978e33a68f83d83489d21853949c1d9c, type: 3}
   _stats: {fileID: 11400000, guid: ee18dc4be1e933a44a6af32ba7ed0832, type: 2}
+  _powerUpstats: {fileID: 11400000, guid: 7943a55bc1c37ac47ba1e166f3eb05fc, type: 2}
+  _powerUpButton: {fileID: 8979384656310314989, guid: b687b025b2566334c82f656bd589b8ac, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
-    //Constant Data
+    // Constant Data
     [SerializeField] private ConstantDataStats constantsDataStats;
     public ConstantDataStats ConstantsDataStats { get => constantsDataStats; }
 

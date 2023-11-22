@@ -804,6 +804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece924c2c185a104c82debaea5dcc900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _powerUpButton: {fileID: 8864263831283743819}
   turret1:
     prefab: {fileID: 3397290022146623055, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
     cost: 150
@@ -813,6 +814,9 @@ MonoBehaviour:
   obstaclesStats:
     cost: 200
     axeSelected: 0
+  powerUpStats: {fileID: 11400000, guid: 7943a55bc1c37ac47ba1e166f3eb05fc, type: 2}
+  _arrowStats: {fileID: 11400000, guid: ee18dc4be1e933a44a6af32ba7ed0832, type: 2}
+  _currDamage: 0
 --- !u!114 &4295050350365482500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6717,6 +6721,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8979384656310314988, guid: b687b025b2566334c82f656bd589b8ac, type: 3}
   m_PrefabInstance: {fileID: 547502057716358054}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8864263831283743819 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8979384656310314989, guid: b687b025b2566334c82f656bd589b8ac, type: 3}
+  m_PrefabInstance: {fileID: 547502057716358054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864263831283743817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3375233404611645988
 PrefabInstance:
   m_ObjectHideFlags: 0
