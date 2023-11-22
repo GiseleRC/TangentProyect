@@ -357,7 +357,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.75
+  field of view: 51.497562
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -4904,9 +4904,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4862434142318880621, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862434142318880621, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862434143941999569, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5425765340978908731, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554858363594967693, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1715766126}
+    - target: {fileID: 5554858363594967693, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseSection
       objectReference: {fileID: 0}
     - target: {fileID: 5929571801843693000, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5022,6 +5042,17 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 7574621436084989206, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
   m_PrefabInstance: {fileID: 1715766123}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1715766126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4909650190062287711, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+  m_PrefabInstance: {fileID: 1715766123}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7013ee8dc2c904c9c4a0fd5ecde377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1718840697
 PrefabInstance:
   m_ObjectHideFlags: 0
