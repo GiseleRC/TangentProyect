@@ -50,6 +50,7 @@ public class ManaManager : Singleton<ManaManager>
     private IEnumerator RechargeManaCourutine()
     {
         _rechargingMana = true;
+        UIMana.Instance.UpdateUI(GameManager.Instance.PersistentData.Mana);
 
         while (GameManager.Instance.PersistentData.Mana < GameManager.Instance.ConstantsDataStats.MaxManaCapacity)
         {
@@ -62,7 +63,7 @@ public class ManaManager : Singleton<ManaManager>
             {
                 if (GameManager.Instance.PersistentData.Mana >= GameManager.Instance.ConstantsDataStats.MaxManaCapacity) break;
 
-                GameManager.Instance.PersistentData.Mana += 1;//en el video dice que se suma un valor?
+                GameManager.Instance.PersistentData.Mana += 1;
                 _addingStamina = true;
 
                 DateTime timeToAdd = nextT;
@@ -77,6 +78,7 @@ public class ManaManager : Singleton<ManaManager>
                 GameManager.Instance.PersistentData.LastManaTime = DateTime.Now;
             }
 
+            UIMana.Instance.UpdateUI(GameManager.Instance.PersistentData.Mana);
             GameManager.Instance.SavePersistentData();
 
             yield return new WaitForEndOfFrame();

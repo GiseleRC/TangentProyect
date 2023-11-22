@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
-public class UIMana : MonoBehaviour
+public class UIMana : Singleton<UIMana>
 {
     [SerializeField] private Slider _manaValue;
     [SerializeField] private Button _manaRecharge;
@@ -24,8 +25,6 @@ public class UIMana : MonoBehaviour
     {
         GameManager.Instance.PersistentData.Mana = 3;
         UpdateUI(GameManager.Instance.PersistentData.Mana);
-
-        Debug.Log(GameManager.Instance.PersistentData.NextManaTime + " ----------- " + GameManager.Instance.PersistentData.LastManaTime);
     }
 
     private void OnDestroy()
@@ -38,8 +37,19 @@ public class UIMana : MonoBehaviour
         UpdateUI(mana);
     }
 
-    private void UpdateUI(int mana)
+    public void UpdateUI(int mana)
     {
         _manaValue.value = mana;
+        _currentManaValue.text = mana.ToString() + "/3";
+
+       if (GameManager.Instance.PersistentData.Mana >= GameManager.Instance.ConstantsDataStats.MaxManaCapacity)
+       {
+           _manaTimerValue.text = "Full stamina!";
+           return;
+       }
+
+        TimeSpan timer = GameManager.Instance.PersistentData.NextManaTime - DateTime.Now;
+
+        _manaTimerValue.text = timer.Minutes.ToString("00") + ":" + timer.Seconds.ToString("00");
     }
 }

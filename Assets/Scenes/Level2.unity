@@ -836,6 +836,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2742986736473672909, guid: 808fdb3ea2fc26e4499ab9b211b36406, type: 3}
+      propertyPath: _buttonSound
+      value: 
+      objectReference: {fileID: 1970332315}
     - target: {fileID: 2742986736473672911, guid: 808fdb3ea2fc26e4499ab9b211b36406, type: 3}
       propertyPath: m_Name
       value: BuildManager
@@ -6101,6 +6105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1970332315 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7574621436084989206, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+  m_PrefabInstance: {fileID: 1970332313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1970332316 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 673025734521257890, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}

@@ -35,12 +35,12 @@ public class ShopGachaSystem : MonoBehaviour
 
     private void OnOrbsChanged(int orbs)
     {
-        if (orbs >= 10)
+        if (orbs >= 100)
         {
             _pull1.interactable = true;
             _pull10.interactable = true;
         }
-        else if (orbs < 10 && orbs > 1)
+        else if (orbs < 100 && orbs >= 10)
         {
             _pull1.interactable = true;
             _pull10.interactable = false;

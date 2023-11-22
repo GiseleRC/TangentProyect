@@ -114,6 +114,7 @@ MonoBehaviour:
   _notBuildableNode: 0
   _hoverColor: {r: 0, g: 0.5754717, b: 0.04651132, a: 0}
   _noMoneyColor: {r: 1, g: 0.32010546, b: 0, a: 1}
+  _buttonSound: {fileID: 3627699235233000373, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
   turret: {fileID: 0}
   positionOffset: {x: 0, y: 2, z: 2}
 --- !u!114 &-2355521761646577652

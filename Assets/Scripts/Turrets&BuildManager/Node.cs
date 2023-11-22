@@ -6,7 +6,7 @@ public class Node : MonoBehaviour
     [SerializeField] private bool _notBuildableNode = false;
     [SerializeField] private Color _hoverColor;
     [SerializeField] private Color _noMoneyColor;
-    //[SerializeField] private GameObject _obstacles;
+
     private Renderer _rend;
     private Color _startColor;
 

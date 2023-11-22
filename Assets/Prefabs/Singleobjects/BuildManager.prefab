@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _turret1Prefab: {fileID: 3397290022146623055, guid: 4c839ca0d5ce16a4abac617049ed1e71, type: 3}
   _turret2Prefab: {fileID: 3397290022146623055, guid: c8259c42735a18541b15e48a77c33dca, type: 3}
+  _buttonSound: {fileID: 7574621436084989206, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}

@@ -4572,6 +4572,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3627699235233000373, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 673025732606106427, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -4704,14 +4732,6 @@ PrefabInstance:
       propertyPath: waveSpawner
       value: 
       objectReference: {fileID: 8092432965152821835}
-    - target: {fileID: 673025734521257919, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1715766126}
-    - target: {fileID: 673025734521257919, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartWave
-      objectReference: {fileID: 0}
     - target: {fileID: 1171168810293803367, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_Name
       value: UIPauseController
@@ -4815,6 +4835,34 @@ PrefabInstance:
     - target: {fileID: 2545612047793290661, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3627699235233000373, guid: 757445e9f6997084c8da8eeeef6fbf96, type: 3}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3471251176408545246, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_IsActive
@@ -4969,17 +5017,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1715766126 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 673025734521257890, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+--- !u!82 &1715766125 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7574621436084989206, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
   m_PrefabInstance: {fileID: 1715766123}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f19a431c2dac84d96f18d69fd958de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1718840697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6195,6 +6237,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2742986736473672909, guid: 808fdb3ea2fc26e4499ab9b211b36406, type: 3}
+      propertyPath: _buttonSound
+      value: 
+      objectReference: {fileID: 1715766125}
     - target: {fileID: 2742986736473672911, guid: 808fdb3ea2fc26e4499ab9b211b36406, type: 3}
       propertyPath: m_Name
       value: BuildManager

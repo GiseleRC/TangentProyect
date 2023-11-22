@@ -31,7 +31,7 @@ public class GachaSystem : MonoBehaviour
 
     public void PullGacha(int pullNumber)
     {
-        GameManager.Instance.PersistentData.Orbs -= pullNumber * 10;
+        GameManager.Instance.PersistentData.Orbs -= pullNumber;
 
         GameManager.Instance.SavePersistentData();
 
