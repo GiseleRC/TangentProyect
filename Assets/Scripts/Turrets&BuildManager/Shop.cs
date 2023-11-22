@@ -35,8 +35,8 @@ public class Shop : Singleton<Shop>
         obstaclesStats.axeSelected = true;
     }
 
-    //POWERUP
-    private void PowerUpEnable()// el boton de powerup
+    //POWERUP-------- zone
+    private void PowerUpEnable()
     {
         if (GameManager.Instance.VolatileData.Coins < powerUpStats.PowerUpCost) return;
 
@@ -47,20 +47,17 @@ public class Shop : Singleton<Shop>
     private IEnumerator PlayPowerUp()
     {
         _powerUpButton.interactable = false;
-
         DamageModified(powerUpStats.MultiplyDamage);
 
         yield return new WaitForSeconds(powerUpStats.PowerUpDuration);
-        Debug.Log(powerUpStats.PowerUpDuration + "   este es el valo del power up, y  Saliod de la corrutina el currenta damage es :  " + _currDamage);
-        OriginalDamage();
 
+        OriginalDamage();
         _powerUpButton.interactable = true;
     }
 
     private int DamageModified(int multiplied)
     {
         _currDamage = multiplied * _arrowStats.Damage;
-        Debug.Log("Entro en el multiplicador de danio ahora el danio es:  " + _currDamage);
         return _currDamage;
     }
 

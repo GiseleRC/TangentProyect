@@ -9,6 +9,7 @@ public class PersistentData
     [SerializeField] private int mana = 3;
     [SerializeField] private int reachedLevel = 0;
     [SerializeField] private int currentAvatar = 0;
+    [SerializeField] private float volumeValue = 1f;
     [SerializeField] private DateTime _nextManaTime;
     [SerializeField] private DateTime _lastManaTime;
 
@@ -19,6 +20,7 @@ public class PersistentData
     public int Mana { get => mana; set { mana = value; OnManaChanged?.Invoke(mana); } }
     public int ReachedLevel { get => reachedLevel; set { reachedLevel = value; OnReachedLevelChanged?.Invoke(reachedLevel); } }
     public int CurrentAvatar { get => currentAvatar; set { currentAvatar = value; OnAvatarChanged?.Invoke(currentAvatar); } }
+    public float VolumeValue { get => volumeValue; set { volumeValue = value; OnVolumeChanged?.Invoke(volumeValue); } }
     public DateTime NextManaTime { get => _nextManaTime; set { _nextManaTime = value; OnNextManaTimeChanged?.Invoke(_nextManaTime); } }
     public DateTime LastManaTime { get => _lastManaTime; set { _lastManaTime = value; OnLastManaTimeChanged?.Invoke(_lastManaTime); } }
 
@@ -34,6 +36,9 @@ public class PersistentData
     public delegate void AvatarChangedHandler(int avatar);
     public event AvatarChangedHandler OnAvatarChanged;
 
+    public delegate void VolumeValueChangedHandler(float volume);
+    public event VolumeValueChangedHandler OnVolumeChanged;
+
     public delegate void NextManaTimeChanged(DateTime nextManaTime);
     public event NextManaTimeChanged OnNextManaTimeChanged;
 
@@ -46,6 +51,7 @@ public class PersistentData
         Orbs = 0;
         ReachedLevel = 0;
         CurrentAvatar = 0;
+        VolumeValue = 1f;
         tutorialCompleted = false;
         tutorialLevelCompleted = false;
     }

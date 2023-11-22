@@ -6,9 +6,7 @@ public class BuildManager : MonoBehaviour
 
     [SerializeField] private GameObject _turret1Prefab;
     [SerializeField] private GameObject _turret2Prefab;
-    [SerializeField] private AudioSource _buttonSound;
     private TurretBlueprints _turretToBuild;
-    private ObstacleStats obstacleStats;
 
     private void Awake()
     {
@@ -30,7 +28,6 @@ public class BuildManager : MonoBehaviour
             return;
         }
         GameManager.Instance.VolatileData.Coins -= Shop.Instance.obstaclesStats.cost;
-        _buttonSound.Play();
         obstacle.node.GetComponent<Collider>().enabled = true;
     }
 
@@ -41,7 +38,6 @@ public class BuildManager : MonoBehaviour
             return;
         }
         GameManager.Instance.VolatileData.Coins -= _turretToBuild.cost;
-        _buttonSound.Play();
         GameObject turret = (GameObject)Instantiate(_turretToBuild.prefab, node.transform.position + node.positionOffset, node.transform.rotation);
         node.turret = turret;
     }
