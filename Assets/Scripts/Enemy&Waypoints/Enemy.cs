@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
     [SerializeField] private EnemyStats _stats;
     [SerializeField] private Transform _startPoint;
     [SerializeField] private WaveSpawner waveSpawner;
+    [SerializeField] private AudioSource _dieSound;
 
     [SerializeField] private int _enemyDamageToBase;
 
@@ -71,8 +72,8 @@ public class Enemy : MonoBehaviour, IPooleableObject
 
     public void TakeDamage(int damageAmounth)
     {
+        _dieSound.Play();
         _health -= damageAmounth;
-
         if (_health <= 0)
         {
             GameManager.Instance.VolatileData.Coins += _stats.KillPrice;

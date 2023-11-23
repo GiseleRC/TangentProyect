@@ -8,7 +8,11 @@ public class SoundManager : Singleton<SoundManager>
     //Volume controller slider menu option
 
     [SerializeField] private AudioSource _buttonsSound;
+    [SerializeField] private AudioSource _putTurretSound;
     [SerializeField] private AudioSource _backgroundSound;
+    [SerializeField] private AudioSource _powerUp;
+    [SerializeField] private AudioSource _inBase;
+    [SerializeField] private AudioSource _enemyDead;
     [SerializeField] private Slider sliderVolumen;
 
     private void Start()
@@ -27,6 +31,26 @@ public class SoundManager : Singleton<SoundManager>
     public void PLayButtonSound()
     {
         _buttonsSound.Play();
+    }
+
+    public void PutTurretSound()
+    {
+        _putTurretSound.Play();
+    }
+
+    public void PowerUpSound()
+    {
+        _powerUp.Play();
+    }
+
+    public void InBaseSound()
+    {
+        _inBase.Play();
+    }
+
+    public void EnemyDeadSound()
+    {
+        _enemyDead.Play();
     }
 
     public void UpdateVolume(float volume)

@@ -10,6 +10,7 @@ public class RunesTrade : Singleton<RunesTrade>
     [SerializeField] public TextMeshProUGUI rareRunes;
     [SerializeField] public TextMeshProUGUI superrareRunes;
     [SerializeField] public TextMeshProUGUI ultrarareRunes;
+    [SerializeField] public TextMeshProUGUI notification;
 
     [SerializeField] public Image common;
     [SerializeField] public Image rare;
@@ -24,6 +25,7 @@ public class RunesTrade : Singleton<RunesTrade>
     private int maxPricetrade = 400;
     void Start()
     {
+        notification.text = " ";
         HasRunesToTrade();
     }
 
@@ -101,6 +103,7 @@ public class RunesTrade : Singleton<RunesTrade>
             ultrarareRunes.text = GameManager.Instance.PersistentData.ultraRareRunesMount.ToString();
         }
 
+        notification.text = "You buy " + GameManager.Instance.PersistentData.tradeCoinsMount + " extra gold for the next TRY ";
         HasRunesToTrade();
         GameManager.Instance.SavePersistentData();
     }

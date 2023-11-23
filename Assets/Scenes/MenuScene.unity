@@ -192,7 +192,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 51.497562
+  field of view: 51.49756
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3031,6 +3031,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8130188810333702612, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_text
+      value: here you can use your orbs for a lucky roll and get RUNES for TRADE
+        extra coins for the next TRY
+      objectReference: {fileID: 0}
     - target: {fileID: 8155832287436436121, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3062,6 +3067,10 @@ PrefabInstance:
     - target: {fileID: 8199799432100039068, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -73
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290930342649730865, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_text
+      value: Here you can buy a new avatar with the orbs obtained.
       objectReference: {fileID: 0}
     - target: {fileID: 8290930342678124731, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3118,6 +3127,41 @@ PrefabInstance:
     - target: {fileID: 8290930343128171055, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290930343574555473, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_text
+      value: 'Here you have a orbs, these will be increased if you win Level you
+        can spen it in Lucky push or change your Avatar
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290930343824594976, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.87276614
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290930343824594976, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.8045321
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290930343824594976, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.63338757
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290930343824594976, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -53.567993
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290930343824594976, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290930343824594976, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290930343824594976, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8290930344021585748, guid: b97b4fee091e92e4fad3f49f4cdf68e1, type: 3}
       propertyPath: m_IsActive
