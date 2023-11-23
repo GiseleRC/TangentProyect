@@ -47,6 +47,10 @@ public class GameManager : PersistentSingleton<GameManager>
         ManaManager.Instance.UseMana(ConstantsDataStats.ManaCostPerLevel);
 
         ResetVolatileData();
+
+        volatileData.Coins += persistentData.tradeCoinsMount;
+        persistentData.tradeCoinsMount = 0;
+
         SavePersistentData();
     }
 

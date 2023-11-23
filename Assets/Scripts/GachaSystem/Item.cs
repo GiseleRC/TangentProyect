@@ -4,7 +4,7 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     public string itemName;
-    public string itemCost;
+    public string itemTradeGold;
     public Sprite itemImage;
     public ItemsRarity rarity;
 }

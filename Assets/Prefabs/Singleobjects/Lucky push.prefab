@@ -326,7 +326,7 @@ MonoBehaviour:
   _pull1: {fileID: 4832983026778509938}
   _pull10: {fileID: 4934035592804624169}
   _luckyPushScrollView: {fileID: 3376133987349127777}
-  _gachaSystem: {fileID: 0}
+  _gachaSystem: {fileID: 8601310205275518235}
   _items:
   - {fileID: 11400000, guid: 17ad7c6dc24b4e249b2b387744b449f4, type: 2}
   - {fileID: 11400000, guid: 7d44d92beb8b72c47bd0953def44d676, type: 2}
@@ -362,7 +362,11 @@ MonoBehaviour:
     myItems:
     - {fileID: 11400000, guid: 17ad7c6dc24b4e249b2b387744b449f4, type: 2}
   _pitySystem: 10
-  resultGacha: {fileID: 0}
+  result: {fileID: 2002336887471724201}
+  commonRunes: {fileID: 0}
+  rareRunes: {fileID: 0}
+  superrareRunes: {fileID: 0}
+  ultrarareRunes: {fileID: 0}
 --- !u!1 &1317960424794343137
 GameObject:
   m_ObjectHideFlags: 0

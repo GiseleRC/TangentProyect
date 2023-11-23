@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca24de8501bcf2045beba43817c8cf00, type: 3}
   m_Name: RuneCommon
   m_EditorClassIdentifier: 
-  itemName: Rune0
-  itemCost: 0
-  itemImage: {fileID: 21300000, guid: 68fafd0a2acc3774988418f657bf7b68, type: 3}
+  itemName: Gold Rune
+  itemTradeGold: '400 x 2 of '
+  itemImage: {fileID: 21300000, guid: 3728580c149181a44b359e89f6edacae, type: 3}
   rarity: 0

@@ -13,6 +13,12 @@ public class PersistentData
     [SerializeField] private DateTime _nextManaTime;
     [SerializeField] private DateTime _lastManaTime;
 
+    public int commonRunesMount = 0;
+    public int rareRunesMount = 0;
+    public int superRareRunesMount = 0;
+    public int ultraRareRunesMount = 0;
+    public int tradeCoinsMount = 0;
+
     public bool tutorialCompleted = false;
     public bool tutorialLevelCompleted = false;
 
@@ -52,7 +58,14 @@ public class PersistentData
         ReachedLevel = 0;
         CurrentAvatar = 0;
         VolumeValue = 1f;
+
         tutorialCompleted = false;
         tutorialLevelCompleted = false;
+
+        commonRunesMount = 0;
+        rareRunesMount = 0;
+        superRareRunesMount = 0;
+        ultraRareRunesMount = 0;
+        tradeCoinsMount = 0;
     }
 }

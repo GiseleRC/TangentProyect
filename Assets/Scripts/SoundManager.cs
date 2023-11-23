@@ -14,12 +14,6 @@ public class SoundManager : Singleton<SoundManager>
     private void Start()
     {
         sliderVolumen.value = GameManager.Instance.PersistentData.VolumeValue;
-        //GameManager.Instance.PersistentData.OnVolumeChanged += UpdateVolume;
-    }
-
-    private void OnDestroy()
-    {
-        //GameManager.Instance.PersistentData.OnVolumeChanged -= UpdateVolume;
     }
 
     public void VolumeChanger()

@@ -48,7 +48,7 @@ public class ShopGachaSystem : MonoBehaviour
         else
         {
             EnablePullButtons(false);
-            _gachaSystem.resultGacha.text = " ";
+            _gachaSystem.result.text = " ";
         }
     }
 

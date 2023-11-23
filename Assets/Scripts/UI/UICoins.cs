@@ -11,6 +11,7 @@ public class UICoins : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.VolatileData.OnCoinsChanged += OnCoinsChanged;
+        _text.text = GameManager.Instance.VolatileData.Coins.ToString();
     }
 
     private void OnDestroy()
