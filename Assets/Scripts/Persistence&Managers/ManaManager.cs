@@ -5,9 +5,6 @@ using System;
 
 public class ManaManager : Singleton<ManaManager>
 {
-    [SerializeField] string _titleNotif = "Full Stamina";
-    [SerializeField] string _textNotif = "Tenes la stamina full, volve a jugar conmigo";
-
     private bool _rechargingMana;
     private TimeSpan timer;
     private int id;
@@ -20,7 +17,6 @@ public class ManaManager : Singleton<ManaManager>
         if (GameManager.Instance.PersistentData.Mana < GameManager.Instance.ConstantsDataStats.MaxManaCapacity)
         {
             timer = GameManager.Instance.PersistentData.NextManaTime - DateTime.Now;
-            id = NotificationManager.Instance.DisplayNotification(_titleNotif, _textNotif, AddTime(DateTime.Now, ((GameManager.Instance.ConstantsDataStats.MaxManaCapacity - GameManager.Instance.PersistentData.Mana + 1) * GameManager.Instance.ConstantsDataStats.RechargeTime) + 1 + (float)timer.TotalSeconds));
         }
     }
 
@@ -32,10 +28,6 @@ public class ManaManager : Singleton<ManaManager>
         {
             GameManager.Instance.PersistentData.Mana -= mana;
 
-            NotificationManager.Instance.CancelNotification(id);
-            id = NotificationManager.Instance.DisplayNotification(_titleNotif, _textNotif, AddTime(DateTime.Now, ((GameManager.Instance.ConstantsDataStats.MaxManaCapacity - GameManager.Instance.PersistentData.Mana + 1) * GameManager.Instance.ConstantsDataStats.RechargeTime) + 1 + (float)timer.TotalSeconds));
-
-            if (!_rechargingMana)
             {
                 GameManager.Instance.PersistentData.NextManaTime = AddTime(DateTime.Now, GameManager.Instance.ConstantsDataStats.RechargeTime);
                 StartCoroutine(RechargeManaCourutine());
