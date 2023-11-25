@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6950938270440946564}
   - component: {fileID: 6950938270440946566}
   - component: {fileID: 6950938270440946565}
+  - component: {fileID: 6715764020544714822}
   m_Layer: 5
   m_Name: Shop Avatar
   m_TagString: Untagged
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shop Avatar
+  m_text: ID_AvatarTittleShop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -135,6 +136,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6715764020544714822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950938270440946563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4174c560f0f3d9409dd43ac4232c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_AvatarTittleShop
+  _myText: {fileID: 6950938270440946565}
 --- !u!1 &6950938270472702519
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,7 +3789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8292686543395948142, guid: ae13e317040365547a9498a4ff915848, type: 3}
       propertyPath: m_text
-      value: 0 ORBS
+      value: ID_ButtonDefaultAvatar
       objectReference: {fileID: 0}
     - target: {fileID: 8292686543395948142, guid: ae13e317040365547a9498a4ff915848, type: 3}
       propertyPath: m_fontStyle
@@ -3803,6 +3818,36 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7271149760152976060, guid: ae13e317040365547a9498a4ff915848, type: 3}
   m_PrefabInstance: {fileID: 6950938270546312033}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1397026271578537231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8292686543395948142, guid: ae13e317040365547a9498a4ff915848, type: 3}
+  m_PrefabInstance: {fileID: 6950938270546312033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3150413463768849356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5462362621553959085, guid: ae13e317040365547a9498a4ff915848, type: 3}
+  m_PrefabInstance: {fileID: 6950938270546312033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &728356562964276610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150413463768849356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4174c560f0f3d9409dd43ac4232c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_ButtonDefaultAvatar
+  _myText: {fileID: 1397026271578537231}
 --- !u!1001 &6950938270590396397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3924,7 +3969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8948212544634805998, guid: 457e001ee6ba935408103fb7cf31310a, type: 3}
       propertyPath: m_text
-      value: 300 ORBS
+      value: ID_ButtonRogueAvatar
       objectReference: {fileID: 0}
     - target: {fileID: 8948212544634805998, guid: 457e001ee6ba935408103fb7cf31310a, type: 3}
       propertyPath: m_fontStyle
@@ -3953,6 +3998,36 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7769753554359968316, guid: 457e001ee6ba935408103fb7cf31310a, type: 3}
   m_PrefabInstance: {fileID: 6950938270590396397}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2042626942889605379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8948212544634805998, guid: 457e001ee6ba935408103fb7cf31310a, type: 3}
+  m_PrefabInstance: {fileID: 6950938270590396397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2631054107448500160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4969106749408262189, guid: 457e001ee6ba935408103fb7cf31310a, type: 3}
+  m_PrefabInstance: {fileID: 6950938270590396397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2781269977578839862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631054107448500160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4174c560f0f3d9409dd43ac4232c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_ButtonRogueAvatar
+  _myText: {fileID: 2042626942889605379}
 --- !u!1001 &6950938270978789759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3974,7 +4049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2813516072506446226, guid: b4d1e8ec573d7db4898a6a70f783204d, type: 3}
       propertyPath: m_text
-      value: 500 ORBS
+      value: ID_ButtonWizardAvatar
       objectReference: {fileID: 0}
     - target: {fileID: 2813516072506446226, guid: b4d1e8ec573d7db4898a6a70f783204d, type: 3}
       propertyPath: m_fontStyle
@@ -4090,11 +4165,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d1e8ec573d7db4898a6a70f783204d, type: 3}
+--- !u!114 &5151322415690842349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2813516072506446226, guid: b4d1e8ec573d7db4898a6a70f783204d, type: 3}
+  m_PrefabInstance: {fileID: 6950938270978789759}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5800906967158373439 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3528086116278988096, guid: b4d1e8ec573d7db4898a6a70f783204d, type: 3}
   m_PrefabInstance: {fileID: 6950938270978789759}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9198201833030280750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2292369948586424145, guid: b4d1e8ec573d7db4898a6a70f783204d, type: 3}
+  m_PrefabInstance: {fileID: 6950938270978789759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7788176893054474407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198201833030280750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4174c560f0f3d9409dd43ac4232c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_ButtonWizardAvatar
+  _myText: {fileID: 5151322415690842349}
 --- !u!1001 &6950938271583216141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4116,7 +4221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803372874970636015, guid: f446ac24903e7c94bb5e97d6a45b86a0, type: 3}
       propertyPath: m_text
-      value: 400 ORBS
+      value: ID_ButtonWarriorAvatar
       objectReference: {fileID: 0}
     - target: {fileID: 2803372874970636015, guid: f446ac24903e7c94bb5e97d6a45b86a0, type: 3}
       propertyPath: m_fontStyle
@@ -4226,12 +4331,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7234735149023254764, guid: f446ac24903e7c94bb5e97d6a45b86a0, type: 3}
+      propertyPath: _ID
+      value: ID_ButtonWarriorAvatar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234735149023254764, guid: f446ac24903e7c94bb5e97d6a45b86a0, type: 3}
+      propertyPath: _myText
+      value: 
+      objectReference: {fileID: 5084886416001187042}
     - target: {fileID: 7847895260199633152, guid: f446ac24903e7c94bb5e97d6a45b86a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f446ac24903e7c94bb5e97d6a45b86a0, type: 3}
+--- !u!114 &5084886416001187042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2803372874970636015, guid: f446ac24903e7c94bb5e97d6a45b86a0, type: 3}
+  m_PrefabInstance: {fileID: 6950938271583216141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5867344886166388784 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3538226844744917565, guid: f446ac24903e7c94bb5e97d6a45b86a0, type: 3}

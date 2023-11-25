@@ -157,6 +157,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5199840709676564884}
+    - target: {fileID: 8993974467712768396, guid: 42c9775e31cd2a142a7a808bb8209d27, type: 3}
+      propertyPath: m_text
+      value: ID_AvatarChanger
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42c9775e31cd2a142a7a808bb8209d27, type: 3}
 --- !u!114 &737788599968989931 stripped
@@ -164,12 +168,42 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6380282628643953861, guid: 42c9775e31cd2a142a7a808bb8209d27, type: 3}
   m_PrefabInstance: {fileID: 5960083018853326382}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6086976359090675075}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3343768576147638178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8993974467712768396, guid: 42c9775e31cd2a142a7a808bb8209d27, type: 3}
+  m_PrefabInstance: {fileID: 5960083018853326382}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6086976359090675075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 490680506184876973, guid: 42c9775e31cd2a142a7a808bb8209d27, type: 3}
+  m_PrefabInstance: {fileID: 5960083018853326382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5343573445474982646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6086976359090675075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4174c560f0f3d9409dd43ac4232c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_AvatarChanger
+  _myText: {fileID: 3343768576147638178}
 --- !u!224 &6609757420255394049 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 652147520948152111, guid: 42c9775e31cd2a142a7a808bb8209d27, type: 3}

@@ -855,8 +855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acb31cd10fe6144ab1bb38fb15d85ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _titleNotif: Full Stamina
-  _textNotif: Tenes la stamina full, volve a jugar conmigo
 --- !u!1 &3545668951569929463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1260,7 @@ GameObject:
   - component: {fileID: 3545668952129349613}
   - component: {fileID: 3545668952129349615}
   - component: {fileID: 3545668952129349612}
+  - component: {fileID: 293438966146379189}
   m_Layer: 5
   m_Name: ManaText
   m_TagString: Untagged
@@ -1386,6 +1385,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &293438966146379189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545668952129349610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4174c560f0f3d9409dd43ac4232c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_ManaBar
+  _myText: {fileID: 3545668952129349612}
 --- !u!1 &3545668952376925199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,6 +1466,7 @@ GameObject:
   - component: {fileID: 3545668952437242518}
   - component: {fileID: 3545668952437242520}
   - component: {fileID: 3545668952437242521}
+  - component: {fileID: 8492619700173034963}
   m_Layer: 5
   m_Name: OrbsText
   m_TagString: Untagged
@@ -1577,6 +1591,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8492619700173034963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545668952437242519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4174c560f0f3d9409dd43ac4232c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_OrbsBar
+  _myText: {fileID: 3545668952437242521}
 --- !u!1 &3545668952558119116
 GameObject:
   m_ObjectHideFlags: 0
