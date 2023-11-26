@@ -5,7 +5,7 @@ using System;
 
 public class ManaManager : Singleton<ManaManager>
 {
-    private bool _rechargingMana;
+    //private bool _rechargingMana;
     private TimeSpan timer;
     private int id;
 
@@ -33,15 +33,11 @@ public class ManaManager : Singleton<ManaManager>
                 StartCoroutine(RechargeManaCourutine());
             }
         }
-        else
-        {
-            Debug.Log("Feedback no tenes stamina suficiente");
-        }
     }
 
     private IEnumerator RechargeManaCourutine()
     {
-        _rechargingMana = true;
+        //_rechargingMana = true;
         UIMana.Instance.UpdateUI(GameManager.Instance.PersistentData.Mana);
 
         while (GameManager.Instance.PersistentData.Mana < GameManager.Instance.ConstantsDataStats.MaxManaCapacity)
@@ -75,7 +71,7 @@ public class ManaManager : Singleton<ManaManager>
 
             yield return new WaitForEndOfFrame();
         }
-        _rechargingMana = false;
+        //_rechargingMana = false;
     }
 
     private DateTime AddTime(DateTime timeToAdd, float timerToRechargeMana)
