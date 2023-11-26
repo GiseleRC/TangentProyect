@@ -357,7 +357,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 40.803726
+  field of view: 60.75
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2284,6 +2284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0c2702d1db7784abd7f101e123810b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _root: {fileID: 0}
   _initialAmount: 10
   _heavyEnemyPrefab: {fileID: 7794854100344542389, guid: 974b68268da22354392d9d817dcebc92, type: 3}
 --- !u!114 &796574335
@@ -2298,6 +2299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed45f63a2752307448fa0a638b6f2ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _root: {fileID: 0}
   _initialAmount: 10
   _basicEnemyPrefab: {fileID: 726220783507680387, guid: f3ab5f41ec8903a44b75cb87eb9f6a58, type: 3}
 --- !u!4 &812285897 stripped
@@ -3960,6 +3962,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
+--- !u!1 &1447502588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1447502589}
+  m_Layer: 0
+  m_Name: TurretsDecoratorDebugger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1447502589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447502588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1455250759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490604439956475444, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
@@ -4422,6 +4455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arrowPrefab: {fileID: 6871205271223513030, guid: 7f457a0161f44b342b91aa56e08a2d5c, type: 3}
+  _root: {fileID: 0}
   _initialAmount: 10
 --- !u!4 &1609512666
 Transform:
