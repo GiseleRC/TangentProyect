@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBasicFactory : EnemyFactory
+public class EnemyBasicFactory : EnemyFactory<EnemyBasicFactory>
 {
     [SerializeField] private Enemy _basicEnemyPrefab;
 
