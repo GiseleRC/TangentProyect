@@ -2,22 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyFactory : MonoBehaviour
+public abstract class EnemyFactory : Singleton<EnemyFactory>
 {
-    public static EnemyFactory Instance { get; private set; }
-
+    [SerializeField] protected Transform _root = null;
     [SerializeField] protected int _initialAmount;
-
-    private void Awake()
-    {
-        if (Instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
 
     abstract protected Enemy CreateObject();
 

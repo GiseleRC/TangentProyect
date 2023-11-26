@@ -27,6 +27,11 @@ public class ScreenReward : MonoBehaviour, IScreen
         ScreenManager.Instance.Pop();
     }
 
+    public void BTN_Claim()
+    {
+        //debe sumar a coins
+    }
+
     public void Activate()
     {
         ActivateButtons(true);

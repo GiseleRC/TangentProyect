@@ -1,22 +1,12 @@
 using UnityEngine;
 
-public class BuildManager : MonoBehaviour
+public class BuildManager : Singleton<BuildManager>
 {
-    public static BuildManager Instance { get; private set; }
-
     [SerializeField] private AudioSource _putTurret;
     [SerializeField] private GameObject _turret1Prefab;
     [SerializeField] private GameObject _turret2Prefab;
+    [SerializeField] protected Transform _root = null;
     private TurretBlueprints _turretToBuild;
-
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            return;
-        }
-        Instance = this;
-    }
 
     public bool CanBuild { get { return _turretToBuild != null; } }
     public bool HasMoney { get { return GameManager.Instance.VolatileData.Coins >= _turretToBuild.cost; } }
@@ -41,7 +31,7 @@ public class BuildManager : MonoBehaviour
         }
         GameManager.Instance.VolatileData.Coins -= _turretToBuild.cost;
         _putTurret.Play();
-        GameObject turret = (GameObject)Instantiate(_turretToBuild.prefab, node.transform.position + node.positionOffset, node.transform.rotation);
+        GameObject turret = (GameObject)Instantiate(_turretToBuild.prefab, node.transform.position + node.positionOffset, node.transform.rotation, _root);
         node.turret = turret;
     }
 

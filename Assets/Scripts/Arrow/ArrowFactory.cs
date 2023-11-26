@@ -2,31 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowFactory : MonoBehaviour
+public class ArrowFactory : Singleton<ArrowFactory>
 {
-    public static ArrowFactory Instance { get; private set; }
-
     [SerializeField] private Arrow _arrowPrefab;
+    [SerializeField] protected Transform _root = null;
     [SerializeField] private int _initialAmount;
 
     private Pool<Arrow> _myArrowPool;
 
     void Awake()
     {
-        if (Instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-
         _myArrowPool = new Pool<Arrow>(CreateObject, Arrow.TurnOn, Arrow.TurnOff, _initialAmount);
     }
 
     Arrow CreateObject()
     {
-        return Instantiate(_arrowPrefab);
+        return Instantiate(_arrowPrefab, _root);
     }
 
     public Arrow GetObjectFromPool()

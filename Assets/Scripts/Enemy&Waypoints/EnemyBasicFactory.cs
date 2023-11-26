@@ -4,28 +4,18 @@ using UnityEngine;
 
 public class EnemyBasicFactory : EnemyFactory
 {
-    public static new EnemyBasicFactory Instance { get; private set; }
-
     [SerializeField] private Enemy _basicEnemyPrefab;
 
     private Pool<Enemy> _myBasicEnemyPool;
 
-    private void Awake()
+    void Awake()
     {
-        if (Instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-
         _myBasicEnemyPool = new Pool<Enemy>(CreateObject, Enemy.TurnOn, Enemy.TurnOff, _initialAmount);
     }
 
     protected override Enemy CreateObject()
     {
-        return Instantiate(_basicEnemyPrefab);
+        return Instantiate(_basicEnemyPrefab, _root);
     }
 
     public override Enemy GetObjectFromPool()
