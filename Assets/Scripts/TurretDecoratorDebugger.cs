@@ -7,26 +7,26 @@ public class TurretDecoratorDebugger : MonoBehaviour
 {
     private void Awake()
     {
-        Turret _mySword = new TurretWithPanels();
+        Turret _myTurret = new TurretWithPanels();
 
-        Debug.Log($"Weapon: {_mySword.GetDescription()}, Damage: {_mySword.AreaHit()}");
+        Debug.Log($"Weapon: {_myTurret.GetDescription()}, Damage: {_myTurret.AreaHit()}");
 
-        _mySword = new DoubleFireShoot(_mySword);
+        _myTurret = new DoubleFireShoot(_myTurret);
 
-        _mySword.ImpactEffect();
+        _myTurret.ImpactEffect();
 
-        Debug.Log($"Weapon: {_mySword.GetDescription()}, Damage: {_mySword.AreaHit()}");
+        Debug.Log($"Weapon: {_myTurret.GetDescription()}, Damage: {_myTurret.AreaHit()}");
 
-        _mySword = _mySword.PreviousTurret;
+        _myTurret = _myTurret.PreviousTurret;
 
-        _mySword = new SimpleIceShoot(_mySword);
+        _myTurret = new SimpleIceShoot(_myTurret);
 
-        _mySword = new SimpleIceShoot(_mySword);
-        _mySword = new SimpleIceShoot(_mySword);
-        _mySword = new SimpleIceShoot(_mySword);
-        _mySword = new SimpleIceShoot(_mySword);
+        _myTurret = new SimpleIceShoot(_myTurret);
+        _myTurret = new SimpleIceShoot(_myTurret);
+        _myTurret = new SimpleIceShoot(_myTurret);
+        _myTurret = new SimpleIceShoot(_myTurret);
 
-        Debug.Log($"Weapon: {_mySword.GetDescription()}, Damage: {_mySword.AreaHit()}");
-        _mySword.ImpactEffect();
+        Debug.Log($"Weapon: {_myTurret.GetDescription()}, Damage: {_myTurret.AreaHit()}");
+        _myTurret.ImpactEffect();
     }
 }

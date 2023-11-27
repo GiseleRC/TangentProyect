@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class TurretsDecorator : Turret
 {
-    protected Turret _turretPrefab;
+    protected Turret _turret;
 
     public TurretsDecorator(Turret turret)
     {
-        PreviousTurret = _turretPrefab = turret;
+        PreviousTurret = _turret = turret;
     }
 }

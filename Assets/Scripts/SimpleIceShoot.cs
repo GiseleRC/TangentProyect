@@ -10,17 +10,17 @@ public class SimpleIceShoot : TurretsDecorator
 
     public override string GetDescription()
     {
-        return _turretPrefab.GetDescription() + ", with Simple Ice Shoot";
+        return _turret.GetDescription() + ", with Simple Ice Shoot";
     }
 
     public override int AreaHit()
     {
-        return _turretPrefab.AreaHit() + 2;
+        return _turret.AreaHit() + 2;
     }
 
     public override void ImpactEffect()
     {
-        _turretPrefab.ImpactEffect();
+        _turret.ImpactEffect();
         Debug.Log("Congela3");
     }
 }
