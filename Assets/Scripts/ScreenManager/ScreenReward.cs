@@ -2,16 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScreenReward : MonoBehaviour, IScreen
 {
+    [SerializeField] private TextMeshProUGUI _goldToReclaim;
+
     private Button[] _buttons;
 
     private void Awake()
     {
         _buttons = GetComponentsInChildren<Button>(true);
 
-        ActivateButtons(false);
+        ActivateButtons(true);
+    }
+    private void Start()
+    {
+        _goldToReclaim.enabled = true;
+        _goldToReclaim.text = " 100 ";
     }
 
     void ActivateButtons(bool enable)
@@ -27,9 +35,10 @@ public class ScreenReward : MonoBehaviour, IScreen
         ScreenManager.Instance.Pop();
     }
 
-    public void BTN_Claim()
+    public void BTN_Claim(Button button)
     {
-        //debe sumar a coins
+        _goldToReclaim.enabled = false;
+        button.interactable = false;
     }
 
     public void Activate()

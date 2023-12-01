@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class ScreenManager : Singleton<ScreenManager>
 {
     private Stack<IScreen> _screenStack;

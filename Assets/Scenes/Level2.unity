@@ -338,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8092432966952246726, guid: 1a4ace83fbcf22343a791d474fbe17d9, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8092432966952246726, guid: 1a4ace83fbcf22343a791d474fbe17d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -799,7 +799,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2742986736473672908, guid: 808fdb3ea2fc26e4499ab9b211b36406, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2742986736473672908, guid: 808fdb3ea2fc26e4499ab9b211b36406, type: 3}
       propertyPath: m_LocalPosition.x
@@ -974,7 +974,7 @@ Transform:
   - {fileID: 294747103}
   - {fileID: 1630438933}
   m_Father: {fileID: 1099221303}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &240782002
 PrefabInstance:
@@ -2609,8 +2609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: -3, y: 0}
+  m_SizeDelta: {x: 216.8262, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717087218
 MonoBehaviour:
@@ -2656,9 +2656,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1537599964}
-        m_TargetAssemblyTypeName: MinigameReadyButton, Assembly-CSharp
-        m_MethodName: MinigameReadyToOpen
+      - m_Target: {fileID: 922947198}
+        m_TargetAssemblyTypeName: Debugger, Assembly-CSharp
+        m_MethodName: OpenMinigame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2994,7 +2994,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1099221303}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &796574334
 MonoBehaviour:
@@ -3231,6 +3231,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea41bc6663232114995a9f7ac7675205, type: 3}
+--- !u!114 &922947198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 635796612519949905, guid: 748aae02420930f4aa0bf2f97f57b821, type: 3}
+  m_PrefabInstance: {fileID: 549592982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25fc680c47da1347980c03cd6fb6fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &928732943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3954,6 +3965,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1970332317}
   - {fileID: 62367025}
   - {fileID: 9182404567535090087}
   - {fileID: 214788385}
@@ -3962,7 +3974,7 @@ Transform:
   - {fileID: 229641377}
   - {fileID: 1609512666}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1121571844
 PrefabInstance:
@@ -5018,7 +5030,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1537599963}
-  - component: {fileID: 1537599964}
   m_Layer: 5
   m_Name: MinigameButton
   m_TagString: Untagged
@@ -5042,23 +5053,11 @@ RectTransform:
   m_Father: {fileID: 1970332317}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.119166605, y: 0.20370372}
-  m_AnchorMax: {x: 0.1913125, y: 0.3092963}
-  m_AnchoredPosition: {x: -0.5, y: 8.999985}
-  m_SizeDelta: {x: 62, y: 86}
+  m_AnchorMin: {x: 0.6605417, y: 0}
+  m_AnchorMax: {x: 0.7635625, y: 0.162}
+  m_AnchoredPosition: {x: 1.5, y: -8.5}
+  m_SizeDelta: {x: 1, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1537599964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537599962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddcfa7c507f41f345b147039a4046d28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1540576864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5218,7 +5217,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1099221303}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1620127570
 PrefabInstance:
@@ -5407,7 +5406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80}
+  m_AnchoredPosition: {x: -27, y: -42}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1672425533
@@ -5430,7 +5429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play
+  m_text: MiniGame
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5439,8 +5438,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5457,8 +5456,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.04
-  m_fontSizeBase: 33.04
+  m_fontSize: 35.22
+  m_fontSizeBase: 35.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5493,7 +5492,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 85.499756}
+  m_margin: {x: 30.842896, y: -32.556305, z: -17.134644, w: 85.499756}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5902,7 +5901,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1829434462
 PrefabInstance:
@@ -6306,7 +6305,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1099221303}
     m_Modifications:
     - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -6366,7 +6365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 673025732606106431, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 673025732606106431, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7185,7 +7184,7 @@ Transform:
   - {fileID: 58877242}
   - {fileID: 550532473}
   m_Father: {fileID: 1099221303}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1982652757
 PrefabInstance:
@@ -7797,7 +7796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9182404566608593049, guid: 6832cbbe1c978d54d96bff937188098a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9182404566608593049, guid: 6832cbbe1c978d54d96bff937188098a, type: 3}
       propertyPath: m_LocalPosition.x

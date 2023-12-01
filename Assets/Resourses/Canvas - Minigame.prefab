@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 7660968393270235884}
   m_Layer: 5
   m_Name: GoldButton (1)
-  m_TagString: Untagged
+  m_TagString: GoldButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +378,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7660968393270235887}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5404583247102329937}
+        m_TargetAssemblyTypeName: PanelButtonsBehaviour, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7660968393270235884}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7660968393293879533
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +540,7 @@ GameObject:
   - component: {fileID: 7660968393370347766}
   m_Layer: 5
   m_Name: GoldButton
-  m_TagString: Untagged
+  m_TagString: GoldButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -635,7 +647,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7660968393370347761}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5404583247102329937}
+        m_TargetAssemblyTypeName: PanelButtonsBehaviour, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7660968393370347766}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7660968393410350880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1702,7 @@ GameObject:
   - component: {fileID: 7660968393812135622}
   m_Layer: 5
   m_Name: GoldButton
-  m_TagString: Untagged
+  m_TagString: GoldButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1785,7 +1809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7660968393812135617}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5404583247102329937}
+        m_TargetAssemblyTypeName: PanelButtonsBehaviour, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7660968393812135622}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7660968393875719496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,6 +1835,7 @@ GameObject:
   - component: {fileID: 7660968393875719498}
   - component: {fileID: 7660968393875719499}
   - component: {fileID: 7660968393875719511}
+  - component: {fileID: 5404583247102329937}
   m_Layer: 5
   m_Name: Canvas - Minigame
   m_TagString: Untagged
@@ -1902,6 +1939,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e55c488958331141b729679ade92ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5404583247102329937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660968393875719496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddcfa7c507f41f345b147039a4046d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panels:
+  - {fileID: 7660968395281477250}
+  - {fileID: 7660968394033116888}
+  - {fileID: 7660968394177408712}
+  rewardButton: {fileID: 7660968394982316243}
 --- !u!1 &7660968393892567796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,7 +2282,7 @@ GameObject:
   - component: {fileID: 7660968394084564608}
   m_Layer: 5
   m_Name: GoldButton (1)
-  m_TagString: Untagged
+  m_TagString: GoldButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2335,7 +2389,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7660968394084564611}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5404583247102329937}
+        m_TargetAssemblyTypeName: PanelButtonsBehaviour, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7660968394084564608}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7660968394107018554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,7 +3094,7 @@ GameObject:
   - component: {fileID: 7660968394421989818}
   m_Layer: 5
   m_Name: GoldButton
-  m_TagString: Untagged
+  m_TagString: GoldButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3135,7 +3201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7660968394421990981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5404583247102329937}
+        m_TargetAssemblyTypeName: PanelButtonsBehaviour, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7660968394421989818}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7660968394471271058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3934,7 +4012,7 @@ GameObject:
   - component: {fileID: 7660968394757161007}
   m_Layer: 5
   m_Name: GoldButton (1)
-  m_TagString: Untagged
+  m_TagString: GoldButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4041,7 +4119,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7660968394757161006}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5404583247102329937}
+        m_TargetAssemblyTypeName: PanelButtonsBehaviour, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7660968394757161007}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7660968394803321789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4704,9 +4794,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7660968393875719511}
-        m_TargetAssemblyTypeName: ScreenMinigame, Assembly-CSharp
-        m_MethodName: BTN_Reward
+      - m_Target: {fileID: 635796612519949905, guid: 748aae02420930f4aa0bf2f97f57b821, type: 3}
+        m_TargetAssemblyTypeName: Debugger, Assembly-CSharp
+        m_MethodName: OpenRewardScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

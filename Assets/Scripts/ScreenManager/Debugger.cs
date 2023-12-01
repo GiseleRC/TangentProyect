@@ -6,8 +6,8 @@ using UnityEngine.Serialization;
 public class Debugger : MonoBehaviour
 {
     [SerializeField] private Transform _mainGameplay;
-
     [SerializeField] private Transform _miniGameplayPrefab;
+    [SerializeField] private Transform _rewardScreenPrefab;
 
     void Start()
     {
@@ -16,18 +16,19 @@ public class Debugger : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ScreenManager.Instance.Push(new ScreenGameplay(Instantiate(_miniGameplayPrefab)));
-        }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            var screenMinigame = Instantiate(Resources.Load<ScreenMinigame>("Canvas - Minigame"));
-            ScreenManager.Instance.Push(screenMinigame);
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             ScreenManager.Instance.Pop();
         }
+    }
+
+    public void OpenMinigame()
+    {
+        ScreenManager.Instance.Push(new ScreenGameplay(Instantiate(_miniGameplayPrefab)));
+    }
+
+    public void OpenRewardScreen()
+    {
+        ScreenManager.Instance.Push(new ScreenGameplay(Instantiate(_rewardScreenPrefab)));
     }
 }

@@ -11,7 +11,7 @@ public class ScreenMinigame : MonoBehaviour, IScreen
     {
         _buttons = GetComponentsInChildren<Button>(true);
 
-        ActivateButtons(false);
+        ActivateButtons(true);
     }
 
     void ActivateButtons(bool enable)

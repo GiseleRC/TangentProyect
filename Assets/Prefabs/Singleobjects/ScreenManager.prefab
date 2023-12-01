@@ -59,3 +59,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainGameplay: {fileID: 0}
   _miniGameplayPrefab: {fileID: 7660968393875719508, guid: daf6991b06e75974fa324fce612578f9, type: 3}
+  _rewardScreenPrefab: {fileID: 3848393706307682616, guid: d963cd17acc284b49a09a84e7932117d, type: 3}

@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce26bc38aee8546479198f7c2a3e7afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _goldToReclaim: {fileID: 3848393707443478561}
 --- !u!1 &3848393706555324594
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,10 +898,10 @@ MonoBehaviour:
       - m_Target: {fileID: 3848393706307682617}
         m_TargetAssemblyTypeName: ScreenReward, Assembly-CSharp
         m_MethodName: BTN_Claim
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3848393707097661600}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1053,7 +1054,7 @@ GameObject:
   - component: {fileID: 3848393707443478562}
   - component: {fileID: 3848393707443478561}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GOLDTOCLAIM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
