@@ -16,11 +16,11 @@ public class TurretWithPanels : Turret
 
     public override int AreaHit()
     {
-        return 30;
+        return 0;
     }
 
     public override void ImpactEffect()
     {
-
+        //none impact
     }
 }
