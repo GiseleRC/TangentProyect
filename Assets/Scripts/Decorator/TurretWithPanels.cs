@@ -16,7 +16,7 @@ public class TurretWithPanels : Turret
 
     public override int AreaHit()
     {
-        return 0;
+        return 30;
     }
 
     public override void ImpactEffect()

@@ -16,11 +16,12 @@ public class TurretSimple : Turret
 
     public override int AreaHit()
     {
-        return 0;
+        return 20;
     }
 
     public override void ImpactEffect()
     {
         //none impact
     }
+
 }

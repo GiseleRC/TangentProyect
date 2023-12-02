@@ -5,28 +5,32 @@ using System;
 
 public class TurretDecoratorDebugger : MonoBehaviour
 {
-    private void Awake()
+    [SerializeField] private GameObject _panelButton;
+
+    public void GetSimpleIceShoot(Turret _myTurret)
     {
-        Turret _myTurret = new TurretWithPanels();
+        _myTurret = new SimpleIceShoot(_myTurret);
+        _myTurret.ImpactEffect();
+        _myTurret.GetDescription();
+        _myTurret.AreaHit();
 
-        Debug.Log($"Weapon: {_myTurret.GetDescription()}, Damage: {_myTurret.AreaHit()}");
+        Debug.Log(" " + _myTurret.GetDescription() + " " + _myTurret.AreaHit() + " ");
+        _panelButton.SetActive(false);
+    }
 
+    public void GetDoubleFireShoot(Turret _myTurret)
+    {
         _myTurret = new DoubleFireShoot(_myTurret);
-
         _myTurret.ImpactEffect();
+        _myTurret.GetDescription();
+        _myTurret.AreaHit();
 
-        Debug.Log($"Weapon: {_myTurret.GetDescription()}, Damage: {_myTurret.AreaHit()}");
+        Debug.Log(" " + _myTurret.GetDescription() + " " + _myTurret.AreaHit() + " ");
+        _panelButton.SetActive(false);
+    }
 
-        _myTurret = _myTurret.PreviousTurret;
-
-        _myTurret = new SimpleIceShoot(_myTurret);
-
-        _myTurret = new SimpleIceShoot(_myTurret);
-        _myTurret = new SimpleIceShoot(_myTurret);
-        _myTurret = new SimpleIceShoot(_myTurret);
-        _myTurret = new SimpleIceShoot(_myTurret);
-
-        Debug.Log($"Weapon: {_myTurret.GetDescription()}, Damage: {_myTurret.AreaHit()}");
-        _myTurret.ImpactEffect();
+    private void OnMouseDown()
+    {
+        _panelButton.SetActive(true);
     }
 }

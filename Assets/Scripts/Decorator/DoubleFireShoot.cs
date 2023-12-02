@@ -15,12 +15,12 @@ public class DoubleFireShoot : TurretsDecorator
 
     public override int AreaHit()
     {
-        return _turret.AreaHit() + 2;
+        return _turret.AreaHit() + 4;
     }
 
     public override void ImpactEffect()
     {
         _turret.ImpactEffect();
-        Debug.Log("Congela3");
+        Debug.Log("Quema3");
     }
 }
