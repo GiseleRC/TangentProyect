@@ -21,6 +21,5 @@ public class DoubleFireShoot : TurretsDecorator
     public override void ImpactEffect()
     {
         _turret.ImpactEffect();
-        Debug.Log("Quema3");
     }
 }

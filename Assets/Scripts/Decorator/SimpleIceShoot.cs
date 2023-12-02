@@ -21,6 +21,5 @@ public class SimpleIceShoot : TurretsDecorator
     public override void ImpactEffect()
     {
         _turret.ImpactEffect();
-        Debug.Log("Congela3");
     }
 }
