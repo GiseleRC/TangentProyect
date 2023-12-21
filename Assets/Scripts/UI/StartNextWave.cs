@@ -10,7 +10,7 @@ public class StartNextWave : MonoBehaviour
 
     private void Awake()
     {
-        waveSpawner.waveCountdownText.text = "Press Start Wave";
+        //waveSpawner.waveCountdownText.text = "Press Start Wave";
     }
 
     public void StartWave()
