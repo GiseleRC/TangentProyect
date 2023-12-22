@@ -2540,6 +2540,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 256637333275142321, guid: 676cc25de378e46489bee6b3b2126066, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 585611740}
+    - target: {fileID: 256637333275142321, guid: 676cc25de378e46489bee6b3b2126066, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 536869813}
+    - target: {fileID: 256637333275142321, guid: 676cc25de378e46489bee6b3b2126066, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 256637333275142321, guid: 676cc25de378e46489bee6b3b2126066, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 256637333275142321, guid: 676cc25de378e46489bee6b3b2126066, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScreenPauseController, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 676cc25de378e46489bee6b3b2126066, type: 3}
 --- !u!114 &585611739 stripped
@@ -2551,6 +2571,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &585611740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 256637333101160249, guid: 676cc25de378e46489bee6b3b2126066, type: 3}
+  m_PrefabInstance: {fileID: 585611738}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35bff19d13321c546800c52d32ae699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &591079743
@@ -6609,12 +6640,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 585611740}
     - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -6624,12 +6659,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PLayButtonSound
       objectReference: {fileID: 0}
     - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScreenPauseController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 73754125503222802, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -6965,12 +7008,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 585611740}
     - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -6980,12 +7027,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PLayButtonSound
       objectReference: {fileID: 0}
     - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScreenPauseController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2593434652363355675, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -7312,6 +7367,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7398674250697322753, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 585611740}
+    - target: {fileID: 7398674250697322753, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 536869812}
@@ -7320,8 +7379,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7398674250697322753, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadThisScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398674250697322753, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PLayButtonSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398674250697322753, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScreenPauseController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7398674250697322753, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
