@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class SoundManager : Singleton<SoundManager>
 {
-    //Volume controller slider menu option
-
     [SerializeField] private AudioSource _buttonsSound;
     [SerializeField] private AudioSource _putTurretSound;
     [SerializeField] private AudioSource _backgroundSound;
@@ -18,6 +16,7 @@ public class SoundManager : Singleton<SoundManager>
     private void Start()
     {
         sliderVolumen.value = GameManager.Instance.PersistentData.VolumeValue;
+        VolumeChanger();
     }
 
     public void VolumeChanger()

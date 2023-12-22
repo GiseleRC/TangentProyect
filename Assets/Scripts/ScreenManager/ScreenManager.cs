@@ -32,6 +32,7 @@ public class ScreenManager : Singleton<ScreenManager>
             _screenStack.Peek().Deactivate();
 
         _screenStack.Push(screen);
+        Debug.Log("Screen stack size = " + _screenStack.Count);
 
         screen.Activate();
     }
@@ -41,6 +42,7 @@ public class ScreenManager : Singleton<ScreenManager>
         if (_screenStack.Count <= 0) return;
 
         _screenStack.Pop().Deactivate();
+        Debug.Log("Screen stack size = " + _screenStack.Count);
 
         if (_screenStack.Count > 0)
             _screenStack.Peek().Activate();
