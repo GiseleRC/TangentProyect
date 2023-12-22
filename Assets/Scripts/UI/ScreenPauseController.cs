@@ -28,32 +28,20 @@ public class ScreenPauseController : MonoBehaviour, IScreen
     public void Activate()
     {
         gameObject.SetActive(true);
-        //Pause();
         ActivateButtons(true);
+        GameManager.Instance.SavePersistentData();
     }
 
     public void Deactivate()
     {
         gameObject.SetActive(false);
-        //Unpause();
         ActivateButtons(false);
+        GameManager.Instance.SavePersistentData();
     }
     
     public void Free()
     {
         //
-    }
-
-    public void Pause()
-    {
-        //Time.timeScale = 0;
-        GameManager.Instance.SavePersistentData();
-    }
-
-    public void Unpause()
-    {
-        //Time.timeScale = 1;
-        GameManager.Instance.SavePersistentData();
     }
 
     public void ActivateButtons(bool enable)

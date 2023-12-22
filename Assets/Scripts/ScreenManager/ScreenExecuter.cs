@@ -39,7 +39,7 @@ public class ScreenExecuter : MonoBehaviour
         ScreenManager.Instance.Push("Canvas - PauseController");
     }
 
-    public void OpenRootScreen() // ClosePauseMenu()
+    public void OpenRootScreen()
     {
         ScreenManager.Instance.Pop();
     }
