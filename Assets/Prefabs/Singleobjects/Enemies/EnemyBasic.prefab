@@ -114,7 +114,7 @@ MonoBehaviour:
   _typeEnemy: 0
   _stats: {fileID: 11400000, guid: 949b0571307bd4241ace2588c3c95214, type: 2}
   _startPoint: {fileID: 8679815270613672910, guid: 4e422c49bcb6988489f908a00cfaa9b9, type: 3}
-  waveSpawner: {fileID: 8092432966952246727, guid: 1a4ace83fbcf22343a791d474fbe17d9, type: 3}
+  _enemySpawner: {fileID: 1584233198837675329, guid: 1a4ace83fbcf22343a791d474fbe17d9, type: 3}
   _dieSound: {fileID: 5914677359035310007}
   _enemyDamageToBase: 1
 --- !u!82 &5914677359035310007

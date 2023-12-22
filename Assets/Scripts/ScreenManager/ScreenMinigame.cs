@@ -34,16 +34,18 @@ public class ScreenMinigame : MonoBehaviour, IScreen
 
     public void Activate()
     {
+        gameObject.SetActive(true);
         ActivateButtons(true);
     }
 
     public void Deactivate()
     {
+        gameObject.SetActive(false);
         ActivateButtons(false);
     }
 
     public void Free()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

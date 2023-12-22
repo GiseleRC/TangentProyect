@@ -414,7 +414,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8ccfb96e5644948a81cfde22363695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  _textWave: {fileID: 0}
+  _startWave: {fileID: 673025734521257919}
+  _nextWave: {fileID: 0}
+  _waveSpawner: {fileID: 0}
 --- !u!114 &4403982951455113227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5665,7 +5668,35 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2153815696879170898, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153815696879170898, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153815696879170898, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153815696879170898, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartWave
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153815696879170898, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PLayButtonSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153815696879170898, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EnemySpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153815696879170898, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153815696879170898, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2153815696879170899, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
@@ -5816,7 +5847,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.00026072
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2153815696879170895, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0d2d9818be5196943a216a0d49d08aea, type: 3}
 --- !u!114 &673025733107353538 stripped
 MonoBehaviour:

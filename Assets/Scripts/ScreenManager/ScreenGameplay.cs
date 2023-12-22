@@ -35,6 +35,6 @@ public class ScreenGameplay : IScreen
 
     public void Free()
     {
-        GameObject.Destroy(_root.gameObject);
+        //GameObject.Destroy(_root.gameObject);
     }
 }

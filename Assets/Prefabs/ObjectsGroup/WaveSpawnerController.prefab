@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8092432966952246726}
-  - component: {fileID: 8092432966952246727}
+  - component: {fileID: 1584233198837675329}
   m_Layer: 0
   m_Name: WaveSpawnerController
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8092432966952246727
+--- !u!114 &1584233198837675329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,13 +43,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 8092432966952246721}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9af16dfc63750f4299913ce55060e17, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d7c1957f2f502546a1b1fb8ee8a309b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBetweenWaves: 5
-  waveCountdownText: {fileID: 0}
-  _enemiesInitialNumber: 10
   _spawnPoint: {fileID: 3489132793212475636}
+  _timeBetweenWaves: 5
+  _waves:
+  - _duration: 10
+    _timeBetweenSpawns: 1
+    _heavyProbability: 0.5
+  - _duration: 10
+    _timeBetweenSpawns: 1
+    _heavyProbability: 0.5
+  - _duration: 10
+    _timeBetweenSpawns: 1
+    _heavyProbability: 0.5
 --- !u!1001 &5196878861381991226
 PrefabInstance:
   m_ObjectHideFlags: 0

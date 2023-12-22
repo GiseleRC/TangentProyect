@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -42,6 +43,8 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+
+
     [SerializeField] public Transform _spawnPoint;
     [SerializeField] private float _timeBetweenWaves;
     [SerializeField] private Wave[] _waves;
@@ -58,10 +61,16 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+        StartWave();
+    }
+
+    void StartWave()
+    {
         if (_waveIdx >= _waves.Length)
         {
             enabled = false;
-            Debug.Log("Waves Ended, disabling spawner");
+            EventManager.TriggerEvent(EventType.LevelEnded, SceneManager.GetActiveScene().buildIndex, true);
+            UIvictory.Instance.WonScreen();
             return;
         }
 

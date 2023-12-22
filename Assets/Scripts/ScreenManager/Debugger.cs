@@ -5,14 +5,7 @@ using UnityEngine.Serialization;
 
 public class Debugger : MonoBehaviour
 {
-    [SerializeField] private Transform _mainGameplay;
-    [SerializeField] private Transform _miniGameplayPrefab;
-    [SerializeField] private Transform _rewardScreenPrefab;
-
-    void Start()
-    {
-        ScreenManager.Instance.Push(new ScreenGameplay(_mainGameplay));
-    }
+    [SerializeField] private PanelButtonsBehaviour _panelBttBehaviour;
 
     void Update()
     {
@@ -24,11 +17,13 @@ public class Debugger : MonoBehaviour
 
     public void OpenMinigame()
     {
-        ScreenManager.Instance.Push(new ScreenGameplay(Instantiate(_miniGameplayPrefab)));
+        ScreenManager.Instance.Push("Canvas - Minigame");
+        _panelBttBehaviour.ResetValues();
     }
 
     public void OpenRewardScreen()
     {
-        ScreenManager.Instance.Push(new ScreenGameplay(Instantiate(_rewardScreenPrefab)));
+        ScreenManager.Instance.Pop();
+        ScreenManager.Instance.Push("Canvas - Reward");
     }
 }

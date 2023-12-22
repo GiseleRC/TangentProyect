@@ -1,47 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ScreenManager : Singleton<ScreenManager>
 {
+    private Dictionary<string, IScreen> _screenByName;
     private Stack<IScreen> _screenStack;
 
     private void Awake()
     {
+        _screenByName = new Dictionary<string, IScreen>();
+        foreach (IScreen screen in FindObjectsOfType<MonoBehaviour>(true).OfType<IScreen>())
+        {
+            _screenByName[((MonoBehaviour)screen).gameObject.name] = screen;
+        }
+
         _screenStack = new Stack<IScreen>();
     }
 
-    public void Push(IScreen newScreen)
+    public void Push(string screenName)
     {
-        if (_screenStack.Count > 0)
-        {
-            _screenStack.Peek()
-                        .Deactivate();
-        }
-
-        _screenStack.Push(newScreen);
-
-        newScreen.Activate();
+        IScreen screen;
+        if (_screenByName.TryGetValue(screenName, out screen))
+            Push(screen);
     }
 
-    public void Push(string newScreenName)
+    private void Push(IScreen screen)
     {
-        var screenPrefab = Resources.Load<GameObject>(newScreenName);
+        if (_screenStack.Count > 0)
+            _screenStack.Peek().Deactivate();
 
-        var instantiatedScreen = Instantiate(screenPrefab);
+        _screenStack.Push(screen);
 
-        if (instantiatedScreen.TryGetComponent(out IScreen screen))
-        {
-            Push(screen);
-        }
+        screen.Activate();
     }
 
     public void Pop()
     {
-        if (_screenStack.Count <= 1) return;
+        if (_screenStack.Count <= 0) return;
 
-        _screenStack.Pop().Free();
+        _screenStack.Pop().Deactivate();
 
-        _screenStack.Peek().Activate();
+        if (_screenStack.Count > 0)
+            _screenStack.Peek().Activate();
     }
 }

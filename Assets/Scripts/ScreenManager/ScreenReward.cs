@@ -33,6 +33,8 @@ public class ScreenReward : MonoBehaviour, IScreen
     public void BTN_Back()
     {
         ScreenManager.Instance.Pop();
+        _goldToReclaim.enabled = true;
+        _goldToReclaim.text = " 100 ";
     }
 
     public void BTN_Claim(Button button)
@@ -43,16 +45,18 @@ public class ScreenReward : MonoBehaviour, IScreen
 
     public void Activate()
     {
+        gameObject.SetActive(true);
         ActivateButtons(true);
     }
 
     public void Deactivate()
     {
+        gameObject.SetActive(false);
         ActivateButtons(false);
     }
 
     public void Free()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

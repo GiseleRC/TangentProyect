@@ -16,9 +16,7 @@ public class PanelButtonsBehaviour : MonoBehaviour
 
     void Start()
     {
-        rewardButton.interactable = false;
-        _correctButtonCount = 0;
-        InvokeRepeating("ActivateNext", 0f, _activationDuration);
+        ResetValues();
     }
 
     void ActivateNext()
@@ -51,5 +49,12 @@ public class PanelButtonsBehaviour : MonoBehaviour
         CancelInvoke("ActivateNext");
         rewardButton.interactable = true;
         GameManager.Instance.VolatileData.Coins += _coinsReward;
+    }
+
+    public void ResetValues()
+    {
+        rewardButton.interactable = false;
+        _correctButtonCount = 0;
+        InvokeRepeating("ActivateNext", 0f, _activationDuration);
     }
 }
