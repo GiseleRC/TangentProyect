@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour, IPooleableObject
     void Update()
     {
         Vector3 _dir = _target.position - transform.position;
-        transform.Translate(_dir.normalized * _stats.Speed * Time.deltaTime, Space.World);
+        transform.Translate(_stats.Speed * Time.deltaTime * _dir.normalized, Space.World);
 
         if (Vector3.Distance(transform.position, _target.position) <= 0.4f)
         {

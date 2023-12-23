@@ -50,5 +50,6 @@ public class DecoratorActioner : MonoBehaviour
         _description.text = " ";
         _particleIce.gameObject.SetActive(false);
         _particleFire.gameObject.SetActive(false);
+        _panelButton.SetActive(false);
     }
 }

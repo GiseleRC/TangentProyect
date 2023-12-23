@@ -5663,6 +5663,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -99.463
       objectReference: {fileID: 0}
+    - target: {fileID: 8378524778943151872, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8825328351762400423, guid: c84c21ef7f9ae714b80b929fb8632094, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7195,6 +7199,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2742986736473672909, guid: 808fdb3ea2fc26e4499ab9b211b36406, type: 3}
+      propertyPath: _root
+      value: 
+      objectReference: {fileID: 1712249662}
     - target: {fileID: 2742986736473672909, guid: 808fdb3ea2fc26e4499ab9b211b36406, type: 3}
       propertyPath: _buttonSound
       value: 
