@@ -832,6 +832,12 @@ MonoBehaviour:
   _thirdSection: {fileID: 3978975745666419632}
   _fourthSection: {fileID: 7218347444916063335}
   _fifthSection: {fileID: 5818312156729515454}
+  _alertsSection:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &5823519136152606364
 GameObject:
   m_ObjectHideFlags: 0

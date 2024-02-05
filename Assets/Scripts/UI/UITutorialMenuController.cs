@@ -14,6 +14,8 @@ public class UITutorialMenuController : MonoBehaviour
     [SerializeField] private GameObject _fourthSection;
     [SerializeField] private GameObject _fifthSection;
 
+    [SerializeField] private GameObject[] _alertsSection;
+
     private GameObject _currSection;
 
     private void Start()
@@ -28,11 +30,14 @@ public class UITutorialMenuController : MonoBehaviour
         else
         {
             _tutorialImageGO.SetActive(false);
+            _alertsSection[5].gameObject.SetActive(false);
         }
     }
 
     public void PlayTutorial()
     {
+        _alertsSection[5].gameObject.SetActive(true);
+        _alertsSection[0].gameObject.SetActive(true);
         _uIController.EnableMenu(false);
         _firstSection.SetActive(true);
         _tutorialImageGO.SetActive(true);
@@ -45,6 +50,7 @@ public class UITutorialMenuController : MonoBehaviour
     private void EndTutorial()
     {
         _uIController.EnableMenu(true);
+        _alertsSection[5].gameObject.SetActive(false);
         gameObject.SetActive(false);
 
         EventManager.TriggerEvent(EventType.TutorialCompleted);
@@ -54,6 +60,8 @@ public class UITutorialMenuController : MonoBehaviour
     {
         if (_currSection == _firstSection)
         {
+            _alertsSection[0].gameObject.SetActive(false);
+            _alertsSection[1].gameObject.SetActive(true);
             _currSection.SetActive(false);
             _secondSection.SetActive(true);
 
@@ -61,6 +69,8 @@ public class UITutorialMenuController : MonoBehaviour
         }
         else if (_currSection == _secondSection)
         {
+            _alertsSection[1].gameObject.SetActive(false);
+            _alertsSection[2].gameObject.SetActive(true);
             _currSection.SetActive(false);
             _thirdSection.SetActive(true);
 
@@ -68,6 +78,8 @@ public class UITutorialMenuController : MonoBehaviour
         }
         else if (_currSection == _thirdSection)
         {
+            _alertsSection[2].gameObject.SetActive(false);
+            _alertsSection[3].gameObject.SetActive(true);
             _currSection.SetActive(false);
             _fourthSection.SetActive(true);
 
@@ -75,6 +87,8 @@ public class UITutorialMenuController : MonoBehaviour
         }
         else if (_currSection == _fourthSection)
         {
+            _alertsSection[3].gameObject.SetActive(false);
+            _alertsSection[4].gameObject.SetActive(true);
             _currSection.SetActive(false);
             _fifthSection.SetActive(true);
 
@@ -82,6 +96,7 @@ public class UITutorialMenuController : MonoBehaviour
         }
         else if (_currSection == _fifthSection)
         {
+            _alertsSection[4].gameObject.SetActive(false);
             _currSection.SetActive(false);
             EndTutorial();
         }
